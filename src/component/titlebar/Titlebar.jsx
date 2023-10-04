@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import "../../Style/Titlebar.css";
 import { Link } from "react-router-dom";
-const Titlebar = () => {
+const Titlebar = (prop) => {
 
     const downloadTxtFile = () => {
         fetch('images/Kenil_v_resume.pdf').then(response => {
@@ -19,7 +19,7 @@ const Titlebar = () => {
 
 
   return (
-    <div className="homePage">
+    <div className="homePage" id="HomePage" ref={prop.titleRef}>
     <div className="Titlebar">
         <div className="TitlebarItem">Kenil Vaghasiya</div>
         <div className="resumeBtn"  onClick={downloadTxtFile} >Resume</div> 
