@@ -5,6 +5,7 @@ import Navbar from "./component/navbar/Navbar";
 import Titlebar from "./component/titlebar/Titlebar";
 import CardPor from "./component/CardPor/CardPor";
 import { Fade ,Zoom,Bounce} from "react-awesome-reveal";
+import Contact from "./component/Contact/Contact";
 function App() {
   const titleRef = useRef();
   const abouttitleRef = useRef();
@@ -75,6 +76,8 @@ function App() {
         />
         </Fade>
       </div>
+
+      <Contact></Contact>
     </div>
   );
 }
