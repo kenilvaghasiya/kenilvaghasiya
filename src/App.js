@@ -4,7 +4,7 @@ import About from "./component/about/About";
 import Navbar from "./component/navbar/Navbar";
 import Titlebar from "./component/titlebar/Titlebar";
 import CardPor from "./component/CardPor/CardPor";
-
+import { Fade ,Zoom,Bounce} from "react-awesome-reveal";
 function App() {
   const titleRef = useRef();
   const abouttitleRef = useRef();
@@ -30,10 +30,13 @@ function App() {
           handleClick(data);
         }}
       ></Navbar>
+      <Fade>
       <Titlebar titleRef={titleRef}></Titlebar>
+      </Fade>
       <About abouttitleRef={abouttitleRef}></About>
       <div className="Portfolioname" ref={Portfolioref}>Portfolio</div>
       <div className="WorkcardSection">
+      <Fade>
         <CardPor
           image1="images/asd/card1.png"
           image2="images/asd/card11.png"
@@ -72,6 +75,7 @@ function App() {
           image3="images/asd/card666.png"
           link="https://www.linkedin.com/feed/update/urn:li:activity:6716957315137904640/?originTrackingId=tzq4QJ6RRK%2BjhFZ%2FPOotkw%3D%3D"
         />
+        </Fade>
       </div>
     </div>
   );

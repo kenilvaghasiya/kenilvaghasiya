@@ -1,6 +1,7 @@
 import "../../Style/about.css";
 import { motion } from "framer-motion";
 import CardSection from "../cardSection/CardSection";
+import { Fade ,Zoom,Flip,JackInTheBox} from "react-awesome-reveal";
 
 const About = (prop) => {
   return (
@@ -29,6 +30,7 @@ const About = (prop) => {
       </div>
       <div className="roadmapSection">
         <div className="roadmapSectionLeft">
+        <JackInTheBox>
           <CardSection
             name="Web Developer"
             margin={0}
@@ -39,6 +41,8 @@ Led adoption of cutting-edge tech, like React and Next.js, amplifying engagement
 Optimized Joomla CMS with PHP extensions, enhancing content management and workflow efficiency.
 Championed WCAG compliance and user-centric design, fostering accessibility excellence within the team."
           />
+          </JackInTheBox>
+        <JackInTheBox>
 
 <CardSection
             name="UI UX Designer Intern"
@@ -47,6 +51,8 @@ Championed WCAG compliance and user-centric design, fostering accessibility exce
             company="Cybervie-Ionots Technologies Pvt Ltd"
             text="UI/UX DESIGNER: Leveraged Figma, Illustrator, and Photoshop to create visually compelling flyers, books, and readingmaterials for cyber security education. Delivered innovation and user-friendly solutions to the forefront of cybersecuritylearning experiences. Conducted research and created user profiles, wireframes, and prototypes."
           />
+        </JackInTheBox>
+
         </div>
         <div className="roadmapSectionCenter">
           <div className="mappathDesign">
@@ -54,6 +60,7 @@ Championed WCAG compliance and user-centric design, fostering accessibility exce
           </div>
         </div>
         <div className="roadmapSectionright">
+        <JackInTheBox>
 
         <CardSection
             name="Full-stack Developer"
@@ -62,6 +69,9 @@ Championed WCAG compliance and user-centric design, fostering accessibility exce
             company="Rejoicehub Solutions"
             text="FULL-STACK DEVELOPER: Constructed dynamic and interactive websites utilizing React JS and Next JS. Deliveredexceptional user experiences through effective UI libraries usage. Leveraged S3, App Sync, Cognito, SES, Code Commit,Amplify, EC2, and Lambda to create secure and scalable solutions. Enables seamless code management and efficientcollaboration with development teams. Navigated full application development life cycle from requirements gatheringto modular structure wiring, workflow."
           />
+        </JackInTheBox>
+
+        <JackInTheBox>
 
 <CardSection
             name="Full-stack Developer"
@@ -71,6 +81,7 @@ Championed WCAG compliance and user-centric design, fostering accessibility exce
             text="FULL-STACK DEVELOPER: Constructed dynamic and interactive websites utilizing React JS and Next JS. Deliveredexceptional user experiences through effective UI libraries usage. Leveraged S3, App Sync, Cognito, SES, Code Commit,Amplify, EC2, and Lambda to create secure and scalable solutions. Enables seamless code management and efficientcollaboration with development teams. Navigated full application development life cycle from requirements gatheringto modular structure wiring, workflow."
           />
 
+</JackInTheBox>
 
         </div>
       </div>
