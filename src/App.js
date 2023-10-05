@@ -30,9 +30,7 @@ function App() {
           handleClick(data);
         }}
       ></Navbar>
-      <Fade>
       <Titlebar titleRef={titleRef}></Titlebar>
-      </Fade>
       <About abouttitleRef={abouttitleRef}></About>
       <div className="Portfolioname" ref={Portfolioref}>Portfolio</div>
       <div className="WorkcardSection">
