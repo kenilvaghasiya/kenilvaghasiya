@@ -83,6 +83,7 @@ letter-spacing: 0.6px;
     width: 20%;
     display: flex;
     justify-content: center;
+    z-index: 9;
 }
 
 .mappathDesign{
