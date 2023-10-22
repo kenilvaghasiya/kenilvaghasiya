@@ -12,19 +12,19 @@ const Portfolio = () => {
         <div className="portfolioMain">
           <div className="bigportfoliobar" style={{marginLeft:activeClassMG}}>
           <Link to="https://k14-dev.netlify.app/">  <div className="portfolioMainas1">
-             <img src="images/al1.png" alt="as1" className="imgAS1"></img>
+             <img src="images/al1.svg " alt="as1" className="imgAS1"></img>
             </div></Link>
 
             <div className="portfolioMainas1">
-              <img src="images/al2.png" alt="as1" className="imgAS1"></img>
+              <img src="images/al2.svg  " alt="as1" className="imgAS1"></img>
             </div>
 
             <Link to="https://scholarworld.netlify.app/">   <div className="portfolioMainas1">
-            <img src="images/al3.png" alt="as1" className="imgAS1"></img>
+            <img src="images/al3.svg  " alt="as1" className="imgAS1"></img>
             </div></Link>
 
             <Link to={"https://dribbble.com/kenil_vaghasiya"}>   <div className="portfolioMainas1">
-             <img src="images/al4.png" alt="as1" className="imgAS1"></img>
+             <img src="images/al4.svg " alt="as1" className="imgAS1"></img>
             </div>
             </Link>
           </div>
