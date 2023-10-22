@@ -1,7 +1,6 @@
 import "../../Style/about.css";
 import { motion } from "framer-motion";
 import CardSection from "../cardSection/CardSection";
-import { Fade ,Zoom,Flip,JackInTheBox} from "react-awesome-reveal";
 
 const About = (prop) => {
   return (

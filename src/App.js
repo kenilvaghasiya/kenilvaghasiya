@@ -39,7 +39,7 @@ function App() {
       <Titlebar titleRef={titleRef}></Titlebar>
       <About abouttitleRef={abouttitleRef}></About>
       <div className="Portfolioname" ref={Portfolioref}>Portfolio</div>
-      <div className="WorkcardSection">
+      {/* <div className="WorkcardSection">
       <Fade>
         <CardPor
           image1="images/asd/card1.png"
@@ -81,7 +81,7 @@ function App() {
         />
 
         </Fade>
-      </div>
+      </div> */}
       <Portfolio></Portfolio>
 
       <Contact contactRef={ContactRef}></Contact>
