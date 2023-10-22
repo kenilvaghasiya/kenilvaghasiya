@@ -6,10 +6,13 @@ import Titlebar from "./component/titlebar/Titlebar";
 import CardPor from "./component/CardPor/CardPor";
 import { Fade ,Zoom,Bounce} from "react-awesome-reveal";
 import Contact from "./component/Contact/Contact";
+import Portfolio from "./component/Portfolio/Portfolio";
 function App() {
   const titleRef = useRef();
   const abouttitleRef = useRef();
   const Portfolioref = useRef();
+  const ContactRef = useRef();
+
 
 
   function handleClick(data) {
@@ -21,7 +24,9 @@ function App() {
     else if (data === "Portfolio") {
       Portfolioref.current.scrollIntoView({ behavior: "smooth" });
     }
-    
+    else if (data === "Contact") {
+      ContactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   return (
@@ -74,10 +79,12 @@ function App() {
           image3="images/asd/card666.png"
           link="https://www.linkedin.com/feed/update/urn:li:activity:6716957315137904640/?originTrackingId=tzq4QJ6RRK%2BjhFZ%2FPOotkw%3D%3D"
         />
+
         </Fade>
       </div>
+      <Portfolio></Portfolio>
 
-      <Contact></Contact>
+      <Contact contactRef={ContactRef}></Contact>
     </div>
   );
 }
