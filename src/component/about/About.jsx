@@ -32,7 +32,7 @@ const About = (prop) => {
         <div className="roadmapSectionLeft">
        
           <CardSection
-            name="Web Developer"
+            name="Full-stack Developer"
             margin={0}
             date="Sep 2023 - Present"
             company="Associated Students, Inc. CSULB"
