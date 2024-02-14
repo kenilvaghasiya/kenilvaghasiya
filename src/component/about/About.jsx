@@ -36,10 +36,7 @@ const About = (prop) => {
             margin={0}
             date="Sep 2023 - Present"
             company="Associated Students, Inc. CSULB"
-            text="Crafted compelling web experiences with HTML, CSS, and JavaScript for seamless user interactions.
-Led adoption of cutting-edge tech, like React and Next.js, amplifying engagement and interactivity.
-Optimized Joomla CMS with PHP extensions, enhancing content management and workflow efficiency.
-Championed WCAG compliance and user-centric design, fostering accessibility excellence within the team."
+            text="Innovative web developer with expertise in HTML, CSS, and JavaScript, integrating cutting-edge technologies like React and Next.js for dynamic, immersive platforms. Optimized Joomla CMS with PHP extensions, championed WCAG compliance, and orchestrated live streaming radio station using React.js and Node.js. Proficient in Git/GitHub for version control and streamlined design-to-development workflow with Figma, fostering collaborative and efficient processes."
           />
          
        
@@ -67,7 +64,7 @@ Championed WCAG compliance and user-centric design, fostering accessibility exce
             margin={450}
             date="Jun 2021 - Jul 2022"
             company="Rejoicehub Solutions"
-            text="FULL-STACK DEVELOPER: Constructed dynamic and interactive websites utilizing React JS and Next JS. Deliveredexceptional user experiences through effective UI libraries usage. Leveraged S3, App Sync, Cognito, SES, Code Commit,Amplify, EC2, and Lambda to create secure and scalable solutions. Enables seamless code management and efficientcollaboration with development teams. Navigated full application development life cycle from requirements gatheringto modular structure wiring, workflow."
+            text="jQuery expert, enhanced web interactivity through streamlined DOM manipulation, ensuring seamless user experiences. Spearheaded revolutionary Continuous Integration/Continuous Deployment pipelines for efficient feature delivery. Developed dynamic React JS and Next JS websites with strategic UI library integration. Utilized a versatile toolset for secure, scalable solutions. Improved productivity through clear communication, task delegation, and strategic bottleneck resolution, showcasing a commitment to high-performance web solutions."
           />
        
 
