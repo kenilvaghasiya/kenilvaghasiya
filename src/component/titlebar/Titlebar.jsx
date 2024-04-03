@@ -1,6 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import "../../Style/Titlebar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Titlebar = (prop) => {
 
     const downloadTxtFile = () => {
@@ -21,7 +21,7 @@ const Titlebar = (prop) => {
   return (
     <div className="homePage" id="HomePage" ref={prop.titleRef}>
     <div className="Titlebar">
-        <div className="TitlebarItem">Kenil Vaghasiya</div>
+       <div className="TitlebarItem"> <NavLink to="/" className="navlinknone">Kenil Vaghasiya </NavLink></div>
         <div className="resumeBtn"  onClick={downloadTxtFile} >Resume</div> 
     </div>
     <div className="mainSection">

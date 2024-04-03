@@ -10,6 +10,7 @@ const About = (prop) => {
           <img src="images/about.png" alt="about"></img>
         </motion.div>
         <div className="aboutTitle">About Me</div>
+
         <div className="aboutgrd">Nice to meet you</div>
         <div className="abotText">
           <p>
@@ -80,7 +81,12 @@ const About = (prop) => {
 
 
         </div>
+
+
+
       </div>
+
+
     </>
   );
 };
