@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import "./Style/app.css";
 import About from "./component/about/About";
 import Navbar from "./component/navbar/Navbar";
@@ -29,6 +29,9 @@ function App() {
     }
   }
 
+
+
+
   return (
     <div>
       <Navbar
@@ -42,7 +45,7 @@ function App() {
  
       <Portfolio></Portfolio>
 
-      <Contact contactRef={ContactRef}></Contact>
+      <Contact contactRef={ContactRef} onScroll=""></Contact>
     </div>
   );
 }

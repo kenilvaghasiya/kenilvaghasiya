@@ -18,7 +18,7 @@ const Contact =(props)=>{
     
     return(<>
 
-    <div className="Contactus">
+    <div className="Contactus" ref={props.contactRef}>
     <div className="Contactus_main">
 
         <img src="/images/kenilVaghasiya.jpg" className="Contactus_mainimg" />
