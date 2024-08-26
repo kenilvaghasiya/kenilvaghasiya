@@ -9,7 +9,7 @@
  }
 
  .Contactus_main{
-	width: 550px;
+	width: 1100px;
 	height: 600px;
 	background-color: #31363F;
 	border-radius: 20px;
@@ -18,18 +18,7 @@
 	transition: all 2s;
  }
 
- .Contactus:hover .Contactus_main{
-	width: 1100px;
-	transition: all 2s;
 
- }
-
- .Contactus:hover .Contactus_mainimg{
-	width: 50%;
-	border-radius: 20px 40px 40px 20px;
-	transition: all 2s;
-
- }
 
  .Contactus_mainimg{
 	width: 100%;

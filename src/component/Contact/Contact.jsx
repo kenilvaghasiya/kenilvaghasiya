@@ -3,19 +3,18 @@ import "../../Style/contact.css"
 const Contact =(props)=>{
 
     const downloadTxtFile = () => {
-        fetch('/images/Kenil_Vaghasiya.pdf').then(response => {
+        fetch('/images/kenil_resume.pdf').then(response => {
             response.blob().then(blob => {
                 // Creating new object of PDF file
                 const fileURL = window.URL.createObjectURL(blob);
                 // Setting various property values
                 let alink = document.createElement('a');
                 alink.href = fileURL;
-                alink.download = 'KenilResume.pdf';
+                alink.download = 'kenil_resume.pdf';
                 alink.click();
             })
         })
     }
-    
     return(<>
 
     <div className="Contactus" ref={props.contactRef}>
@@ -26,7 +25,7 @@ const Contact =(props)=>{
       <div className="Contactus_mainimg-left">
         <div className="Contactus_mainimgName">Kenil Vaghasiya</div>
         <div className="Contactus_mainimgpo">Full Stack Developer</div>
-        <div className="Contactus_mainimgEmail">kenilvaghasiya705@gmail.com</div>
+        <div className="Contactus_mainimgEmail">kenilvaghasiya10@gmail.com</div>
         <div className="Contactus_mainimgBtn" onClick={downloadTxtFile}>Resume</div>
 
       </div>
