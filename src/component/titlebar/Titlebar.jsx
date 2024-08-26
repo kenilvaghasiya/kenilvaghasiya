@@ -4,14 +4,14 @@ import { Link, NavLink } from "react-router-dom";
 const Titlebar = (prop) => {
 
     const downloadTxtFile = () => {
-        fetch('/images/Kenil_Vaghasiya.pdf').then(response => {
+        fetch('/images/kenil_resume.pdf').then(response => {
             response.blob().then(blob => {
                 // Creating new object of PDF file
                 const fileURL = window.URL.createObjectURL(blob);
                 // Setting various property values
                 let alink = document.createElement('a');
                 alink.href = fileURL;
-                alink.download = 'KenilResume.pdf';
+                alink.download = 'kenil_resume.pdf';
                 alink.click();
             })
         })
