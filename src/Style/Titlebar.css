@@ -87,6 +87,13 @@ transition: all 1s;
     width: 80%;
     position: relative;
     height: 80%;
+    animation: heroFloat 9s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
 .TitlebarItem {
@@ -165,5 +172,4 @@ transition: all 1s;
   }
 
 }
-
 

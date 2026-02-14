@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import "./Style/app.css";
 import About from "./component/about/About";
 import Navbar from "./component/navbar/Navbar";
 import Titlebar from "./component/titlebar/Titlebar";
-import CardPor from "./component/CardPor/CardPor";
-import { Fade ,Zoom,Bounce} from "react-awesome-reveal";
 import Contact from "./component/Contact/Contact";
 import Portfolio from "./component/Portfolio/Portfolio";
+import { motion } from "framer-motion";
 function App() {
   const titleRef = useRef();
   const abouttitleRef = useRef();
@@ -41,7 +40,16 @@ function App() {
       ></Navbar>
       <Titlebar titleRef={titleRef}></Titlebar>
       <About abouttitleRef={abouttitleRef}></About>
-      <div className="Portfolioname" ref={Portfolioref}>Portfolio</div>
+      <motion.div
+        className="Portfolioname"
+        ref={Portfolioref}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        Portfolio
+      </motion.div>
  
       <Portfolio></Portfolio>
 

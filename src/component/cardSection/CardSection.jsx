@@ -1,9 +1,21 @@
 import "../../Style/card.css"
+import { motion } from "framer-motion";
 
 const CardSection =(prop)=>{
+    const highlights = Array.isArray(prop.highlights)
+      ? prop.highlights
+      : [];
+
     return(<>
-         <div className="cardSection"  style={{ marginTop:prop.margin }}>
-         <div className="titleBAr">
+         <motion.div
+          className="cardSection"
+          style={{ marginTop:prop.margin }}
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+         >
+         <div className="titleBar">
             <div className="titlename">{prop.name}</div>
             <div className="dateSection">{prop.date}</div>
          </div>
@@ -12,9 +24,17 @@ const CardSection =(prop)=>{
          </div>
 
          <div className="textSection">
-            <p>{prop.text}</p>
+            {highlights.length > 0 ? (
+              <ul className="highlightsList">
+                {highlights.map((item, index) => (
+                  <li key={`${prop.name}-${index}`}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{prop.text}</p>
+            )}
          </div>
-        </div>
+        </motion.div>
     </>)
 }
 
