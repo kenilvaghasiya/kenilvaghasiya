@@ -1,8 +1,8 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=160&section=header&text=Kenil%20Vaghasiya&fontSize=52&fontColor=fff&fontAlignY=38&desc=Senior%20Full%20Stack%20Engineer%20%E2%80%A2%20SDE%20%E2%80%A2%20Open%20to%20Work&descAlignY=60&descSize=17&animation=twinkling" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=160&section=header&text=Kenil%20Vaghasiya&fontSize=52&fontColor=fff&fontAlignY=38&desc=Senior%20Full%20Stack%20Engineer%20%E2%80%A2%20SDE%20%E2%80%A2%20React%20%7C%20Node.js%20%7C%20Azure&descAlignY=60&descSize=17&animation=twinkling" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=React+%7C+ASP.NET+Core+%7C+Node.js+%7C+Azure+%7C+AWS;4%2B+years+building+scalable+cloud-native+apps;40%25+perf+boost+%E2%80%A2+60%25+API+latency+reduction+%E2%80%A2+90%25%2B+test+coverage;Available+for+SDE+%2F+Full+Stack+roles+%F0%9F%9A%80)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=React+%7C+ASP.NET+Core+%7C+Node.js+%7C+Azure+%7C+AWS;4%2B+years+building+scalable+cloud-native+apps;40%25+perf+boost+%E2%80%A2+60%25+API+latency+reduction+%E2%80%A2+90%25%2B+test+coverage)](https://git.io/typing-svg)
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-kenilvaghasiya.com-58A6FF?style=flat-square&logo=safari&logoColor=white)](https://kenilvaghasiya.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-kenil704-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/kenil704)
@@ -24,7 +24,7 @@ const kenil: Engineer = {
   stack    : ["React", "ASP.NET Core", "Node.js", "TypeScript", "Azure", "AWS"],
   impact   : ["↑40% perf", "↓60% API latency", "↑300% DAU", "90%+ test coverage"],
   education: "M.S. Computer Science — Cal State Long Beach",
-  target   : "SDE / Full Stack roles @ top-tier companies",
+
 };
 ```
 
@@ -66,23 +66,6 @@ const kenil: Engineer = {
 
 ---
 
-### 📊 GitHub Stats
-
-<div align="center">
-
-<img height="165em" src="https://github-readme-stats.vercel.app/api?username=kenilvaghasiya&show_icons=true&theme=github_dark&hide_border=true&count_private=true&title_color=58A6FF&icon_color=58A6FF" />
-<img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kenilvaghasiya&layout=compact&theme=github_dark&hide_border=true&langs_count=8&title_color=58A6FF" />
-
-</div>
-
-<div align="center">
-<img width="65%" src="https://github-readme-streak-stats.herokuapp.com/?user=kenilvaghasiya&theme=github-dark-blue&hide_border=true&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" />
-</div>
-
-<div align="center">
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=kenilvaghasiya&theme=github-compact&hide_border=true&bg_color=0d1117&color=58A6FF&line=58A6FF&point=ffffff&area=true" />
-</div>
-
 ---
 
 ### 🚀 Featured Projects
@@ -101,8 +84,6 @@ const kenil: Engineer = {
 ---
 
 <div align="center">
-
-🎯 **Open to SDE & Full Stack roles** — Let's build something great together.
 
 [![LinkedIn](https://img.shields.io/badge/Let's_Connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/kenil704)
 
