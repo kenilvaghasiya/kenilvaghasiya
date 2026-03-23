@@ -72,8 +72,8 @@ const kenil: Engineer = {
 
 <div align="center">
 
-<a href="https://github.com/kenilvaghasiya/eventApp">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=kenilvaghasiya&repo=eventApp&theme=github_dark&hide_border=true&title_color=58A6FF&icon_color=58A6FF" />
+<a href="https://github.com/kenilvaghasiya/Jira_task_Management">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=kenilvaghasiya&repo=Jira_task_Management&theme=github_dark&hide_border=true&title_color=58A6FF&icon_color=58A6FF" />
 </a>
 <a href="https://github.com/kenilvaghasiya/K14-Design">
   <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=kenilvaghasiya&repo=K14-Design&theme=github_dark&hide_border=true&title_color=58A6FF&icon_color=58A6FF" />
