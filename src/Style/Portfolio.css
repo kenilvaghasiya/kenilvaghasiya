@@ -39,6 +39,7 @@ position: relative;
 
 
 .portfolioMainas1{
+    border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;

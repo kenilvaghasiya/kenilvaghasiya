@@ -155,11 +155,10 @@ top: 40%;
     font-size: 14px;
     font-weight: 600;
     padding: 8px 14px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease;
 }
 
 .skillsChips span:hover{
-    transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(16, 24, 40, 0.15);
 }
 

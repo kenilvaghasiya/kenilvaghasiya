@@ -13,20 +13,24 @@ code {
 }
 
 @font-face {
-  font-family: "font1";   /*Can be any text*/
-  src: local("AirbnbCerealLight"),
-    url("./font/Curvilingus.otf") format("truetype");
+  font-family: "font1";
+  src: url("./font/Curvilingus.woff2") format("woff2"),
+    url("./font/Curvilingus.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "font2";   /*Can be any text*/
-  src: local("AirbnbCerealLight"),
+  font-family: "font2";
+  src: url("./font/Raleway-VariableFont_wght.woff2") format("woff2"),
     url("./font/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
 }
 
-
 @font-face {
-  font-family: "font3";   /*Can be any text*/
-  src: local("AirbnbCerealLight"),
+  font-family: "font3";
+  src: url("./font/Jura-VariableFont_wght.woff2") format("woff2"),
     url("./font/Jura-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 700;
+  font-display: swap;
 }

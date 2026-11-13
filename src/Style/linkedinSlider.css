@@ -21,30 +21,145 @@
     margin-top: 8px;
 }
 
-.linkedinSliderShell{
+.coverflowStage{
+    position: relative;
+    width: 100%;
+    perspective: 1500px;
+    overflow: hidden;
+    outline: none;
+    touch-action: pan-y;
+}
+
+.coverflowStage:focus-visible{
+    box-shadow: inset 0 0 0 2px #0a86f9;
+    border-radius: 16px;
+}
+
+.coverflowTrack{
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0;
+    cursor: grab;
+}
+
+.coverflowTrack:active{
+    cursor: grabbing;
+}
+
+.coverflowCard{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -252px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #dce6f5;
+    box-shadow: 0 18px 40px rgba(16, 24, 40, 0.16);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.coverflowCard iframe,
+.linkedinFramePlaceholder{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #ffffff;
+}
+
+.linkedinFramePlaceholder{
+    background: linear-gradient(160deg, #f4f7fb 0%, #e6edf7 100%);
+}
+
+.coverflowCover{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(9, 28, 35, 0.16), rgba(9, 28, 35, 0.04));
+    transition: background 0.25s ease;
+}
+
+.coverflowCover:hover{
+    background: rgba(9, 28, 35, 0);
+}
+
+.coverflowCover.isActiveCover{
+    background: transparent;
+    cursor: grab;
+}
+
+.coverflowCover.isActiveCover:active{
+    cursor: grabbing;
+}
+
+.coverflowCover{
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.coverflowHint{
+    margin-top: 12px;
+    text-align: center;
+    color: #64748b;
+    font-family: "font2", sans-serif;
+    font-size: 14px;
+}
+
+.coverflowControls{
     margin-top: 18px;
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 8px;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
 }
 
-.linkedinFrameWrap{
-    width: 520px;
-    min-width: 520px;
-    scroll-snap-align: start;
+.coverflowArrow{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 0;
+    background: #091C23;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
 }
 
-.linkedinFrameWrap iframe{
-    width: 100%;
-    height: 670px;
-    border-radius: 8px;
-    border: 1px solid #dce6f5;
-    background: #ffffff;
+.coverflowArrow:disabled{
+    opacity: 0.25;
+    cursor: default;
+}
+
+.coverflowDots{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.coverflowDot{
+    position: relative;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border-radius: 50%;
+    border: 0;
+    background: #cfd8e3;
+    cursor: pointer;
+}
+
+.coverflowDotFill{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #091C23;
 }
 
 @media only screen and (max-width: 700px) {
@@ -57,8 +172,8 @@
         font-size: 38px;
     }
 
-    .linkedinFrameWrap{
-        width: calc(100vw - 50px);
-        min-width: calc(100vw - 50px);
+    .coverflowArrow{
+        width: 42px;
+        height: 42px;
     }
 }

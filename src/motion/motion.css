@@ -1,0 +1,119 @@
+.scrollProgress{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 30;
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, #0a86f9 0%, #12a60f 45%, #fe9800 100%);
+    pointer-events: none;
+}
+
+.tiltCard{
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.tiltGlare{
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    mix-blend-mode: soft-light;
+}
+
+.splitWord{
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.splitChar{
+    display: inline-block;
+    transform-origin: 50% 100%;
+    will-change: transform, opacity;
+}
+
+.revealText{
+    display: inline-block;
+    text-align: inherit;
+}
+
+.revealMask{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-bottom: 0.14em;
+    margin-bottom: -0.14em;
+}
+
+.revealWord{
+    display: inline-block;
+    will-change: transform;
+}
+
+.countUp{
+    font-variant-numeric: tabular-nums;
+}
+
+/* Particle portrait (WebGL) */
+.particlePortrait{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.particlePhoto,
+.particleCanvas{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.particlePhoto{
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.particleCanvas{
+    pointer-events: none;
+}
+
+.particleHint{
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(9, 28, 35, 0.62);
+    color: #ffffff;
+    font-family: "font2", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    pointer-events: none;
+    backdrop-filter: blur(6px);
+}
+
+.hintTap{
+    display: none;
+}
+
+@media (hover: none) {
+    .hintHover{
+        display: none;
+    }
+
+    .hintTap{
+        display: inline;
+    }
+}

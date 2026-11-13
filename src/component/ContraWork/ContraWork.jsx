@@ -1,0 +1,140 @@
+import { motion } from "framer-motion";
+import "../../Style/contraWork.css";
+import { RevealText, TiltCard } from "../../motion/Motion";
+
+const PROFILE_URL = "https://contra.com/kenil_vaghasiya6108";
+
+const projects = [
+  {
+    title: "ORVEN — Interior Design Website",
+    text: "Framer website showcase for an interior design studio: warm visual identity, image-led layouts, responsive pages and animation direction.",
+    tags: ["Framer", "Figma", "Web Design"],
+    image: "images/work/orven.webp",
+    link: "https://contra.com/p/vXQvqZle-orven-interior-design-website-built-in-framer"
+  },
+  {
+    title: "AXIOM — Architecture Brand & Website Concept",
+    text: "Brand and website concept for an architecture studio: geometric logo, editorial typography and desktop + mobile homepage designs.",
+    tags: ["Next.js", "React", "Node.js"],
+    image: "images/work/axiom.webp",
+    link: "https://contra.com/p/cORkYE72-axiom-architecture-brand-and-website-design-concept"
+  },
+  {
+    title: "From Zero to Hero — SaaS Brand & Product",
+    text: "My 8-step process for turning a SaaS idea into a complete brand and digital product, from discovery and naming to MVP, launch and brand guidelines.",
+    tags: ["Brand Design", "UI Design", "React"],
+    image: "images/work/saasbrand.webp",
+    link: "https://contra.com/p/QFUgeq77-from-zero-to-heroturning-a"
+  },
+  {
+    title: "Building a New SaaS Product",
+    text: "An Agile, MVP-first approach in six steps: discovery, planning, UI/UX design, development, testing, then launch and improvement.",
+    tags: ["Next.js", ".NET", "Supabase"],
+    image: "images/work/saasmvp.webp",
+    link: "https://contra.com/p/RPWcRgov-building-a-new-saa-s-product"
+  }
+];
+
+const services = [
+  {
+    title: "Backend API Development & Integrations",
+    price: "$58/hr",
+    image: "images/work/svc-api.webp",
+    link: "https://contra.com/s/3NBqBQmq-backend-api-development-and-integrations"
+  },
+  {
+    title: "AI Integrations & Workflow Automation",
+    price: "$60/hr",
+    image: "images/work/svc-ai.webp",
+    link: "https://contra.com/s/6MNbYPQs-ai-integrations-and-workflow-automation"
+  },
+  {
+    title: "Next.js Website Design & Development",
+    price: "$55/hr",
+    image: "images/work/svc-next.webp",
+    link: "https://contra.com/s/7ZoZYPLB-nextjs-website-design-and-development"
+  },
+  {
+    title: "SaaS & MVP Development",
+    price: "Contact for pricing",
+    image: "images/work/svc-saas.webp",
+    link: "https://contra.com/s/essYOqOs-saa-s-and-mvp-development"
+  }
+];
+
+const group = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
+const item = {
+  hidden: { opacity: 0, y: 36 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+};
+
+const ContraWork = () => (
+  <section className="contraWork">
+    <div className="contraWorkTitle"><RevealText text="Latest Work" /></div>
+    <p className="contraWorkSub">
+      Recent projects from my <a href={PROFILE_URL} target="_blank" rel="noreferrer">Contra profile</a>.
+    </p>
+
+    <motion.div
+      className="contraWorkGrid"
+      variants={group}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.12 }}
+    >
+      {projects.map((project) => (
+        <motion.a
+          key={project.title}
+          className="contraWorkCard"
+          href={project.link}
+          target="_blank"
+          rel="noreferrer"
+          variants={item}
+        >
+          <TiltCard className="contraWorkImageWrap" max={6}>
+            <img src={project.image} alt={project.title} width="1200" height="900" loading="lazy" decoding="async" />
+          </TiltCard>
+          <div className="contraWorkBody">
+            <div className="contraWorkCardTitle">{project.title}</div>
+            <div className="contraWorkText">{project.text}</div>
+            <div className="contraWorkTags">
+              {project.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </div>
+        </motion.a>
+      ))}
+    </motion.div>
+
+    <div className="contraWorkTitle contraServicesTitle"><RevealText text="Services" /></div>
+
+    <motion.div
+      className="contraServicesGrid"
+      variants={group}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.12 }}
+    >
+      {services.map((service) => (
+        <motion.a
+          key={service.title}
+          className="contraServiceCard"
+          href={service.link}
+          target="_blank"
+          rel="noreferrer"
+          variants={item}
+          whileHover={{ y: -8 }}
+        >
+          <img src={service.image} alt={service.title} width="1200" height="900" loading="lazy" decoding="async" />
+          <div className="contraServiceBody">
+            <div className="contraServiceTitle">{service.title}</div>
+            <div className="contraServicePrice">{service.price}</div>
+          </div>
+        </motion.a>
+      ))}
+    </motion.div>
+  </section>
+);
+
+export default ContraWork;

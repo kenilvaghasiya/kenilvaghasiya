@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import "../../Style/dashboardReplica.css";
+import { RevealText } from "../../motion/Motion";
 
 const properties = [
   {
@@ -11,7 +12,7 @@ const properties = [
     beds: 3,
     baths: 4,
     area: 890,
-    image: "https://picsum.photos/seed/long_beach_7_1/1200/700",
+    image: "linear-gradient(160deg, #1d3b53 0%, #3f7ea6 45%, #f2b880 100%)",
     title: "Full Burj view | Vacant",
     location: "Burj Vista 1, Burj Vista, Downtown Dubai, Dubai",
     featured: false
@@ -24,7 +25,7 @@ const properties = [
     beds: 3,
     baths: 4,
     area: 1572,
-    image: "https://picsum.photos/seed/anaheim_3_1/1200/700",
+    image: "linear-gradient(160deg, #2b2440 0%, #6a4c93 50%, #f7a072 100%)",
     title: "Luxurious | Burj Khalifa View | High Floor",
     location: "Exquisite Living Residences, Downtown Dubai, Dubai",
     featured: true
@@ -37,7 +38,7 @@ const properties = [
     beds: 2,
     baths: 2,
     area: 1120,
-    image: "https://picsum.photos/seed/san_jose_5_1/1200/700",
+    image: "linear-gradient(160deg, #0f3d3e 0%, #2a9d8f 55%, #e9c46a 100%)",
     title: "Contemporary interiors with skyline view",
     location: "Downtown Boulevard, Dubai",
     featured: false
@@ -50,7 +51,7 @@ const properties = [
     beds: 4,
     baths: 5,
     area: 2200,
-    image: "https://picsum.photos/seed/palm_springs_5_1/1200/700",
+    image: "linear-gradient(160deg, #3a2618 0%, #b5651d 50%, #ffd9a0 100%)",
     title: "Garden villa with private pool access",
     location: "Jumeirah Park, Dubai",
     featured: false
@@ -131,7 +132,7 @@ const DashboardReplica = () => {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
     >
-      <div className="dashboardReplicaTitle">Dashboard UI Demo</div>
+      <div className="dashboardReplicaTitle"><RevealText text="Dashboard UI Demo" /></div>
       <div className="dashboardReplicaSub">Interactive real-estate UI replica with working filters and controls.</div>
 
       <div className="estateReplicaFrame">
@@ -205,7 +206,7 @@ const DashboardReplica = () => {
                   className={`estateReplicaCard top ${index === 1 ? "featured" : ""}`}
                   whileHover={{ y: -4 }}
                 >
-                  <div className="estateReplicaImage" style={{ backgroundImage: `url(${item.image})` }}>
+                  <div className="estateReplicaImage" style={{ backgroundImage: item.image }}>
                     {index === 0 && <div className="estateReplicaBadge">Property of the week</div>}
                   </div>
                   <div className="estateReplicaPrice">{toCurrency(item.price)}</div>
@@ -222,7 +223,7 @@ const DashboardReplica = () => {
               ))}
               {visible.slice(2, 4).map((item) => (
                 <motion.article key={item.id} className="estateReplicaCard short" whileHover={{ y: -4 }}>
-                  <div className="estateReplicaImage" style={{ backgroundImage: `url(${item.image})` }}></div>
+                  <div className="estateReplicaImage" style={{ backgroundImage: item.image }}></div>
                   <div className="estateReplicaPrice mini">{toCurrency(item.price)}</div>
                 </motion.article>
               ))}

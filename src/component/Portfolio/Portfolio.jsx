@@ -1,5 +1,6 @@
 import "../../Style/Portfolio.css";
 import { motion } from "framer-motion";
+import { TiltCard } from "../../motion/Motion";
 
 const Portfolio = () => {
   const openLink=(data)=> {
@@ -30,7 +31,7 @@ const Portfolio = () => {
             }}
           >
             {portfolioItems.map((item, index) => (
-              <motion.div
+              <TiltCard
                 key={`${item.alt}-${index}`}
                 className="portfolioMainas1"
                 onClick={() => item.link && openLink(item.link)}
@@ -39,10 +40,9 @@ const Portfolio = () => {
                   show: { opacity: 1, y: 0 }
                 }}
                 transition={{ duration: 0.45, ease: "easeOut" }}
-                whileHover={{ y: -6, scale: 1.02 }}
               >
                 <img src={item.image} alt={item.alt} className="imgAS1" width="1004" height="567" loading="lazy" decoding="async"></img>
-              </motion.div>
+              </TiltCard>
             ))}
           </motion.div>
         </div>

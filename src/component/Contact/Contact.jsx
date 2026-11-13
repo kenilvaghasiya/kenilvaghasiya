@@ -1,5 +1,6 @@
 import "../../Style/contact.css"
 import { motion } from "framer-motion";
+import ParticlePortrait from "../../motion/ParticlePortrait";
 
 const Contact =(props)=>{
 
@@ -14,16 +15,10 @@ const Contact =(props)=>{
       transition={{ duration: 0.55, ease: "easeOut" }}
     >
 
-        <motion.img
+        <ParticlePortrait
           src="/images/kenilVaghasiya.webp"
-          loading="lazy"
-          decoding="async"
           className="Contactus_mainimg"
           alt="Kenil Vaghasiya"
-          initial={{ scale: 1.04 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
         />
 
       <div className="Contactus_mainimg-left">

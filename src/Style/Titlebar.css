@@ -173,3 +173,37 @@ transition: all 1s;
 
 }
 
+
+/* Motion: hero content wrapper + parallax ring */
+.heroContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    will-change: transform, opacity;
+}
+
+.Titilename{
+    transition: none;
+    perspective: 600px;
+    text-align: center;
+}
+
+.bgDesignInner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homePage{
+    position: relative;
+    overflow: hidden;
+}
+
+.iconLogo{
+    transition: none;
+    display: block;
+}

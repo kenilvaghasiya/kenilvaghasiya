@@ -4,6 +4,7 @@ import CardSection from "../cardSection/CardSection";
 import LinkedInSlider from "../LinkedInSlider/LinkedInSlider";
 import DashboardReplica from "../dashboardReplica/DashboardReplica";
 import ContraButton from "../ContraButton/ContraButton";
+import { CountUp, Magnetic, RevealText, chipGroup, chipItem } from "../../motion/Motion";
 
 const About = (prop) => {
   const fadeUp = {
@@ -188,85 +189,85 @@ distributed systems, API design, and performance optimization. Delivered measura
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <div className="skillsTitle">Skills</div>
+        <div className="skillsTitle"><RevealText text="Skills" /></div>
 
         <div className="skillsGroup">
           <div className="skillsGroupTitle">Languages</div>
-          <div className="skillsChips">
-            <span>C#</span>
-            <span>JavaScript</span>
-            <span>TypeScript</span>
-            <span>Java</span>
-            <span>Python</span>
-            <span>SQL</span>
-          </div>
+          <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>C#</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>JavaScript</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>TypeScript</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Java</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Python</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>SQL</motion.span>
+          </motion.div>
         </div>
 
         <div className="skillsGroup">
           <div className="skillsGroupTitle">Frontend</div>
-          <div className="skillsChips">
-            <span>React.js</span>
-            <span>Next.js</span>
-            <span>Redux</span>
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>Responsive Design</span>
-          </div>
+          <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>React.js</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Next.js</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Redux</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>HTML5</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>CSS3</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Responsive Design</motion.span>
+          </motion.div>
         </div>
 
         <div className="skillsGroup">
           <div className="skillsGroupTitle">Backend</div>
-          <div className="skillsChips">
-            <span>ASP.NET Core</span>
-            <span>.NET</span>
-            <span>Node.js</span>
-            <span>REST APIs</span>
-            <span>GraphQL</span>
-            <span>Microservices</span>
-          </div>
+          <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>ASP.NET Core</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>.NET</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Node.js</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>REST APIs</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>GraphQL</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Microservices</motion.span>
+          </motion.div>
         </div>
 
         <div className="skillsGroup">
           <div className="skillsGroupTitle">Cloud</div>
-          <div className="skillsChips">
-            <span>Microsoft Azure</span>
-            <span>AWS S3</span>
-            <span>AWS CloudFront</span>
-            <span>AWS Lambda</span>
-            <span>Azure Service Bus</span>
-          </div>
+          <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Microsoft Azure</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>AWS S3</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>AWS CloudFront</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>AWS Lambda</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Azure Service Bus</motion.span>
+          </motion.div>
         </div>
 
         <div className="skillsGroup">
           <div className="skillsGroupTitle">Databases</div>
-          <div className="skillsChips">
-            <span>SQL Server</span>
-            <span>PostgreSQL</span>
-            <span>Cosmos DB</span>
-            <span>MongoDB</span>
-            <span>Redis</span>
-          </div>
+          <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>SQL Server</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>PostgreSQL</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Cosmos DB</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>MongoDB</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Redis</motion.span>
+          </motion.div>
         </div>
 
         <div className="skillsGroup">
           <div className="skillsGroupTitle">DevOps</div>
-          <div className="skillsChips">
-            <span>Docker</span>
-            <span>Kubernetes</span>
-            <span>CI/CD</span>
-            <span>Azure DevOps</span>
-            <span>Git</span>
-          </div>
+          <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Docker</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Kubernetes</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>CI/CD</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Azure DevOps</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Git</motion.span>
+          </motion.div>
         </div>
 
         <div className="skillsGroup">
           <div className="skillsGroupTitle">Architecture</div>
-          <div className="skillsChips">
-            <span>Distributed Systems</span>
-            <span>Event-Driven Architecture</span>
-            <span>Caching</span>
-            <span>Concurrency</span>
-          </div>
+          <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Distributed Systems</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Event-Driven Architecture</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Caching</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Concurrency</motion.span>
+          </motion.div>
         </div>
       </motion.div>
 
@@ -280,7 +281,7 @@ distributed systems, API design, and performance optimization. Delivered measura
         <div className="impactShowcase">
           <motion.div className="impactFeatureCard emerald" whileHover={{ y: -5 }}>
             <div className="impactTopLine">
-              <div className="impactMainValue">40%</div>
+              <div className="impactMainValue"><CountUp value="40%" /></div>
               <div className="impactMainIcon">⚡</div>
             </div>
             <div className="impactMainText">Performance improvement in production systems</div>
@@ -289,7 +290,7 @@ distributed systems, API design, and performance optimization. Delivered measura
 
           <motion.div className="impactFeatureCard sand" whileHover={{ y: -5 }}>
             <div className="impactTopLine">
-              <div className="impactMainValue dark">90%+</div>
+              <div className="impactMainValue dark"><CountUp value="90%+" /></div>
               <div className="impactMainIcon green">◎</div>
             </div>
             <div className="impactMainText dark">Reliable test coverage and release confidence</div>
@@ -298,7 +299,7 @@ distributed systems, API design, and performance optimization. Delivered measura
 
           <motion.div className="impactFeatureCard clean" whileHover={{ y: -5 }}>
             <div className="impactTopLine">
-              <div className="impactMainValue dark">300%</div>
+              <div className="impactMainValue dark"><CountUp value="300%" /></div>
               <div className="impactStars">★ ★ ★ ★ ☆</div>
             </div>
             <div className="impactMainText lightDark">Daily active user growth through performance and API optimization</div>
@@ -306,10 +307,10 @@ distributed systems, API design, and performance optimization. Delivered measura
           </motion.div>
         </div>
         <div className="impactMiniStats">
-          <div><strong>30%</strong> defect reduction</div>
-          <div><strong>60%</strong> API latency reduction</div>
-          <div><strong>25%</strong> lower memory usage</div>
-          <div><strong>90%+</strong> test coverage</div>
+          <div><strong><CountUp value="30%" /></strong> defect reduction</div>
+          <div><strong><CountUp value="60%" /></strong> API latency reduction</div>
+          <div><strong><CountUp value="25%" /></strong> lower memory usage</div>
+          <div><strong><CountUp value="90%+" /></strong> test coverage</div>
         </div>
       </motion.div>
 
@@ -320,7 +321,7 @@ distributed systems, API design, and performance optimization. Delivered measura
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <div className="certTitle">Certifications & Achievements</div>
+        <div className="certTitle"><RevealText text="Certifications & Achievements" /></div>
 
       
 
@@ -361,14 +362,14 @@ distributed systems, API design, and performance optimization. Delivered measura
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <div className="recruiterCtaLeft">
-          <div className="recruiterCtaTitle">Let’s Build High-Impact Products</div>
+          <div className="recruiterCtaTitle"><RevealText text="Let’s Build High-Impact Products" /></div>
           <div className="recruiterCtaSub">
             Available for Software Engineer and Full-Stack roles focused on scalable products, cloud systems, and AI-powered features.
           </div>
         </div>
         <div className="recruiterCtaRight">
-          <a href="mailto:kenilvaghasiya66@gmail.com" className="recruiterBtn recruiterBtnPrimary">Email Me</a>
-          <a href="https://www.linkedin.com/in/kenil704/" target="_blank" rel="noreferrer" className="recruiterBtn recruiterBtnGhost">LinkedIn</a>
+          <Magnetic strength={0.3}><a href="mailto:kenilvaghasiya66@gmail.com" className="recruiterBtn recruiterBtnPrimary">Email Me</a></Magnetic>
+          <Magnetic strength={0.3}><a href="https://www.linkedin.com/in/kenil704/" target="_blank" rel="noreferrer" className="recruiterBtn recruiterBtnGhost">LinkedIn</a></Magnetic>
           <div className="recruiterContra">
             <ContraButton theme="light" />
           </div>

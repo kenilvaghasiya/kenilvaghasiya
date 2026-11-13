@@ -1,0 +1,207 @@
+.contraWork{
+    box-sizing: border-box;
+    width: min(100%, 1240px);
+    margin: 0 auto 120px auto;
+    padding: 0 24px;
+}
+
+.contraWork *{
+    box-sizing: border-box;
+}
+
+.contraWorkTitle{
+    color: #091C23;
+    font-family: "font1";
+    font-size: 64px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.contraServicesTitle{
+    margin-top: 110px;
+    margin-bottom: 34px;
+}
+
+.contraWorkSub{
+    margin: 12px 0 40px 0;
+    text-align: center;
+    color: #4b5563;
+    font-family: "font2", sans-serif;
+    font-size: 18px;
+}
+
+.contraWorkSub a{
+    color: #091C23;
+    font-weight: 700;
+}
+
+.contraWorkGrid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.contraWorkCard{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 22px;
+    background: #ffffff;
+    border: 1px solid #e8ebef;
+    box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    padding: 12px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contraWorkCard:hover{
+    border-color: #cfd6df;
+    box-shadow: 0 22px 44px rgba(16, 24, 40, 0.16);
+}
+
+.contraWorkImageWrap{
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: #f1f3f6;
+}
+
+.contraWorkImageWrap img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contraWorkBody{
+    padding: 18px 10px 10px 10px;
+}
+
+.contraWorkCardTitle{
+    color: #091C23;
+    font-family: "font2", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.contraWorkText{
+    margin-top: 8px;
+    color: #4b5563;
+    font-family: "font2", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contraWorkTags{
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.contraWorkTags span{
+    border: 1px solid #ffd88f;
+    border-radius: 999px;
+    background: #fff4db;
+    color: #0A1C23;
+    font-family: "font2", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+}
+
+.contraServicesGrid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.contraServiceCard{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #091C23;
+    box-shadow: 0 12px 28px rgba(16, 24, 40, 0.14);
+}
+
+.contraServiceCard img{
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.contraServiceBody{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.contraServiceTitle{
+    color: #ffffff;
+    font-family: "font2", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.contraServicePrice{
+    color: #fe9800;
+    font-family: "font2", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 1100px) {
+    .contraServicesGrid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .contraWork{
+        padding: 0 16px;
+        margin-bottom: 90px;
+    }
+
+    .contraWorkTitle{
+        font-size: 40px;
+    }
+
+    .contraWorkSub{
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+
+    .contraWorkGrid{
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .contraWorkCardTitle{
+        font-size: 20px;
+    }
+
+    .contraWorkText{
+        font-size: 15px;
+    }
+
+    .contraServicesTitle{
+        margin-top: 80px;
+        margin-bottom: 24px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .contraServicesGrid{
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
