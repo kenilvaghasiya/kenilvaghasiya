@@ -4,6 +4,7 @@ import "../../Style/Titlebar.css";
 import { Link, NavLink } from "react-router-dom";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { Magnetic, SplitText } from "../../motion/Motion";
+import ContraButton from "../ContraButton/ContraButton";
 
 const socials = [
   { to: "https://www.linkedin.com/in/kenil704/", src: "images/linkedin.png", alt: "linkedin" },
@@ -89,6 +90,14 @@ const Titlebar = (prop) => {
               </Magnetic>
             </motion.div>
           ))}
+        </motion.div>
+        <motion.div
+          className="heroContra"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <ContraButton theme="light" />
         </motion.div>
       </motion.div>
     </motion.div>

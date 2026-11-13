@@ -207,3 +207,16 @@ transition: all 1s;
     transition: none;
     display: block;
 }
+
+.heroContra{
+    margin-top: 14px;
+    min-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.heroContra iframe{
+    max-width: 100%;
+}
