@@ -82,7 +82,7 @@ const About = (prop) => {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <motion.div whileHover={{ scale: 1.08 }} className="aboutImage">
-          <img src="images/about.png" alt="about"></img>
+          <img src="images/about.webp" alt="about" width="862" height="635" loading="lazy" decoding="async"></img>
         </motion.div>
         <motion.div className="aboutTitle" variants={fadeUp} transition={{ delay: 0.1, duration: 0.45 }}>About Me</motion.div>
 
@@ -93,6 +93,9 @@ const About = (prop) => {
 backend systems. Strong expertise in React, TypeScript, ASP.NET Core, Node.js, and Azure, with proven impact in microservices,
 distributed systems, API design, and performance optimization. Delivered measurable outcomes including 40% performance improvement,
 60% API latency reduction, and 90%+ test coverage in production SaaS environments. </p>
+          <p>
+          I also design and build websites in Framer: responsive, animated marketing sites and brand concepts,
+taken from Figma design through to a published Framer site. </p>
         </motion.div>
       </motion.div>
       <motion.div
@@ -212,6 +215,8 @@ distributed systems, API design, and performance optimization. Delivered measura
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>HTML5</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>CSS3</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Responsive Design</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Framer</motion.span>
+            <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Figma</motion.span>
           </motion.div>
         </div>
 
@@ -364,7 +369,7 @@ distributed systems, API design, and performance optimization. Delivered measura
         <div className="recruiterCtaLeft">
           <div className="recruiterCtaTitle"><RevealText text="Let’s Build High-Impact Products" /></div>
           <div className="recruiterCtaSub">
-            Available for Software Engineer and Full-Stack roles focused on scalable products, cloud systems, and AI-powered features.
+            Available for Software Engineer and Full-Stack roles, and Framer website projects, focused on scalable products, cloud systems, and AI-powered features.
           </div>
         </div>
         <div className="recruiterCtaRight">

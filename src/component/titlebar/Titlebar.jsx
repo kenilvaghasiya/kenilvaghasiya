@@ -59,11 +59,13 @@ const Titlebar = (prop) => {
         <TypeAnimation
   sequence={[
     // Same substring at the start will only be typed once, initially
-    'Full Stack developer',
+    'Full Stack Developer',
+    1000,
+    'Framer Developer',
     1000,
     'React JS , Node JS , Next JS ',
     1000,
-    'Full Stack Developer',
+    'Full Stack & Framer Developer',
     1000,
     
   ]}

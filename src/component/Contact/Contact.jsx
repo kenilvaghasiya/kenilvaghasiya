@@ -23,7 +23,7 @@ const Contact =(props)=>{
 
       <div className="Contactus_mainimg-left">
         <div className="Contactus_mainimgName">Kenil Vaghasiya</div>
-        <div className="Contactus_mainimgpo">Full Stack Developer</div>
+        <div className="Contactus_mainimgpo">Full Stack &amp; Framer Developer</div>
         <div className="Contactus_mainimgEmail">kenilvaghasiya66@gmail.com</div>
 
       </div>
