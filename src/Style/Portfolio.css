@@ -127,3 +127,21 @@ position: relative;
 
 
 
+
+/* Scroll-driven card entrance */
+.portfolioMainas1{
+    will-change: transform, opacity;
+}
+
+.portfolioTilt{
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolioTilt .imgAS1{
+    display: block;
+    transition: none;
+    border-radius: 0;
+}
