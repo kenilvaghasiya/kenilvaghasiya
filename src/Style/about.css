@@ -2,57 +2,208 @@
 
 
 .AboutPage{
-    width: 100%;
+    box-sizing: border-box;
+    width: min(100%, 1180px);
+    margin: 120px auto 160px auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 64px;
+    align-items: center;
+}
+
+.AboutPage *{
+    box-sizing: border-box;
+}
+
+.aboutVisual{
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    margin-top: 100px;
-    margin-bottom: 180px;
-}
-
-.aboutImage{
-    max-width: 308px;
-  
-}
-
-.aboutImage img{
+    aspect-ratio: 1 / 1;
     width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
 }
 
-.aboutTitle{
+.aboutVisualGlow{
+    position: absolute;
+    inset: 6%;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(10, 134, 249, 0.22), transparent 55%),
+      radial-gradient(circle at 75% 70%, rgba(254, 152, 0, 0.24), transparent 55%),
+      radial-gradient(circle at 50% 50%, #fff7e6 0%, #f3f8ff 70%);
+    border: 1px solid #e8ebef;
+}
+
+.aboutVisualImage{
+    position: relative;
+    display: block;
+    width: 82%;
+    height: auto;
+    mix-blend-mode: multiply;
+    /* Fade the photo's edges so its rectangular background never shows. */
+    -webkit-mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 55%, transparent 100%);
+}
+
+.aboutBadge{
+    position: absolute;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid #e8ebef;
+    box-shadow: 0 10px 24px rgba(16, 24, 40, 0.12);
     color: #091C23;
-font-family: "font1";
-font-size: 64px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-position: absolute;
-top: 180px;
+    font-family: "font2", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.aboutBadge strong{
+    font-weight: 800;
+}
+
+.aboutBadgeTop{
+    top: 8%;
+    right: 0;
+}
+
+.aboutBadgeBottom{
+    bottom: 10%;
+    left: 0;
+    background: #091C23;
+    border-color: #091C23;
+    color: #ffffff;
+}
+
+.aboutContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .aboutgrd{
-    color: #000;
-text-align: center;
-font-family: "font2";
-font-size: 20px;
-font-style: normal;
-margin-top: 30px;
-font-weight: 600;
-line-height: normal;
+    display: inline-flex;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid #ffd88f;
+    background: #fff4db;
+    color: #0A1C23;
+    font-family: "font2", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.aboutTitle{
+    margin: 16px 0 6px 0;
+    color: #091C23;
+    font-family: "font1";
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
 }
 
 .abotText{
-    width: 80%;
-    color: #000;
-text-align: center;
-font-family: Raleway;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 0.6px;
+    margin: 14px 0 0 0;
+    max-width: 620px;
+    color: #374151;
+    font-family: "font2", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: 0.2px;
+}
+
+.aboutStats{
+    margin-top: 30px;
+    width: 100%;
+    max-width: 620px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.aboutStat{
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #e8ebef;
+    background: linear-gradient(150deg, #ffffff 0%, #fffaf0 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.aboutStat strong{
+    color: #091C23;
+    font-family: "font2", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.aboutStat > span{
+    color: #4b5563;
+    font-family: "font2", sans-serif;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+@media only screen and (max-width: 900px) {
+    .AboutPage{
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+        margin: 80px auto 110px auto;
+        padding: 0 20px;
+    }
+
+    .aboutVisual{
+        max-width: 300px;
+    }
+
+    .aboutContent{
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .aboutBadge{
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .aboutStats{
+        gap: 8px;
+    }
+
+    .aboutStat{
+        padding: 12px 8px;
+        align-items: center;
+    }
+
+    .aboutStat strong{
+        font-size: 22px;
+    }
+
+    .aboutStat > span{
+        font-size: 12px;
+    }
+
+    .aboutBadgeTop{
+        right: -6px;
+    }
+
+    .aboutBadgeBottom{
+        left: -6px;
+    }
 }
 
 .roadmapSection{
@@ -1744,26 +1895,6 @@ top: 40%;
 
 
 @media only screen and (max-width: 650px) {
-    .AboutPage{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        margin-top: 10px;
-        margin-bottom: 90px;
-    }
-    .aboutTitle{
-        font-size: 13vw;
-    }
-
-    .abotText{
-        width: 90%;
-        font-size: 16px;
-        text-align: justify;
-    }
-
     .skillsSection{
         width: 92%;
         margin-bottom: 90px;

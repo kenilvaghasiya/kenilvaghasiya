@@ -72,32 +72,80 @@ const About = (prop) => {
 
   return (
     <>
-      <motion.div
-        className="AboutPage"
-        ref={prop.abouttitleRef}
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-      >
-        <motion.div whileHover={{ scale: 1.08 }} className="aboutImage">
-          <img src="images/about.webp" alt="about" width="862" height="635" loading="lazy" decoding="async"></img>
+      <section className="AboutPage" ref={prop.abouttitleRef}>
+        <motion.div
+          className="aboutVisual"
+          initial={{ opacity: 0, scale: 0.85, x: -40 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="aboutVisualGlow" aria-hidden="true"></div>
+          <motion.img
+            src="images/about.webp"
+            alt=""
+            width="862"
+            height="635"
+            loading="lazy"
+            decoding="async"
+            className="aboutVisualImage"
+            animate={{ y: [0, -14, 0], rotate: [0, 4, 0] }}
+            transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
+          />
+          <motion.div
+            className="aboutBadge aboutBadgeTop"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.45, duration: 0.5 }}
+          >
+            <strong><CountUp value="4+" /></strong> years building products
+          </motion.div>
+          <motion.div
+            className="aboutBadge aboutBadgeBottom"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            Full-Stack &amp; Framer
+          </motion.div>
         </motion.div>
-        <motion.div className="aboutTitle" variants={fadeUp} transition={{ delay: 0.1, duration: 0.45 }}>About Me</motion.div>
 
-        <motion.div className="aboutgrd" variants={fadeUp} transition={{ delay: 0.15, duration: 0.45 }}>Nice to meet you</motion.div>
-        <motion.div className="abotText" variants={fadeUp} transition={{ delay: 0.2, duration: 0.45 }}>
-          <p>
-          Software Engineer with 4+ years of experience building scalable, cloud-native web applications across frontend and
-backend systems. Strong expertise in React, TypeScript, ASP.NET Core, Node.js, and Azure, with proven impact in microservices,
-distributed systems, API design, and performance optimization. Delivered measurable outcomes including 40% performance improvement,
-60% API latency reduction, and 90%+ test coverage in production SaaS environments. </p>
-          <p>
-          I also design and build websites in Framer: responsive, animated marketing sites and brand concepts,
-taken from Figma design through to a published Framer site. </p>
+        <motion.div
+          className="aboutContent"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
+        >
+          <motion.div className="aboutgrd" variants={fadeUp} transition={{ duration: 0.5 }}>Nice to meet you</motion.div>
+          <h2 className="aboutTitle"><RevealText text="About Me" /></h2>
+          <motion.p className="abotText" variants={fadeUp} transition={{ duration: 0.5 }}>
+            Software Engineer with 4+ years of experience building scalable, cloud-native web applications across frontend and
+            backend systems. Strong expertise in React, TypeScript, ASP.NET Core, Node.js, and Azure, with proven impact in
+            microservices, distributed systems, API design, and performance optimization.
+          </motion.p>
+          <motion.p className="abotText" variants={fadeUp} transition={{ duration: 0.5 }}>
+            I also design and build websites in Framer: responsive, animated marketing sites and brand concepts, taken from
+            Figma design through to a published Framer site.
+          </motion.p>
+          <motion.div className="aboutStats" variants={fadeUp} transition={{ duration: 0.5 }}>
+            <div className="aboutStat">
+              <strong><CountUp value="40%" /></strong>
+              <span>performance improvement</span>
+            </div>
+            <div className="aboutStat">
+              <strong><CountUp value="60%" /></strong>
+              <span>API latency reduction</span>
+            </div>
+            <div className="aboutStat">
+              <strong><CountUp value="90%+" /></strong>
+              <span>test coverage</span>
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </section>
       <motion.div
         className="roadmapSection"
         initial={{ opacity: 0, y: 24 }}

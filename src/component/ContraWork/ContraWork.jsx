@@ -6,6 +6,17 @@ const PROFILE_URL = "https://contra.com/kenil_vaghasiya6108";
 
 const projects = [
   {
+    title: "Caldiors — A Little Care. A Beautiful Website.",
+    text: "Website for Caldiors, a premium baby-care brand: clean design, thoughtful details and a premium browsing experience, built from design through to launch.",
+    tags: ["Next.js", "React", "CSS3", "Brand Design"],
+    image: "images/work/caldiors.webp",
+    width: 1280,
+    height: 853,
+    link: "https://contra.com/p/POlFEscZ-a-little-care-a-beautiful",
+    site: "caldiors.com",
+    featured: true
+  },
+  {
     title: "ORVEN — Interior Design Website",
     text: "Framer website showcase for an interior design studio: warm visual identity, image-led layouts, responsive pages and animation direction.",
     tags: ["Framer", "Figma", "Web Design"],
@@ -85,16 +96,17 @@ const ContraWork = () => (
       {projects.map((project) => (
         <motion.a
           key={project.title}
-          className="contraWorkCard"
+          className={`contraWorkCard ${project.featured ? "isFeatured" : ""}`}
           href={project.link}
           target="_blank"
           rel="noreferrer"
           variants={item}
         >
           <TiltCard className="contraWorkImageWrap" max={6}>
-            <img src={project.image} alt={project.title} width="1200" height="900" loading="lazy" decoding="async" />
+            <img src={project.image} alt={project.title} width={project.width || 960} height={project.height || 720} loading="lazy" decoding="async" />
           </TiltCard>
           <div className="contraWorkBody">
+            {project.featured && <div className="contraWorkFeaturedLabel">Featured · Live site{project.site ? ` · ${project.site}` : ""}</div>}
             <div className="contraWorkCardTitle">{project.title}</div>
             <div className="contraWorkText">{project.text}</div>
             <div className="contraWorkTags">
@@ -126,7 +138,7 @@ const ContraWork = () => (
           variants={item}
           whileHover={{ y: -8 }}
         >
-          <img src={service.image} alt={service.title} width="1200" height="900" loading="lazy" decoding="async" />
+          <img src={service.image} alt={service.title} width="640" height="480" loading="lazy" decoding="async" />
           <div className="contraServiceBody">
             <div className="contraServiceTitle">{service.title}</div>
             <div className="contraServicePrice">{service.price}</div>

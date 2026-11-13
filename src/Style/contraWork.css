@@ -73,6 +73,37 @@
     object-fit: cover;
 }
 
+/* Featured project: full-width card, image beside the text. */
+.contraWorkCard.isFeatured{
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.contraWorkCard.isFeatured .contraWorkImageWrap{
+    flex: 0 0 60%;
+    aspect-ratio: 3 / 2;
+}
+
+.contraWorkCard.isFeatured .contraWorkBody{
+    padding: 18px 22px;
+}
+
+.contraWorkCard.isFeatured .contraWorkCardTitle{
+    font-size: 30px;
+}
+
+.contraWorkFeaturedLabel{
+    margin-bottom: 10px;
+    color: #b45309;
+    font-family: "font2", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
 .contraWorkBody{
     padding: 18px 10px 10px 10px;
 }
@@ -184,6 +215,24 @@
     .contraWorkGrid{
         grid-template-columns: minmax(0, 1fr);
         gap: 20px;
+    }
+
+    .contraWorkCard.isFeatured{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .contraWorkCard.isFeatured .contraWorkImageWrap{
+        flex: none;
+    }
+
+    .contraWorkCard.isFeatured .contraWorkBody{
+        padding: 18px 10px 10px 10px;
+    }
+
+    .contraWorkCard.isFeatured .contraWorkCardTitle{
+        font-size: 20px;
     }
 
     .contraWorkCardTitle{
