@@ -37,7 +37,7 @@
 
 .contraWorkGrid{
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
 }
 
@@ -82,9 +82,13 @@
     gap: 12px;
 }
 
+.contraWorkCard.isFeatured.isReversed{
+    flex-direction: row-reverse;
+}
+
 .contraWorkCard.isFeatured .contraWorkImageWrap{
     flex: 0 0 60%;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: var(--ratio, 3 / 2);
 }
 
 .contraWorkCard.isFeatured .contraWorkBody{
@@ -112,7 +116,7 @@
 .contraWorkCardTitle{
     color: #091C23;
     font-family: "font2", sans-serif;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 800;
     line-height: 1.2;
 }
@@ -195,6 +199,33 @@
 @media only screen and (max-width: 1100px) {
     .contraServicesGrid{
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .contraWorkGrid{
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    .contraWorkCard.isFeatured,
+    .contraWorkCard.isFeatured.isReversed{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .contraWorkCard.isFeatured .contraWorkImageWrap{
+        flex: none;
+    }
+
+    .contraWorkCard.isFeatured .contraWorkBody{
+        padding: 18px 10px 10px 10px;
+    }
+
+    .contraWorkCard.isFeatured .contraWorkCardTitle{
+        font-size: 24px;
     }
 }
 

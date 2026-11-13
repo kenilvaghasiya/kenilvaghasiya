@@ -15,14 +15,22 @@ const projects = [
     width: 1280,
     height: 853,
     link: "https://contra.com/p/POlFEscZ-a-little-care-a-beautiful",
-    site: "caldiors.com",
+    label: "Featured · Live site · caldiors.com",
+    ratio: "3 / 2",
     featured: true
   },
   {
     title: "ORVEN — Interior Design Website",
     text: "Framer website showcase for an interior design studio: warm visual identity, image-led layouts, responsive pages and animation direction.",
     tags: ["Framer", "Figma", "Web Design"],
-    image: "images/work/orven.webp",
+    image: "images/work/orven-poster.webp",
+    video: "videos/orven.mp4",
+    width: 1120,
+    height: 644,
+    label: "Featured · Built in Framer",
+    ratio: "1120 / 644",
+    featured: true,
+    reversed: true,
     link: "https://contra.com/p/vXQvqZle-orven-interior-design-website-built-in-framer"
   },
   {
@@ -135,7 +143,8 @@ const ContraWork = () => (
       {projects.map((project) => (
         <motion.a
           key={project.title}
-          className={`contraWorkCard ${project.featured ? "isFeatured" : ""}`}
+          className={`contraWorkCard ${project.featured ? "isFeatured" : ""} ${project.reversed ? "isReversed" : ""}`}
+          style={project.ratio ? { "--ratio": project.ratio } : undefined}
           href={project.link}
           target="_blank"
           rel="noreferrer"
@@ -149,7 +158,7 @@ const ContraWork = () => (
             )}
           </TiltCard>
           <div className="contraWorkBody">
-            {project.featured && <div className="contraWorkFeaturedLabel">Featured · Live site{project.site ? ` · ${project.site}` : ""}</div>}
+            {project.label && <div className="contraWorkFeaturedLabel">{project.label}</div>}
             <h3 className="contraWorkCardTitle">{project.title}</h3>
             <div className="contraWorkText">{project.text}</div>
             <div className="contraWorkTags">
