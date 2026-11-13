@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import "../../Style/contraWork.css";
 import { RevealText, TiltCard } from "../../motion/Motion";
 
@@ -10,6 +11,7 @@ const projects = [
     text: "Website for Caldiors, a premium baby-care brand: clean design, thoughtful details and a premium browsing experience, built from design through to launch.",
     tags: ["Next.js", "React", "CSS3", "Brand Design"],
     image: "images/work/caldiors.webp",
+    video: "videos/caldiors.mp4",
     width: 1280,
     height: 853,
     link: "https://contra.com/p/POlFEscZ-a-little-care-a-beautiful",
@@ -79,6 +81,43 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
 };
 
+/*
+ * Project video: shows the still image first, downloads the video only when
+ * the card is on screen, plays while visible and pauses when scrolled away.
+ */
+const ProjectVideo = ({ src, poster, label, width, height }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { amount: 0.35 });
+  const reduce = useReducedMotion();
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video || reduce) return;
+    if (inView) {
+      const playing = video.play();
+      if (playing && playing.catch) playing.catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, [inView, reduce]);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      poster={poster}
+      width={width}
+      height={height}
+      muted
+      loop
+      playsInline
+      preload="none"
+      controls={reduce}
+      aria-label={label}
+    />
+  );
+};
+
 const ContraWork = () => (
   <section className="contraWork">
     <div className="contraWorkTitle"><RevealText text="Latest Work" /></div>
@@ -103,7 +142,11 @@ const ContraWork = () => (
           variants={item}
         >
           <TiltCard className="contraWorkImageWrap" max={6}>
-            <img src={project.image} alt={project.title} width={project.width || 960} height={project.height || 720} loading="lazy" decoding="async" />
+            {project.video ? (
+              <ProjectVideo src={project.video} poster={project.image} label={project.title} width={project.width} height={project.height} />
+            ) : (
+              <img src={project.image} alt={project.title} width={project.width || 960} height={project.height || 720} loading="lazy" decoding="async" />
+            )}
           </TiltCard>
           <div className="contraWorkBody">
             {project.featured && <div className="contraWorkFeaturedLabel">Featured · Live site{project.site ? ` · ${project.site}` : ""}</div>}
