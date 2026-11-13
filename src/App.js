@@ -59,13 +59,16 @@ function App() {
       ></Navbar>
       <Titlebar titleRef={titleRef} onViewWork={() => handleClick("Portfolio")}></Titlebar>
       <About abouttitleRef={abouttitleRef}></About>
-      <h2 className="Portfolioname" ref={Portfolioref}>
-        <RevealText text="Portfolio" />
-      </h2>
+      {/* Work: latest Contra projects first, then the portfolio grid. The navbar's "Portfolio" scrolls here. */}
+      <div ref={Portfolioref}>
+        <ContraWork />
 
-      <Portfolio></Portfolio>
+        <h2 className="Portfolioname">
+          <RevealText text="Portfolio" />
+        </h2>
 
-      <ContraWork />
+        <Portfolio></Portfolio>
+      </div>
 
       <Contact contactRef={ContactRef} onScroll=""></Contact>
     </div>
