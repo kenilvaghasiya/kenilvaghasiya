@@ -1,71 +1,92 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=160&section=header&text=Kenil%20Vaghasiya&fontSize=52&fontColor=fff&fontAlignY=38&desc=Senior%20Full%20Stack%20Engineer%20%E2%80%A2%20SDE%20%E2%80%A2%20React%20%7C%20Node.js%20%7C%20Azure&descAlignY=60&descSize=17&animation=twinkling" />
 
-## Available Scripts
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=React+%7C+ASP.NET+Core+%7C+Node.js+%7C+Azure+%7C+AWS;4%2B+years+building+scalable+cloud-native+apps;40%25+perf+boost+%E2%80%A2+60%25+API+latency+reduction+%E2%80%A2+90%25%2B+test+coverage)](https://git.io/typing-svg)
 
-In the project directory, you can run:
+[![Portfolio](https://img.shields.io/badge/Portfolio-kenilvaghasiya.com-58A6FF?style=flat-square&logo=safari&logoColor=white)](https://kenilvaghasiya.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-kenil704-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/kenil704)
+[![Email](https://img.shields.io/badge/Email-kenilvaghasiya66@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:kenilvaghasiya66@gmail.com)
+[![Resume](https://img.shields.io/badge/Resume-View-4CAF50?style=flat-square&logo=googledrive&logoColor=white)](https://kenilvaghasiya.com/)
+![Profile Views](https://komarev.com/ghpvc/?username=kenilvaghasiya&style=flat-square&color=58A6FF)
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 👨‍💻 About Me
 
-### `npm test`
+```ts
+const kenil: Engineer = {
+  role     : "Senior Full Stack Engineer | SDE",
+  exp      : "4+ years",
+  location : "Long Beach, CA 🌴",
+  stack    : ["React", "ASP.NET Core", "Node.js", "TypeScript", "Azure", "AWS"],
+  impact   : ["↑40% perf", "↓60% API latency", "↑300% DAU", "90%+ test coverage"],
+  education: "M.S. Computer Science — Cal State Long Beach",
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+};
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🏢 Experience Highlights
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Company | Role | Impact |
+|---|---|---|
+| **UnivSoftware** · Las Vegas | Software Developer | ↓30% defects · ↑40% perf · AI invoice workflows |
+| **Associated Students Inc.** · CSULB | Full-Stack Developer | ↑300% DAU · 10,000+ users · real-time streaming |
+| **Rejoice Hub Solutions** · India | Full-Stack Developer | 450ms → 180ms API · ↓25% memory · AI automation |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### 🛠️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<div align="center">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000?style=flat-square&logo=next.js&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white)
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+</div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🚀 Featured Projects
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<div align="center">
 
-### Code Splitting
+<a href="https://github.com/kenilvaghasiya/Jira_task_Management">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=kenilvaghasiya&repo=Jira_task_Management&theme=github_dark&hide_border=true&title_color=58A6FF&icon_color=58A6FF" />
+</a>
+<a href="https://github.com/kenilvaghasiya/K14-Design">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=kenilvaghasiya&repo=K14-Design&theme=github_dark&hide_border=true&title_color=58A6FF&icon_color=58A6FF" />
+</a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+</div>
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<div align="center">
 
-### Making a Progressive Web App
+[![LinkedIn](https://img.shields.io/badge/Let's_Connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/kenil704)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer&animation=twinkling" />
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# kenilvaghasiya
+</div>
