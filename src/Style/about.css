@@ -108,6 +108,7 @@ top: 40%;
 }
 
 .skillsSection{
+    box-sizing: border-box;
     width: min(100%, 1040px);
     margin: 0 auto 110px auto;
     padding: 30px 22px;
@@ -163,6 +164,7 @@ top: 40%;
 }
 
 .impactSection{
+    box-sizing: border-box;
     margin: 0 0 48px 0;
     padding: 0 2.5%;
     border: none;
@@ -319,6 +321,8 @@ top: 40%;
 
 .certSection{
     width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
     margin: 0 0 120px 0;
     padding: 20px 2.5%;
     border: none;
@@ -328,6 +332,7 @@ top: 40%;
 }
 
 .certTitle{
+    text-align: center;
     color: #091C23;
     font-family: "font1";
     display: flex;
@@ -546,6 +551,7 @@ top: 40%;
 
 .certTrendCard{
     flex: 0 0 360px;
+    box-sizing: border-box;
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 16px;
     background: #ffffff;
@@ -588,6 +594,7 @@ top: 40%;
 }
 
 .valueSection{
+    box-sizing: border-box;
     width: min(100%, 1040px);
     margin: 0 auto 36px auto;
     padding: 30px 22px;
@@ -651,6 +658,7 @@ top: 40%;
 }
 
 .recruiterCtaSection{
+    box-sizing: border-box;
     width: min(100%, 1040px);
     margin: 0 auto 140px auto;
     padding: 30px 24px;
@@ -686,8 +694,21 @@ top: 40%;
     width: 34%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+}
+
+.recruiterContra{
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 40px;
+    margin-top: 4px;
+}
+
+.recruiterContra iframe{
+    max-width: 100%;
 }
 
 .recruiterBtn{
@@ -1793,7 +1814,8 @@ top: 40%;
     }
 
     .certTitle{
-        font-size: 34px;
+        font-size: clamp(24px, 7.2vw, 34px);
+        line-height: 1.15;
     }
 
     .certBadgeStrip{
@@ -1820,11 +1842,11 @@ top: 40%;
     }
 
     .certTrendCard{
-        flex: 0 0 calc(100vw - 64px);
+        flex: 0 0 min(78vw, 300px);
     }
 
     .certName{
-        font-size: 22px;
+        font-size:  18px;
     }
 
     .certIssuer{
@@ -1879,6 +1901,10 @@ top: 40%;
 
     .recruiterCtaRight{
         width: 100%;
+        justify-content: flex-start;
+    }
+
+    .recruiterContra{
         justify-content: flex-start;
     }
 
@@ -1996,3 +2022,29 @@ top: 40%;
     height: 1200px;
 }
   }
+
+/* Certifications: tablet sizing */
+@media only screen and (min-width: 651px) and (max-width: 1100px) {
+    .certTitle{
+        font-size: 38px;
+        line-height: 1.15;
+    }
+
+    .certTrendCard{
+        flex: 0 0 300px;
+    }
+
+    .certName{
+        font-size: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .certMarquee{
+        overflow-x: auto;
+    }
+
+    .certTrendGrid{
+        animation: none;
+    }
+}

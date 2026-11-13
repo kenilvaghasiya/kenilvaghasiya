@@ -432,9 +432,11 @@
 }
 
 @media only screen and (max-width: 1100px){
-  .estateReplicaGrid{ grid-template-columns: 1fr; min-height: auto; }
-  .estateReplicaCards{ grid-template-columns: 1fr; }
-  .estateReplicaTypeGrid{ grid-template-columns: repeat(3, 1fr); }
+  .estateReplicaGrid{ grid-template-columns: minmax(0, 1fr); min-height: auto; }
+  .estateReplicaGrid > *{ min-width: 0; }
+  .estateReplicaCards{ grid-template-columns: minmax(0, 1fr); }
+  .estateReplicaTypeGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .estateReplicaTypeGrid button{ min-width: 0; }
   .dashboardReplicaTitle{ font-size: 44px; }
   .estateReplicaHeading{ font-size: 24px; }
 }

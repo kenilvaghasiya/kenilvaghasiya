@@ -4,19 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 const Titlebar = (prop) => {
 
-    const downloadTxtFile = () => {
-        fetch('/images/Kenil_P_vaghasiya24.pdf').then(response => {
-            response.blob().then(blob => {
-                // Creating new object of PDF file
-                const fileURL = window.URL.createObjectURL(blob);
-                // Setting various property values
-                let alink = document.createElement('a');
-                alink.href = fileURL;
-                alink.download = 'Kenil_P_vaghasiya24.pdf';
-                alink.click();
-            })
-        })
-    }
 
 
   return (
@@ -30,7 +17,6 @@ const Titlebar = (prop) => {
        <motion.div className="TitlebarItem" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1, duration: 0.5 }}>
         <NavLink to="/" className="navlinknone">Kenil Vaghasiya </NavLink>
       </motion.div>
-        <motion.div className="resumeBtn"  onClick={downloadTxtFile} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Resume</motion.div> 
     </motion.div>
     <motion.div
       className="mainSection"

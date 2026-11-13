@@ -3,19 +3,6 @@ import { motion } from "framer-motion";
 
 const Contact =(props)=>{
 
-    const downloadTxtFile = () => {
-        fetch('/images/Kenil_P_vaghasiya24.pdf').then(response => {
-            response.blob().then(blob => {
-                // Creating new object of PDF file
-                const fileURL = window.URL.createObjectURL(blob);
-                // Setting various property values
-                let alink = document.createElement('a');
-                alink.href = fileURL;
-                alink.download = 'Kenil_P_vaghasiya24.pdf';
-                alink.click();
-            })
-        })
-    }
     return(<>
 
     <div className="Contactus" ref={props.contactRef}>
@@ -28,7 +15,9 @@ const Contact =(props)=>{
     >
 
         <motion.img
-          src="/images/kenilVaghasiya.jpg"
+          src="/images/kenilVaghasiya.webp"
+          loading="lazy"
+          decoding="async"
           className="Contactus_mainimg"
           alt="Kenil Vaghasiya"
           initial={{ scale: 1.04 }}
@@ -41,7 +30,6 @@ const Contact =(props)=>{
         <div className="Contactus_mainimgName">Kenil Vaghasiya</div>
         <div className="Contactus_mainimgpo">Full Stack Developer</div>
         <div className="Contactus_mainimgEmail">kenilvaghasiya66@gmail.com</div>
-        <motion.div className="Contactus_mainimgBtn" onClick={downloadTxtFile} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Resume</motion.div>
 
       </div>
 

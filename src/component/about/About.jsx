@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import CardSection from "../cardSection/CardSection";
 import LinkedInSlider from "../LinkedInSlider/LinkedInSlider";
 import DashboardReplica from "../dashboardReplica/DashboardReplica";
+import ContraButton from "../ContraButton/ContraButton";
 
 const About = (prop) => {
   const fadeUp = {
@@ -87,10 +88,10 @@ const About = (prop) => {
         <motion.div className="aboutgrd" variants={fadeUp} transition={{ delay: 0.15, duration: 0.45 }}>Nice to meet you</motion.div>
         <motion.div className="abotText" variants={fadeUp} transition={{ delay: 0.2, duration: 0.45 }}>
           <p>
-         Software Engineer with over three years of experience developing scalable, cloud-native applications with React, TypeScript,
-ASP.NET Core, and Microsoft Azure. Achieved a 40% increase in performance, reduced defects by 30%, and maintained over 90%
-test coverage through effective architecture and CI/CD practices. Skilled in distributed systems, microservices, and AI-driven
-solutions, including LLM integration and RAG pipelines. </p>
+          Software Engineer with 4+ years of experience building scalable, cloud-native web applications across frontend and
+backend systems. Strong expertise in React, TypeScript, ASP.NET Core, Node.js, and Azure, with proven impact in microservices,
+distributed systems, API design, and performance optimization. Delivered measurable outcomes including 40% performance improvement,
+60% API latency reduction, and 90%+ test coverage in production SaaS environments. </p>
         </motion.div>
       </motion.div>
       <motion.div
@@ -106,15 +107,18 @@ solutions, including LLM integration and RAG pipelines. </p>
           <CardSection
             name="Software Developer"
             margin={0}
-            date="Jun 2024 - Present"
-            company="UnivSoftware.com, Inc."
+            date="Jun 2024 - Dec 2025"
+            company="UnivSoftware.com, Inc. — Las Vegas, NV"
             highlights={[
-              "Built a QR-based Quick Check-In flow that reduced customer check-in time by 60%.",
-              "Redesigned system and database architecture, improving response speed by 40% and supporting 3x user load.",
-              "Implemented unit and integration testing with 95% code coverage to improve release confidence.",
-              "Led 4 engineers on PHP and AWS/RDS delivery, improving execution quality and team velocity.",
-              "Migrated legacy modules to a modern stack, cutting maintenance cost by 50% and improving reliability.",
-              "Set up Jenkins and GitLab CI/CD pipelines, reducing deployment time by 70% and increasing release frequency by 200%."
+              "Designed and implemented RESTful APIs using ASP.NET Core supporting high-traffic SaaS workloads.",
+              "Built scalable React.js + TypeScript frontend architecture with reusable components and strict typing, reducing post-release defects by 30%.",
+              "Improved full-stack performance by 40% using SSR, Redis caching, AWS CloudFront CDN, and asset optimization.",
+              "Architected microservices deployed via Azure App Services and Docker containers.",
+              "Built event-driven workflows using Azure Service Bus for asynchronous processing.",
+              "Optimized SQL queries and indexing strategies in PostgreSQL and SQL Server, improving throughput under concurrent load.",
+              "Integrated LLM-powered AI features for intelligent invoice summaries and automated customer communication workflows.",
+              "Developed end-to-end tests using Jest, Cypress, and React Testing Library with 90%+ coverage.",
+              "Collaborated in Agile/Scrum teams on architecture decisions and CI/CD deployments."
             ]}
           />
          
@@ -126,12 +130,13 @@ solutions, including LLM integration and RAG pipelines. </p>
             name="Full-stack Developer"
             margin={120}
             date="Jan 2020 - Jul 2022"
-            company="Rejoicehub Solutions"
+            company="Rejoice Hub Solutions — Surat, India"
             highlights={[
-              "Developed production-ready websites using React.js and Next.js with reusable UI components.",
-              "Improved interactivity and front-end performance through efficient DOM and state management patterns.",
-              "Implemented CI/CD workflows to accelerate release cycles and reduce deployment errors.",
-              "Collaborated across design and engineering to unblock bottlenecks and improve sprint delivery."
+              "Developed enterprise billing and CRM systems using TypeScript and RESTful backend APIs.",
+              "Improved API response times from 450ms to 180ms under 5,000+ concurrent users using async processing and caching.",
+              "Built AI-driven automation modules using Python and Azure ML APIs.",
+              "Reduced memory consumption by 25% through performance profiling and optimized object lifecycle management.",
+              "Developed automated test suites improving system reliability and Core Web Vitals by 35%."
             ]}
           />
        
@@ -153,13 +158,13 @@ solutions, including LLM integration and RAG pipelines. </p>
             name="Full-stack Developer"
             margin={70}
             date="Sep 2023 - May 2024"
-            company="Associated Students, Inc. CSULB"
+            company="Associated Students, Inc. — Long Beach, CA"
             highlights={[
-              "Built and maintained interactive web experiences using React.js, Next.js, HTML, CSS, and JavaScript.",
-              "Extended Joomla CMS using PHP and custom modules to support organization-specific workflows.",
-              "Improved accessibility by implementing WCAG-aligned components and UI behavior.",
-              "Delivered a live streaming platform using React.js and Node.js.",
-              "Improved team collaboration and handoff quality using Git/GitHub and Figma-based workflows."
+              "Developed full-stack applications using React.js, Node.js, and REST APIs serving 10,000+ student users.",
+              "Designed real-time streaming features and dynamic UI rendering pipelines.",
+              "Built backend services for authentication, event tracking, and analytics dashboards.",
+              "Increased daily active users by 300% through optimized frontend performance and API enhancements.",
+              "Implemented secure authentication flows (JWT, OAuth) and improved API response times."
             ]}
           />
 
@@ -189,26 +194,11 @@ solutions, including LLM integration and RAG pipelines. </p>
           <div className="skillsGroupTitle">Languages</div>
           <div className="skillsChips">
             <span>C#</span>
-            <span>C++</span>
             <span>JavaScript</span>
             <span>TypeScript</span>
             <span>Java</span>
             <span>Python</span>
-            <span>PHP</span>
             <span>SQL</span>
-          </div>
-        </div>
-
-        <div className="skillsGroup">
-          <div className="skillsGroupTitle">Frameworks & APIs</div>
-          <div className="skillsChips">
-            <span>ASP.NET Core</span>
-            <span>.NET</span>
-            <span>WPF</span>
-            <span>Node.js</span>
-            <span>Entity Framework Core</span>
-            <span>REST APIs</span>
-            <span>GraphQL</span>
           </div>
         </div>
 
@@ -218,85 +208,64 @@ solutions, including LLM integration and RAG pipelines. </p>
             <span>React.js</span>
             <span>Next.js</span>
             <span>Redux</span>
-            <span>Fluent UI</span>
             <span>HTML5</span>
             <span>CSS3</span>
-            <span>SCSS</span>
-            <span>Bootstrap</span>
+            <span>Responsive Design</span>
           </div>
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">Cloud & Systems</div>
+          <div className="skillsGroupTitle">Backend</div>
+          <div className="skillsChips">
+            <span>ASP.NET Core</span>
+            <span>.NET</span>
+            <span>Node.js</span>
+            <span>REST APIs</span>
+            <span>GraphQL</span>
+            <span>Microservices</span>
+          </div>
+        </div>
+
+        <div className="skillsGroup">
+          <div className="skillsGroupTitle">Cloud</div>
           <div className="skillsChips">
             <span>Microsoft Azure</span>
-            <span>Azure App Service</span>
-            <span>Azure Functions</span>
-            <span>Service Bus</span>
-            <span>Event Grid</span>
-            <span>Azure Blob Storage</span>
-            <span>Key Vault</span>
-            <span>Azure AD</span>
-            <span>Azure AI Studio</span>
-            <span>Windows SDK</span>
-            <span>PowerShell</span>
-            <span>AWS EC2</span>
             <span>AWS S3</span>
+            <span>AWS CloudFront</span>
             <span>AWS Lambda</span>
-            <span>RDS</span>
+            <span>Azure Service Bus</span>
           </div>
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">DevOps & Infrastructure</div>
-          <div className="skillsChips">
-            <span>Docker</span>
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Azure DevOps</span>
-            <span>GitLab</span>
-            <span>Jenkins</span>
-            <span>CI/CD Pipelines</span>
-            <span>Terraform</span>
-            <span>Bicep</span>
-            <span>Azure Kubernetes Service (AKS)</span>
-            <span>AWS</span>
-          </div>
-        </div>
-
-        <div className="skillsGroup">
-          <div className="skillsGroupTitle">Databases & Caching</div>
+          <div className="skillsGroupTitle">Databases</div>
           <div className="skillsChips">
             <span>SQL Server</span>
             <span>PostgreSQL</span>
             <span>Cosmos DB</span>
+            <span>MongoDB</span>
             <span>Redis</span>
           </div>
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">AI & Personalization</div>
+          <div className="skillsGroupTitle">DevOps</div>
           <div className="skillsChips">
-            <span>LLM Integration</span>
-            <span>LangChain</span>
-            <span>Semantic Kernel</span>
-            <span>RAG</span>
-            <span>Vector Databases</span>
-            <span>AI Orchestration</span>
-            <span>Recommendation Systems</span>
-            <span>NLP</span>
+            <span>Docker</span>
+            <span>Kubernetes</span>
+            <span>CI/CD</span>
+            <span>Azure DevOps</span>
+            <span>Git</span>
           </div>
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">Core Concepts</div>
+          <div className="skillsGroupTitle">Architecture</div>
           <div className="skillsChips">
-            <span>Object-Oriented Design</span>
-            <span>Software Architecture</span>
             <span>Distributed Systems</span>
-            <span>Performance Optimization</span>
-            <span>Experimentation Frameworks</span>
-            <span>Jira</span>
+            <span>Event-Driven Architecture</span>
+            <span>Caching</span>
+            <span>Concurrency</span>
           </div>
         </div>
       </motion.div>
@@ -329,18 +298,18 @@ solutions, including LLM integration and RAG pipelines. </p>
 
           <motion.div className="impactFeatureCard clean" whileHover={{ y: -5 }}>
             <div className="impactTopLine">
-              <div className="impactMainValue dark">4x</div>
+              <div className="impactMainValue dark">300%</div>
               <div className="impactStars">★ ★ ★ ★ ☆</div>
             </div>
-            <div className="impactMainText lightDark">Traffic and engagement growth from product launch work</div>
+            <div className="impactMainText lightDark">Daily active user growth through performance and API optimization</div>
             <button className="impactArrowBtn darkBtn" aria-label="Open growth impact">↗</button>
           </motion.div>
         </div>
         <div className="impactMiniStats">
           <div><strong>30%</strong> defect reduction</div>
-          <div><strong>70%</strong> faster deployments</div>
-          <div><strong>200%</strong> release frequency gain</div>
-          <div><strong>60%</strong> faster check-in flow</div>
+          <div><strong>60%</strong> API latency reduction</div>
+          <div><strong>25%</strong> lower memory usage</div>
+          <div><strong>90%+</strong> test coverage</div>
         </div>
       </motion.div>
 
@@ -400,6 +369,9 @@ solutions, including LLM integration and RAG pipelines. </p>
         <div className="recruiterCtaRight">
           <a href="mailto:kenilvaghasiya66@gmail.com" className="recruiterBtn recruiterBtnPrimary">Email Me</a>
           <a href="https://www.linkedin.com/in/kenil704/" target="_blank" rel="noreferrer" className="recruiterBtn recruiterBtnGhost">LinkedIn</a>
+          <div className="recruiterContra">
+            <ContraButton theme="light" />
+          </div>
         </div>
       </motion.div>
 

@@ -1,4 +1,5 @@
 .cardSection{
+    box-sizing: border-box;
     border-radius: 16px;
     border: 1px solid #e8ebef;
     background: linear-gradient(145deg, #ffffff 0%, #fffaf0 100%);

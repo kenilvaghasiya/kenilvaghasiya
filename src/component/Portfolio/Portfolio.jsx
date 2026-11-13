@@ -7,12 +7,12 @@ const Portfolio = () => {
 }
 
   const portfolioItems = [
-    { image: "images/al6.svg ", link: "https://22westmedia.com/web-team", alt: "project 1" },
-    { image: "images/al1.svg ", link: "https://k14-dev.netlify.app/", alt: "project 2" },
-    { image: "images/al5.svg ", link: "https://github.com/kenilvaghasiya/SearchEngine", alt: "project 3" },
-    { image: "images/al2.svg  ", link: "", alt: "project 4" },
-    { image: "images/al3.svg  ", link: "https://scholarworld.netlify.app/", alt: "project 5" },
-    { image: "images/al4.svg ", link: "https://dribbble.com/kenil_vaghasiya", alt: "project 6" }
+    { image: "images/al6.webp", link: "https://22westmedia.com/web-team", alt: "project 1" },
+    { image: "images/al1.webp", link: "https://k14-dev.netlify.app/", alt: "project 2" },
+    { image: "images/al5.webp", link: "https://github.com/kenilvaghasiya/SearchEngine", alt: "project 3" },
+    { image: "images/al2.webp", link: "", alt: "project 4" },
+    { image: "images/al3.webp", link: "https://scholarworld.netlify.app/", alt: "project 5" },
+    { image: "images/al4.webp", link: "https://dribbble.com/kenil_vaghasiya", alt: "project 6" }
   ];
 
   return (
@@ -41,7 +41,7 @@ const Portfolio = () => {
                 transition={{ duration: 0.45, ease: "easeOut" }}
                 whileHover={{ y: -6, scale: 1.02 }}
               >
-                <img src={item.image} alt={item.alt} className="imgAS1"></img>
+                <img src={item.image} alt={item.alt} className="imgAS1" width="1004" height="567" loading="lazy" decoding="async"></img>
               </motion.div>
             ))}
           </motion.div>
