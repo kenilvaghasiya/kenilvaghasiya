@@ -52,6 +52,10 @@ const LinkedInSlider = () => {
   const [stageWidth, setStageWidth] = useState(1200);
   // LinkedIn embeds are heavy: only create the iframes once the section is close to the viewport.
   const nearViewport = useInView(stageRef, { once: true, margin: "600px 0px" });
+  // The centre post and its two neighbours load first; the rest wait until the
+  // gallery is actually on screen, or until you move to them.
+  const onScreen = useInView(stageRef, { once: true, amount: 0.35 });
+  const [loaded, setLoaded] = useState(() => new Set());
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -62,6 +66,17 @@ const LinkedInSlider = () => {
     observer.observe(stage);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!nearViewport) return;
+    setLoaded((previous) => {
+      const next = new Set(previous);
+      posts.forEach((post, index) => {
+        if (onScreen || Math.abs(index - active) <= 1) next.add(index);
+      });
+      return next.size === previous.size ? previous : next;
+    });
+  }, [nearViewport, onScreen, active]);
 
   const last = posts.length - 1;
   const go = (index) => setActive(Math.max(0, Math.min(last, index)));
@@ -152,7 +167,7 @@ const LinkedInSlider = () => {
                 style={{ zIndex: 100 - Math.abs(offset), width: CARD_WIDTH, height: CARD_HEIGHT }}
                 aria-hidden={!isActive}
               >
-                {nearViewport ? (
+                {loaded.has(index) ? (
                   <iframe
                     src={post.src}
                     height={CARD_HEIGHT}

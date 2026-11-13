@@ -19,13 +19,12 @@ const builds = ["I build SaaS products", "I build Framer websites", "I build AI-
 const EASE = [0.22, 1, 0.36, 1];
 const rise = {
   hidden: { opacity: 0, y: 22 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } }
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } }
 };
 
 const Titlebar = (prop) => {
   const heroRef = useRef(null);
   const nameRef = useRef(null);
-  const [plainName, setPlainName] = useState(false);
   const [buildIndex, setBuildIndex] = useState(0);
 
   useEffect(() => {
@@ -63,7 +62,7 @@ const Titlebar = (prop) => {
       </motion.div>
 
       <div className="mainSection">
-        <ParticleText text={NAME} targetRef={nameRef} dissolve={scrollYProgress} onFallback={setPlainName} />
+        <ParticleText text={NAME} targetRef={nameRef} dissolve={scrollYProgress} />
 
         <motion.div
           className="heroTop"
@@ -83,11 +82,12 @@ const Titlebar = (prop) => {
           style={{ y: contentY, opacity: contentOpacity }}
           initial="hidden"
           animate="show"
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.9 } } }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } } }}
         >
           <motion.div className="heroRole" variants={rise}>Full-Stack &amp; Framer Developer</motion.div>
 
-          <h1 ref={nameRef} className={`Titilename ${plainName ? "isPlain" : ""}`}>{NAME}</h1>
+          {/* Plain text, visible from the first paint; ParticleText animates a copy of it on interaction. */}
+          <h1 ref={nameRef} className="Titilename">{NAME}</h1>
 
           <motion.div className="heroBuild" variants={rise} aria-live="off">
             <AnimatePresence mode="wait" initial={false}>

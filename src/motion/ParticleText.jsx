@@ -5,15 +5,18 @@ import "./motion.css";
 /*
  * Text drawn from thousands of particles (WebGL, no extra library).
  *
- *  - On load the particles float as a coloured cloud, then assemble into the text.
- *  - They move away from the pointer and swirl back.
- *  - A click / tap sends a shock wave through them.
- *  - `dissolve` (a Motion value, 0..1) scatters them again, e.g. while scrolling.
+ * The real heading (`targetRef`) is what visitors see first: it is ordinary
+ * text, readable the moment the page paints. The particle copy is prepared
+ * afterwards, when the browser is idle, and only takes over while there is
+ * something to animate:
  *
- * `targetRef` points at the real (invisible) heading: it gives the particles
- * their position, font and size, and stays in the page for screen readers and
- * search engines. If WebGL is unavailable or the visitor prefers reduced
- * motion, `onFallback` is called so the caller can show that heading normally.
+ *  - the pointer comes near the text: particles move away and swirl back
+ *  - a click / tap: a shock wave runs through them
+ *  - `dissolve` (a Motion value, 0..1) rises, e.g. while scrolling: they scatter
+ *
+ * The rest of the time the canvas is hidden and nothing is drawn, so the hero
+ * costs nothing while idle. Without WebGL, or with reduced motion turned on,
+ * the heading simply stays as text.
  */
 
 const VERTEX = `
@@ -22,7 +25,7 @@ attribute vec4 aSeed;     // per-particle random values
 uniform vec2 uRes;        // canvas size (css px)
 uniform vec2 uMouse;      // pointer position (css px)
 uniform float uMouseOn;
-uniform float uProgress;  // 0 = cloud, 1 = text
+uniform float uProgress;  // 0 = scattered, 1 = text
 uniform float uBurst;
 uniform float uTime;
 uniform float uSize;
@@ -40,7 +43,7 @@ void main() {
   float local = clamp(uProgress * 1.5 - aSeed.z * 0.5, 0.0, 1.0);
   local = local * local * (3.0 - 2.0 * local);
 
-  // Cloud: spread over the whole hero, slowly drifting.
+  // Scattered state: spread over the whole hero, slowly drifting.
   vec2 start = aSeed.xy * uRes;
   start += vec2(cos(uTime * 0.3 + aSeed.w * 6.2831), sin(uTime * 0.25 + aSeed.z * 6.2831)) * 46.0;
 
@@ -99,15 +102,10 @@ const offsetWithin = (node, ancestor) => {
   return { left, top };
 };
 
-const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
+const ParticleText = ({ text, targetRef, dissolve }) => {
   const canvasRef = useRef(null);
   const reduce = useReducedMotion();
   const [failed, setFailed] = useState(false);
-
-  useEffect(() => {
-    if (reduce || failed) onFallback?.(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [reduce, failed]);
 
   useEffect(() => {
     if (reduce) return undefined;
@@ -152,11 +150,12 @@ const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
     let disposed = false;
     let frameId = 0;
     let count = 0;
+    let box = null; // where the heading sits inside the canvas (css px)
     let visible = true;
     let buffers = [];
     const startTime = performance.now();
     // Smoothed values, advanced every frame.
-    const state = { intro: 0, mouseX: -9999, mouseY: -9999, targetX: -9999, targetY: -9999, mouseOn: 0, mouseOnTarget: 0, burst: 0 };
+    const state = { mouseX: -9999, mouseY: -9999, targetX: -9999, targetY: -9999, mouseOn: 0, mouseOnTarget: 0, burst: 0 };
 
     const setAttribute = (name, data, size) => {
       const buffer = gl.createBuffer();
@@ -197,6 +196,9 @@ const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
       const pixels = ctx.getImageData(0, 0, sample.width, sample.height).data;
 
       const origin = offsetWithin(target, host);
+      box = { left: origin.left, top: origin.top, right: origin.left + boxWidth, bottom: origin.top + boxHeight };
+      // Fewer particles on small screens: phones have less GPU to spare.
+      const maxCount = width < 700 ? 12000 : 26000;
       let step = Math.max(1, Math.round(dpr));
       let points = [];
       for (;;) {
@@ -208,7 +210,7 @@ const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
             }
           }
         }
-        if (points.length / 2 <= 70000) break;
+        if (points.length / 2 <= maxCount) break;
         step += 1;
       }
 
@@ -225,19 +227,34 @@ const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
       gl.uniform1f(uniforms.size, step * 1.9);
     };
 
+    // Swap between the real heading (idle) and the particle copy (animating).
+    let showing = false;
+    const show = (on) => {
+      if (showing === on) return;
+      showing = on;
+      canvas.style.opacity = on ? "1" : "0";
+      target.style.color = on ? "transparent" : "";
+    };
+
     const render = () => {
       frameId = 0;
       if (disposed || !visible) return;
 
       // Ease the smoothed values toward their targets.
-      state.intro += (1 - state.intro) * 0.022;
       state.mouseX += (state.targetX - state.mouseX) * 0.16;
       state.mouseY += (state.targetY - state.mouseY) * 0.16;
       state.mouseOn += (state.mouseOnTarget - state.mouseOn) * 0.12;
       state.burst *= 0.93;
 
       const scatter = Math.min(1, Math.max(0, (dissolve ? dissolve.get() : 0) * 1.7));
-      const progress = Math.min(1, state.intro * 1.04) * (1 - scatter);
+      const progress = 1 - scatter;
+
+      // Nothing to animate: hand back to the real text and stop drawing.
+      const active = state.mouseOn > 0.004 || state.mouseOnTarget > 0 || state.burst > 0.004 || scatter > 0.0005;
+      if (!count || !active) {
+        show(false);
+        return;
+      }
 
       if (count) {
         gl.uniform1f(uniforms.progress, progress);
@@ -247,6 +264,7 @@ const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
         gl.uniform1f(uniforms.burst, state.burst);
         gl.clear(gl.COLOR_BUFFER_BIT);
         gl.drawArrays(gl.POINTS, 0, count);
+        show(true);
       }
       frameId = requestAnimationFrame(render);
     };
@@ -260,13 +278,22 @@ const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
       return [event.clientX - rect.left, event.clientY - rect.top];
     };
     const onMove = (event) => {
-      if (event.pointerType === "touch") return;
-      [state.targetX, state.targetY] = local(event);
-      if (state.mouseOnTarget === 0) {
-        state.mouseX = state.targetX;
-        state.mouseY = state.targetY;
+      if (event.pointerType === "touch" || !box) return;
+      const [x, y] = local(event);
+      // Only react when the pointer is on or near the text.
+      const near = x > box.left - 130 && x < box.right + 130 && y > box.top - 130 && y < box.bottom + 130;
+      if (!near) {
+        state.mouseOnTarget = 0;
+        return;
+      }
+      state.targetX = x;
+      state.targetY = y;
+      if (state.mouseOnTarget === 0 && state.mouseOn < 0.01) {
+        state.mouseX = x;
+        state.mouseY = y;
       }
       state.mouseOnTarget = 1;
+      wake();
     };
     const onLeave = () => {
       state.mouseOnTarget = 0;
@@ -276,6 +303,7 @@ const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
       state.mouseX = state.targetX;
       state.mouseY = state.targetY;
       state.burst = 1;
+      wake();
     };
     host.addEventListener("pointermove", onMove);
     host.addEventListener("pointerleave", onLeave);
@@ -287,23 +315,41 @@ const ParticleText = ({ text, targetRef, dissolve, onFallback }) => {
     });
     visibility.observe(host);
 
+    const stopDissolve = dissolve ? dissolve.on("change", wake) : () => {};
+
+    // Prepare the particles only once the font is in and the browser is idle,
+    // so this work never delays the first paint of the page.
     let resizeObserver;
+    let idleId = 0;
+    const whenIdle = window.requestIdleCallback
+      ? (run) => window.requestIdleCallback(run, { timeout: 2000 })
+      : (run) => window.setTimeout(run, 400);
+    const cancelIdle = window.cancelIdleCallback || window.clearTimeout;
     const fontSize = parseFloat(getComputedStyle(target).fontSize);
     const fontReady = document.fonts?.load ? document.fonts.load(`${fontSize}px ${getComputedStyle(target).fontFamily}`, text) : Promise.resolve();
     fontReady
       .catch(() => {})
       .then(() => {
         if (disposed) return;
-        build();
-        resizeObserver = new ResizeObserver(build);
-        resizeObserver.observe(host);
-        resizeObserver.observe(target);
-        wake();
+        idleId = whenIdle(() => {
+          if (disposed) return;
+          build();
+          resizeObserver = new ResizeObserver(() => {
+            build();
+            wake();
+          });
+          resizeObserver.observe(host);
+          resizeObserver.observe(target);
+          wake();
+        });
       });
 
     return () => {
       disposed = true;
       cancelAnimationFrame(frameId);
+      cancelIdle(idleId);
+      stopDissolve();
+      target.style.color = "";
       visibility.disconnect();
       if (resizeObserver) resizeObserver.disconnect();
       host.removeEventListener("pointermove", onMove);

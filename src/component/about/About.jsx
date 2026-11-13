@@ -88,8 +88,6 @@ const About = (prop) => {
             loading="lazy"
             decoding="async"
             className="aboutVisualImage"
-            animate={{ y: [0, -14, 0], rotate: [0, 4, 0] }}
-            transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
           />
           <motion.div
             className="aboutBadge aboutBadgeTop"
@@ -195,11 +193,7 @@ const About = (prop) => {
         </div>
         <div className="roadmapSectionCenter">
           <div className="mappathDesign">
-            <motion.div
-              className="mappathDesigncenter"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 2.4, ease: "easeInOut", repeat: Infinity }}
-            ></motion.div>
+            <div className="mappathDesigncenter"></div>
           </div>
         </div>
         <div className="roadmapSectionright">

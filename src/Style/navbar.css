@@ -16,7 +16,6 @@
     flex-direction: row;
     border-radius: 50px;
     background: #091C23;
-    backdrop-filter: blur(27.5px);
     height: 55px;
     padding: 7px;
 }

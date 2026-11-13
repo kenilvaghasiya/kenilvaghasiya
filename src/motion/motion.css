@@ -101,7 +101,6 @@
     letter-spacing: 0.02em;
     white-space: nowrap;
     pointer-events: none;
-    backdrop-filter: blur(6px);
 }
 
 .hintTap{
@@ -127,4 +126,5 @@
     display: block;
     pointer-events: none;
     z-index: 2;
+    opacity: 0;
 }

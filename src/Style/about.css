@@ -2178,3 +2178,29 @@ top: 40%;
         animation: none;
     }
 }
+
+/* Gentle endless floats, as CSS so they run off the main thread */
+.aboutVisualImage{
+    animation: aboutFloat 7s ease-in-out infinite;
+}
+
+@keyframes aboutFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+.mappathDesigncenter{
+    animation: mapDotFloat 2.4s ease-in-out infinite;
+}
+
+@keyframes mapDotFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aboutVisualImage,
+    .mappathDesigncenter{
+        animation: none;
+    }
+}

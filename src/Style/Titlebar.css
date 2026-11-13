@@ -37,6 +37,9 @@
     width: 80%;
     height: 80%;
     position: relative;
+    /* Blur the ring itself (drawn once) instead of using backdrop-filter on the
+       layer above it, which the browser had to recompute on every frame. */
+    filter: blur(50px);
     animation: heroFloat 9s ease-in-out infinite;
 }
 
@@ -46,14 +49,12 @@
     100% { transform: translateY(0px); }
 }
 
-/* Frosted layer that holds the content */
+/* Soft white layer that holds the content */
 .mainSection{
     position: absolute;
     inset: 0;
     z-index: 5;
     background: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,22 +146,16 @@
     text-transform: uppercase;
 }
 
-/* The real heading: invisible while the particle version is drawn over it. */
+/* The real heading. ParticleText makes it transparent only while its particle copy is animating. */
 .Titilename{
     margin: 18px 0 0 0;
-    color: transparent;
+    color: #091C23;
     font-family: "font1";
     font-size: 112px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.15;
     white-space: nowrap;
-    user-select: none;
-}
-
-.Titilename.isPlain{
-    color: #091C23;
-    user-select: auto;
 }
 
 .heroBuild{
@@ -256,6 +251,10 @@
 }
 
 @media only screen and (max-width: 650px) {
+    .bgDesign img{
+        filter: blur(34px);
+    }
+
     .heroTop{
         padding: 16px 16px;
     }
