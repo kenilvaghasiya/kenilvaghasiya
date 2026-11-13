@@ -42,7 +42,7 @@ const Navbar = (prop) => {
           </motion.div>
         ))}
         <motion.div whileHover={{ y: -3, rotate: -8 }} whileTap={{ scale: 0.9 }} className="topItem" onClick={()=>prop.datapass("home")}>
-            <img src="images/Arrow.png" alt="arrow"></img>
+            <img src="images/Arrow.png" alt="Back to top"></img>
         </motion.div>
       </div>
     </motion.div>

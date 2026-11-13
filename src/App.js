@@ -57,11 +57,11 @@ function App() {
           handleClick(data);
         }}
       ></Navbar>
-      <Titlebar titleRef={titleRef}></Titlebar>
+      <Titlebar titleRef={titleRef} onViewWork={() => handleClick("Portfolio")}></Titlebar>
       <About abouttitleRef={abouttitleRef}></About>
-      <div className="Portfolioname" ref={Portfolioref}>
+      <h2 className="Portfolioname" ref={Portfolioref}>
         <RevealText text="Portfolio" />
-      </div>
+      </h2>
 
       <Portfolio></Portfolio>
 

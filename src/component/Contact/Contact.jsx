@@ -18,7 +18,7 @@ const Contact =(props)=>{
         <ParticlePortrait
           src="/images/kenilVaghasiya.webp"
           className="Contactus_mainimg"
-          alt="Kenil Vaghasiya"
+          alt="Kenil Vaghasiya, full stack developer and Framer developer"
         />
 
       <div className="Contactus_mainimg-left">

@@ -16,7 +16,7 @@ const CardSection =(prop)=>{
           transition={{ duration: 0.55, ease: "easeOut" }}
          >
          <div className="titleBar">
-            <div className="titlename">{prop.name}</div>
+            <h3 className="titlename">{prop.name}</h3>
             <div className="dateSection">{prop.date}</div>
          </div>
          <div className="companyName">

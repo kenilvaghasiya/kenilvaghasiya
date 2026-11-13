@@ -7,6 +7,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings take their look from their own class, not browser defaults. */
+:where(h1, h2, h3) {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

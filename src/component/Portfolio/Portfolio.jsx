@@ -8,12 +8,12 @@ const Portfolio = () => {
 }
 
   const portfolioItems = [
-    { image: "images/al6.webp", link: "https://22westmedia.com/web-team", alt: "project 1" },
-    { image: "images/al1.webp", link: "https://k14-dev.netlify.app/", alt: "project 2" },
-    { image: "images/al5.webp", link: "https://github.com/kenilvaghasiya/SearchEngine", alt: "project 3" },
-    { image: "images/al2.webp", link: "", alt: "project 4" },
-    { image: "images/al3.webp", link: "https://scholarworld.netlify.app/", alt: "project 5" },
-    { image: "images/al4.webp", link: "https://dribbble.com/kenil_vaghasiya", alt: "project 6" }
+    { image: "images/al6.webp", link: "https://22westmedia.com/web-team", alt: "22 West Media website, built by Kenil Vaghasiya" },
+    { image: "images/al1.webp", link: "https://k14-dev.netlify.app/", alt: "K14 Design website project" },
+    { image: "images/al5.webp", link: "https://github.com/kenilvaghasiya/SearchEngine", alt: "Python search engine project" },
+    { image: "images/al2.webp", link: "", alt: "Task management web app with responsive design" },
+    { image: "images/al3.webp", link: "https://scholarworld.netlify.app/", alt: "Scholar World website project" },
+    { image: "images/al4.webp", link: "https://dribbble.com/kenil_vaghasiya", alt: "UI design work by Kenil Vaghasiya on Dribbble" }
   ];
 
   return (

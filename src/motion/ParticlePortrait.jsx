@@ -281,15 +281,13 @@ const ParticlePortrait = ({ src, alt, className }) => {
     <div
       ref={wrapRef}
       className={`particlePortrait ${className || ""}`}
-      role="img"
-      aria-label={alt}
       onPointerEnter={onEnter}
       onPointerLeave={onLeave}
       onPointerUp={onTap}
     >
       <motion.img
         src={src}
-        alt=""
+        alt={alt}
         className="particlePhoto"
         loading="lazy"
         decoding="async"

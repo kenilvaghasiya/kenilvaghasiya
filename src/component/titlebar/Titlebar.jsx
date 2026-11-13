@@ -1,10 +1,12 @@
-import { useRef } from "react";
-import { TypeAnimation } from "react-type-animation";
+import { useEffect, useRef, useState } from "react";
 import "../../Style/Titlebar.css";
 import { Link, NavLink } from "react-router-dom";
-import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
-import { Magnetic, SplitText } from "../../motion/Motion";
+import { AnimatePresence, motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
+import { Magnetic } from "../../motion/Motion";
+import ParticleText from "../../motion/ParticleText";
 import ContraButton from "../ContraButton/ContraButton";
+
+const NAME = "Kenil Vaghasiya";
 
 const socials = [
   { to: "https://www.linkedin.com/in/kenil704/", src: "images/linkedin.png", alt: "linkedin" },
@@ -12,10 +14,26 @@ const socials = [
   { to: "https://dribbble.com/kenil_vaghasiya", src: "images/dribbble.png", alt: "dribbble" }
 ];
 
+const builds = ["I build SaaS products", "I build Framer websites", "I build AI-powered features", "I build fast web apps"];
+
+const EASE = [0.22, 1, 0.36, 1];
+const rise = {
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } }
+};
+
 const Titlebar = (prop) => {
   const heroRef = useRef(null);
+  const nameRef = useRef(null);
+  const [plainName, setPlainName] = useState(false);
+  const [buildIndex, setBuildIndex] = useState(0);
 
-  // Scroll-linked parallax: the hero text lifts and fades, the colour ring grows.
+  useEffect(() => {
+    const timer = window.setInterval(() => setBuildIndex((index) => (index + 1) % builds.length), 2400);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  // Scroll-linked: the text lifts and fades, the colour ring grows, the name dissolves into particles.
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -140]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
@@ -38,76 +56,74 @@ const Titlebar = (prop) => {
 
   return (
     <div className="homePage" id="HomePage" ref={setRefs} onPointerMove={handlePointerMove}>
-    <motion.div
-      className="Titlebar"
-      initial={{ opacity: 0, y: -24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-       <motion.div className="TitlebarItem" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1, duration: 0.5 }}>
-        <NavLink to="/" className="navlinknone">Kenil Vaghasiya </NavLink>
+      <motion.div className="bgDesign" style={{ scale: ringScale, y: ringY }}>
+        <motion.div className="bgDesignInner" style={{ x: pointerX, y: pointerY }}>
+          <img src="images/es1.svg" alt=""></img>
+        </motion.div>
       </motion.div>
-    </motion.div>
-    <motion.div
-      className="mainSection"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.7 }}
-    >
-      <motion.div className="heroContent" style={{ y: contentY, opacity: contentOpacity }}>
-        <SplitText text="Kenil Vaghasiya" className="Titilename" delay={0.2} />
-        <TypeAnimation
-  sequence={[
-    // Same substring at the start will only be typed once, initially
-    'Full Stack Developer',
-    1000,
-    'Framer Developer',
-    1000,
-    'React JS , Node JS , Next JS ',
-    1000,
-    'Full Stack & Framer Developer',
-    1000,
-    
-  ]}
-  speed={20}
-  className="fieldname"
-  repeat={2}
-/>
+
+      <div className="mainSection">
+        <ParticleText text={NAME} targetRef={nameRef} dissolve={scrollYProgress} onFallback={setPlainName} />
+
         <motion.div
-          className="logosectionMain"
+          className="heroTop"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: EASE }}
+        >
+          <NavLink to="/" className="navlinknone heroLogo">Kenil Vaghasiya</NavLink>
+          <div className="heroStatus">
+            <span className="heroStatusDot" aria-hidden="true"></span>
+            Available for work
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="heroContent"
+          style={{ y: contentY, opacity: contentOpacity }}
           initial="hidden"
           animate="show"
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.75 } } }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.9 } } }}
         >
-          {socials.map((item) => (
-            <motion.div
-              key={item.alt}
-              variants={{
-                hidden: { opacity: 0, y: 18, scale: 0.6 },
-                show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 320, damping: 18 } }
-              }}
-            >
-              <Magnetic strength={0.45}>
+          <motion.div className="heroRole" variants={rise}>Full-Stack &amp; Framer Developer</motion.div>
+
+          <h1 ref={nameRef} className={`Titilename ${plainName ? "isPlain" : ""}`}>{NAME}</h1>
+
+          <motion.div className="heroBuild" variants={rise} aria-live="off">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={builds[buildIndex]}
+                className="heroBuildLine"
+                initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -18, filter: "blur(6px)" }}
+                transition={{ duration: 0.4, ease: EASE }}
+              >
+                {builds[buildIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </motion.div>
+
+          <motion.div className="heroActions" variants={rise}>
+            <Magnetic strength={0.3}>
+              <button type="button" className="heroPrimaryBtn" onClick={() => prop.onViewWork?.()}>
+                View my work <span aria-hidden="true">↓</span>
+              </button>
+            </Magnetic>
+            <div className="heroContra">
+              <ContraButton theme="light" />
+            </div>
+          </motion.div>
+
+          <motion.div className="logosectionMain" variants={rise}>
+            {socials.map((item) => (
+              <Magnetic strength={0.45} key={item.alt}>
                 <Link to={item.to}><img src={item.src} alt={item.alt} className="iconLogo"/></Link>
               </Magnetic>
-            </motion.div>
-          ))}
+            ))}
+          </motion.div>
         </motion.div>
-        <motion.div
-          className="heroContra"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <ContraButton theme="light" />
-        </motion.div>
-      </motion.div>
-    </motion.div>
-    <motion.div className="bgDesign" style={{ scale: ringScale, y: ringY }}>
-      <motion.div className="bgDesignInner" style={{ x: pointerX, y: pointerY }}>
-        <img src="images/es1.svg" alt="bgimage"></img>
-      </motion.div>
-    </motion.div>
+      </div>
     </div>
   );
 };

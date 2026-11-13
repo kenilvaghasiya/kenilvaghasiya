@@ -120,7 +120,7 @@ const ProjectVideo = ({ src, poster, label, width, height }) => {
 
 const ContraWork = () => (
   <section className="contraWork">
-    <div className="contraWorkTitle"><RevealText text="Latest Work" /></div>
+    <h2 className="contraWorkTitle"><RevealText text="Latest Work" /></h2>
     <p className="contraWorkSub">
       Recent projects from my <a href={PROFILE_URL} target="_blank" rel="noreferrer">Contra profile</a>.
     </p>
@@ -150,7 +150,7 @@ const ContraWork = () => (
           </TiltCard>
           <div className="contraWorkBody">
             {project.featured && <div className="contraWorkFeaturedLabel">Featured · Live site{project.site ? ` · ${project.site}` : ""}</div>}
-            <div className="contraWorkCardTitle">{project.title}</div>
+            <h3 className="contraWorkCardTitle">{project.title}</h3>
             <div className="contraWorkText">{project.text}</div>
             <div className="contraWorkTags">
               {project.tags.map((tag) => (
@@ -162,7 +162,7 @@ const ContraWork = () => (
       ))}
     </motion.div>
 
-    <div className="contraWorkTitle contraServicesTitle"><RevealText text="Services" /></div>
+    <h2 className="contraWorkTitle contraServicesTitle"><RevealText text="Services" /></h2>
 
     <motion.div
       className="contraServicesGrid"
@@ -183,7 +183,7 @@ const ContraWork = () => (
         >
           <img src={service.image} alt={service.title} width="640" height="480" loading="lazy" decoding="async" />
           <div className="contraServiceBody">
-            <div className="contraServiceTitle">{service.title}</div>
+            <h3 className="contraServiceTitle">{service.title}</h3>
             <div className="contraServicePrice">{service.price}</div>
           </div>
         </motion.a>

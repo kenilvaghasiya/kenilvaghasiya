@@ -240,10 +240,10 @@ const About = (prop) => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <div className="skillsTitle"><RevealText text="Skills" /></div>
+        <h2 className="skillsTitle"><RevealText text="Skills" /></h2>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">Languages</div>
+          <h3 className="skillsGroupTitle">Languages</h3>
           <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>C#</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>JavaScript</motion.span>
@@ -255,7 +255,7 @@ const About = (prop) => {
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">Frontend</div>
+          <h3 className="skillsGroupTitle">Frontend</h3>
           <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>React.js</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Next.js</motion.span>
@@ -269,7 +269,7 @@ const About = (prop) => {
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">Backend</div>
+          <h3 className="skillsGroupTitle">Backend</h3>
           <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>ASP.NET Core</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>.NET</motion.span>
@@ -281,7 +281,7 @@ const About = (prop) => {
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">Cloud</div>
+          <h3 className="skillsGroupTitle">Cloud</h3>
           <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Microsoft Azure</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>AWS S3</motion.span>
@@ -292,7 +292,7 @@ const About = (prop) => {
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">Databases</div>
+          <h3 className="skillsGroupTitle">Databases</h3>
           <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>SQL Server</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>PostgreSQL</motion.span>
@@ -303,7 +303,7 @@ const About = (prop) => {
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">DevOps</div>
+          <h3 className="skillsGroupTitle">DevOps</h3>
           <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Docker</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Kubernetes</motion.span>
@@ -314,7 +314,7 @@ const About = (prop) => {
         </div>
 
         <div className="skillsGroup">
-          <div className="skillsGroupTitle">Architecture</div>
+          <h3 className="skillsGroupTitle">Architecture</h3>
           <motion.div className="skillsChips" variants={chipGroup} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Distributed Systems</motion.span>
             <motion.span variants={chipItem} whileHover={{ y: -4, scale: 1.06 }}>Event-Driven Architecture</motion.span>
@@ -374,7 +374,7 @@ const About = (prop) => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <div className="certTitle"><RevealText text="Certifications & Achievements" /></div>
+        <h2 className="certTitle"><RevealText text="Certifications & Achievements" /></h2>
 
       
 
@@ -415,7 +415,7 @@ const About = (prop) => {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <div className="recruiterCtaLeft">
-          <div className="recruiterCtaTitle"><RevealText text="Let’s Build High-Impact Products" /></div>
+          <h2 className="recruiterCtaTitle"><RevealText text="Let’s Build High-Impact Products" /></h2>
           <div className="recruiterCtaSub">
             Available for Software Engineer and Full-Stack roles, and Framer website projects, focused on scalable products, cloud systems, and AI-powered features.
           </div>

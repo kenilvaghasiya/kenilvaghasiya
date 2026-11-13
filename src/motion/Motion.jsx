@@ -100,11 +100,13 @@ export const TiltCard = ({ children, className, max = 9, ...rest }) => {
 };
 
 /* Letters rise into place one after another (used for the hero name). */
-export const SplitText = ({ text, className, delay = 0, stagger = 0.035 }) => {
+export const SplitText = ({ text, className, delay = 0, stagger = 0.035, as = "div" }) => {
   const words = text.split(" ");
   let index = 0;
+  // `as` picks the HTML tag, e.g. "h1" for the page's main heading.
+  const Tag = motion[as];
   return (
-    <motion.div
+    <Tag
       className={className}
       aria-label={text}
       initial="hidden"
@@ -128,7 +130,7 @@ export const SplitText = ({ text, className, delay = 0, stagger = 0.035 }) => {
           {w < words.length - 1 ? " " : ""}
         </span>
       ))}
-    </motion.div>
+    </Tag>
   );
 };
 

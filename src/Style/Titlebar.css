@@ -1,193 +1,28 @@
 @import url(../index.css);
 
+/* ---------- Hero ---------- */
 
-.Titlebar {
+.homePage{
+    position: relative;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: 80px;
-    z-index: 7;
-
+    height: 100vh;
+    height: 100svh;
+    min-height: 620px;
+    overflow: hidden;
 }
 
 .navlinknone{
     text-decoration: none;
     color: #091C23;
-
 }
 
-.homePage {
-    width: 100%;
-    height: 100vh;
-}
-
-.Titilename{
-    color: #091C23;
-font-family: "font1";
-font-size: 96px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-transition: all 1s;
-
-}
-
-.fieldname{
-color: #091C23;
-font-family: Raleway;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-margin-top: 15px;
-transition: all 1s;
-
-}
-
-.iconLogo{
-    width: 29px;
-height: 29px;
-margin: 15px 10px;
-transition: all 1s;
-
-}
-
-.logosectionMain{
-    display: flex;
-    flex-direction: row;
-}
-
-.mainSection{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(50px);
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-}
-
+/* Colour ring behind everything */
 .bgDesign{
     position: absolute;
-    width: 100%;
-    top: 0;
-    height: 100vh;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
-}
-
-.bgDesign img{
-    width: 80%;
-    position: relative;
-    height: 80%;
-    animation: heroFloat 9s ease-in-out infinite;
-}
-
-@keyframes heroFloat {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.TitlebarItem {
-    color: #091C23;
-    font-family: "font1";
-    cursor: pointer;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 50%;
-    padding-top: 20px;
-    padding-left: 30px;
-    transition: all 1s;
-    z-index: 7;
-
-
-}
-
-.resumeBtn {
-    position: absolute;
-    border-radius: 24px;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
-    border: 2px solid #000;
-    width: 137px;
-    height: 42px;
-    color: #000;
-    font-family: "font2";
-    z-index: 7;
-
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    transition: all 1s;
-    color: #091C23;
-}
-
-.resumeBtn:hover{
-    background-color: #091C23;
-    color: white;
-    border: 2px solid #ffffff;
-
-}
-
-
-
-
-
-@media only screen and (max-width: 650px) {
-    .TitlebarItem {
-        font-size: 21px
-    }
-
-    .resumeBtn {
-        width: 112px;
-        height: 36px;
-        font-size: 16px;
-    }
-
-}
-
-
-@media only screen and (max-width: 750px) {
-  .Titilename{
-    font-size: 13vw;
-  }
-  .fieldname{
-    font-size: 6vw;
-    margin-top: 0;
-  }
-
-}
-
-
-/* Motion: hero content wrapper + parallax ring */
-.heroContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    will-change: transform, opacity;
-}
-
-.Titilename{
-    transition: none;
-    perspective: 600px;
-    text-align: center;
 }
 
 .bgDesignInner{
@@ -198,25 +33,271 @@ transition: all 1s;
     align-items: center;
 }
 
-.homePage{
+.bgDesign img{
+    width: 80%;
+    height: 80%;
     position: relative;
+    animation: heroFloat 9s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Frosted layer that holds the content */
+.mainSection{
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroTop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    box-sizing: border-box;
+    padding: 22px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.heroLogo{
+    font-family: "font1";
+    font-size: 30px;
+    line-height: 1;
+}
+
+.heroStatus{
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e3e8ee;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+    color: #091C23;
+    font-family: "font2", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.heroStatusDot{
+    position: relative;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #12a60f;
+}
+
+.heroStatusDot::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #12a60f;
+    animation: heroPulse 1.8s ease-out infinite;
+}
+
+@keyframes heroPulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(3.2); opacity: 0; }
+}
+
+.heroContent{
+    position: relative;
+    z-index: 3;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    will-change: transform, opacity;
+}
+
+.heroRole{
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid #ffd88f;
+    background: #fff4db;
+    color: #0A1C23;
+    font-family: "font2", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* The real heading: invisible while the particle version is drawn over it. */
+.Titilename{
+    margin: 18px 0 0 0;
+    color: transparent;
+    font-family: "font1";
+    font-size: 112px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.15;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.Titilename.isPlain{
+    color: #091C23;
+    user-select: auto;
+}
+
+.heroBuild{
+    margin-top: 6px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
-.iconLogo{
-    transition: none;
-    display: block;
+.heroBuildLine{
+    display: inline-block;
+    color: #091C23;
+    font-family: "font2", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.heroActions{
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.heroPrimaryBtn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 46px;
+    padding: 0 24px;
+    border: 0;
+    border-radius: 999px;
+    background: #091C23;
+    color: #ffffff;
+    font-family: "font2", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(9, 28, 35, 0.22);
+    transition: box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.heroPrimaryBtn:hover{
+    background: #12303b;
+    box-shadow: 0 14px 30px rgba(9, 28, 35, 0.3);
+}
+
+.heroPrimaryBtn span{
+    display: inline-block;
+    animation: heroNudge 1.6s ease-in-out infinite;
+}
+
+@keyframes heroNudge {
+    0%, 100% { transform: translateY(-2px); }
+    50% { transform: translateY(3px); }
 }
 
 .heroContra{
-    margin-top: 14px;
     min-height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .heroContra iframe{
     max-width: 100%;
+}
+
+.logosectionMain{
+    margin-top: 22px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.iconLogo{
+    display: block;
+    width: 29px;
+    height: 29px;
+    margin: 6px 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .Titilename{
+        font-size: 11.6vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .heroTop{
+        padding: 16px 16px;
+    }
+
+    .heroLogo{
+        font-size: 20px;
+    }
+
+    .heroStatus{
+        font-size: 12px;
+        padding: 7px 12px;
+        gap: 7px;
+    }
+
+    .heroRole{
+        font-size: 11px;
+        padding: 7px 12px;
+    }
+
+    .Titilename{
+        margin-top: 14px;
+    }
+
+    .heroBuild{
+        height: 36px;
+    }
+
+    .heroBuildLine{
+        font-size: 20px;
+    }
+
+    .heroActions{
+        margin-top: 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bgDesign img,
+    .heroStatusDot::after,
+    .heroPrimaryBtn span{
+        animation: none;
+    }
 }
