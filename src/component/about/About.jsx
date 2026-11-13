@@ -2,7 +2,6 @@ import "../../Style/about.css";
 import { motion } from "framer-motion";
 import CardSection from "../cardSection/CardSection";
 import LinkedInSlider from "../LinkedInSlider/LinkedInSlider";
-import DashboardReplica from "../dashboardReplica/DashboardReplica";
 import ContraButton from "../ContraButton/ContraButton";
 import { CountUp, Magnetic, RevealText, chipGroup, chipItem } from "../../motion/Motion";
 
@@ -405,7 +404,6 @@ const About = (prop) => {
 
  
 
-      <DashboardReplica />
 
       <motion.div
         className="recruiterCtaSection"
