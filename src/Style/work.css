@@ -702,3 +702,9 @@
     -webkit-text-stroke: 3px #111111;
     paint-order: stroke fill;
 }
+
+@media only screen and (max-width: 680px) {
+    .wkTitle em{
+        -webkit-text-stroke-width: 1.6px;
+    }
+}
