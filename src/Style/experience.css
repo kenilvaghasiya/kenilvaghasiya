@@ -1,20 +1,41 @@
 .expSection{
     box-sizing: border-box;
-    width: min(100%, 1180px);
-    margin: 0 auto 140px auto;
-    padding: 0 32px;
+    width: min(100%, 1168px);
+    margin: 0 auto 130px auto;
+    padding: 0 24px;
 }
 
 .expSection *{
     box-sizing: border-box;
 }
 
+.expEyebrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #b45309;
+    font-family: "font2", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.expEyebrow::before{
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: #fe9800;
+}
+
 .expTitle{
-    margin: 0;
+    margin: 12px 0 0 0;
     color: #091C23;
-    font-family: "font1";
-    font-size: 64px;
-    font-weight: 400;
+    font-family: "font2", sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     line-height: 1.1;
     text-align: center;
 }
@@ -96,8 +117,8 @@
     padding: 24px 26px;
     border-radius: 20px;
     border: 1px solid #e8ebef;
-    background: linear-gradient(150deg, #ffffff 0%, #fffaf0 100%);
-    box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -157,9 +178,10 @@
 .expRole{
     margin: 16px 0 0 0;
     color: #091C23;
-    font-family: "font1";
+    font-family: "font2", sans-serif;
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     line-height: 1.15;
 }
 
@@ -233,7 +255,7 @@
     }
 
     .expTitle{
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .expSub{

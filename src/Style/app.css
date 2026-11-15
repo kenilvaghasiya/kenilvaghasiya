@@ -45,6 +45,23 @@ align-items: center;
     padding-top: 1px;
 }
 
+.pageAbout .linkedinSection{
+    margin-bottom: 110px;
+}
+
+.pageAbout .linkedinHeading{
+    font-family: "font2", sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+@media only screen and (max-width: 640px) {
+    .pageAbout .linkedinHeading{
+        font-size: 36px;
+    }
+}
+
 .pagePortfolio{
     padding-top: 90px;
 }

@@ -1,0 +1,607 @@
+/* About page. One container width, one card style, one heading style. */
+.ab{
+    --ink: #091C23;
+    --muted: #5b6672;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    --line: #e6e9ee;
+    --accent: #fe9800;
+    --soft: #f6f8fa;
+    color: var(--ink);
+    font-family: "font2", sans-serif;
+}
+
+.ab *{
+    box-sizing: border-box;
+}
+
+.abIntro,
+.abResults,
+.abSection,
+.abCta{
+    width: min(100% - 48px, 1120px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.abSection{
+    margin-bottom: 130px;
+}
+
+/* ---------- Headings ---------- */
+.abEyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #b45309;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.abEyebrow::before{
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.abHead{
+    margin-bottom: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.abTitle{
+    margin: 12px 0 0 0;
+    font-family: "font2", sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.abSub{
+    margin: 12px 0 0 0;
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* ---------- Buttons ---------- */
+.abBtn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    padding: 0 22px;
+    border-radius: 999px;
+    border: 1px solid var(--ink);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.abBtnPrimary{
+    background: var(--ink);
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(9, 28, 35, 0.2);
+}
+
+.abBtnPrimary:hover{
+    background: #12303b;
+}
+
+.abBtnGhost{
+    background: transparent;
+    color: var(--ink);
+    border-color: #cfd6de;
+}
+
+.abBtnGhost:hover{
+    border-color: var(--ink);
+    background: var(--ink);
+    color: #ffffff;
+}
+
+.abBtnAccent{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+}
+
+.abBtnOnDark{
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+}
+
+.abBtnOnDark:hover{
+    background: #ffffff;
+    color: var(--ink);
+}
+
+/* ---------- Intro ---------- */
+.abIntro{
+    margin-top: 110px;
+    margin-bottom: 72px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    gap: 72px;
+    align-items: center;
+}
+
+.abHeadline{
+    margin: 18px 0 0 0;
+    font-family: "font2", sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+}
+
+.abLead{
+    margin: 22px 0 0 0;
+    max-width: 620px;
+    color: #3d4852;
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+.abLead + .abLead{
+    margin-top: 14px;
+}
+
+.abActions{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.abProfile{
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(16, 24, 40, 0.1);
+    padding: 12px;
+}
+
+.abPhoto{
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4 / 4.2;
+    background: var(--soft);
+}
+
+.abPhoto img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.abAvailable{
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(16, 24, 40, 0.16);
+}
+
+.abAvailable span{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #12a60f;
+    animation: abPulse 1.8s ease-out infinite;
+}
+
+@keyframes abPulse {
+    0% { box-shadow: 0 0 0 0 rgba(18, 166, 15, 0.5); }
+    100% { box-shadow: 0 0 0 9px rgba(18, 166, 15, 0); }
+}
+
+.abFacts{
+    margin: 0;
+    padding: 8px 10px 4px 10px;
+}
+
+.abFacts > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.abFacts > div:last-child{
+    border-bottom: 0;
+}
+
+.abFacts dt{
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.abFacts dd{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* ---------- Results ---------- */
+.abResults{
+    margin-bottom: 130px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.abResult{
+    padding: 26px 24px 24px 24px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.abResult strong{
+    color: var(--ink);
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.abResult > span{
+    padding-top: 12px;
+    border-top: 2px solid var(--accent);
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+/* ---------- Skills ---------- */
+.abSkills{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.abSkillCard{
+    padding: 22px 20px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #ffffff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.abSkillCard:hover{
+    border-color: #ffd88f;
+    box-shadow: 0 14px 30px rgba(16, 24, 40, 0.1);
+    transform: translateY(-3px);
+}
+
+.abSkillCard h3{
+    margin: 0 0 14px 0;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.abChips{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.abChips span{
+    padding: 6px 11px;
+    border-radius: 8px;
+    background: var(--soft);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ---------- Education & certifications ---------- */
+.abCredentials{
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.abEducation{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.abEduCard{
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.abEduDate{
+    color: #b45309;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.abEduCard h3{
+    margin: 8px 0 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.abEduSchool{
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.abCerts{
+    list-style: none;
+    margin: 0;
+    padding: 6px 22px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.abCerts li{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.abCerts li:last-child{
+    border-bottom: 0;
+}
+
+.abCertLogo{
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.abCertLogo.coursera{ background: #1f6feb; }
+.abCertLogo.udemy{ background: #a855f7; }
+.abCertLogo.google{ background: #22c55e; }
+.abCertLogo.michigan{ background: #1d4ed8; color: #facc15; }
+.abCertLogo.ibm{ background: #1e40af; font-size: 12px; }
+
+.abCertText{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.abCertName{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.abCertMeta{
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ---------- Call to action ---------- */
+.abCta{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 44px 40px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    background: linear-gradient(125deg, #091c23 0%, #102f3c 55%, #1f4f64 100%);
+    box-shadow: 0 18px 40px rgba(9, 28, 35, 0.22);
+}
+
+.abCtaTitle{
+    margin: 0;
+    color: #ffffff;
+    font-family: "font2", sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+}
+
+.abCtaSub{
+    margin: 14px 0 0 0;
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.abCtaActions{
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    max-width: 300px;
+}
+
+.abCtaContra{
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 44px;
+}
+
+.abCtaContra iframe{
+    max-width: 100%;
+}
+
+/* ---------- Tablet ---------- */
+@media only screen and (max-width: 1000px) {
+    .abIntro{
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+        margin-top: 80px;
+    }
+
+    .abProfile{
+        max-width: 420px;
+    }
+
+    .abHeadline{
+        font-size: 46px;
+    }
+
+    .abResults{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .abSkills{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .abCredentials{
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .abCta{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .abCtaActions,
+    .abCtaContra{
+        justify-content: flex-start;
+        max-width: none;
+    }
+}
+
+/* ---------- Phone ---------- */
+@media only screen and (max-width: 640px) {
+    .abIntro,
+    .abResults,
+    .abSection,
+    .abCta{
+        width: calc(100% - 32px);
+    }
+
+    .abIntro{
+        margin-top: 56px;
+        margin-bottom: 48px;
+    }
+
+    .abHeadline{
+        font-size: 34px;
+    }
+
+    .abLead{
+        font-size: 16px;
+    }
+
+    .abSection,
+    .abResults{
+        margin-bottom: 90px;
+    }
+
+    .abHead{
+        margin-bottom: 30px;
+    }
+
+    .abTitle{
+        font-size: 36px;
+    }
+
+    .abSub{
+        font-size: 16px;
+    }
+
+    .abResults{
+        gap: 10px;
+    }
+
+    .abResult{
+        padding: 18px 16px;
+    }
+
+    .abResult strong{
+        font-size: 36px;
+    }
+
+    .abResult > span{
+        font-size: 14px;
+    }
+
+    .abSkills{
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .abCerts{
+        padding: 4px 16px;
+    }
+
+    .abCertName{
+        font-size: 15px;
+    }
+
+    .abCta{
+        padding: 30px 22px;
+    }
+
+    .abCtaTitle{
+        font-size: 32px;
+    }
+
+    .abCtaSub{
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .abAvailable span{
+        animation: none;
+    }
+}

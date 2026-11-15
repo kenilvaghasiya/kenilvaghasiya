@@ -134,6 +134,7 @@ const Experience = () => {
 
   return (
     <section className="expSection">
+      <div className="expEyebrow">Career</div>
       <h2 className="expTitle"><RevealText text="Experience" /></h2>
       <p className="expSub">Where I have worked, most recent first.</p>
 
