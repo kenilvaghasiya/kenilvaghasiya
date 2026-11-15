@@ -694,3 +694,11 @@
 .wkCard:hover .wkMore{ color: #F2542D; }
 .wkService:hover .wkServicePoints li::before{ background: #F2542D; }
 .wkService:hover .wkServiceArrow{ color: #111111; }
+
+/* Outline lettering on the second half of the page headline */
+.wkTitle em{
+    letter-spacing: 0;
+    color: #ffffff;
+    -webkit-text-stroke: 3px #111111;
+    paint-order: stroke fill;
+}

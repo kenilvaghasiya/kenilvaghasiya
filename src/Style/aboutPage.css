@@ -653,3 +653,12 @@
 .abResult:nth-child(4){ background: #F5F5F6; border-color: #E6E6EA; }
 .abResult:nth-child(4) > span{ color: var(--muted); }
 .abCta{ background: #111111; box-shadow: 0 18px 40px rgba(17, 17, 17, 0.22); }
+
+/* Outline numbers on the two plain result tiles */
+.abResult:nth-child(2) strong,
+.abResult:nth-child(3) strong{
+    color: #ffffff;
+    -webkit-text-stroke: 3px #111111;
+    paint-order: stroke fill;
+    -webkit-text-stroke-width: 2.5px;
+}

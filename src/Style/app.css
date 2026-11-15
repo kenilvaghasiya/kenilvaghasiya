@@ -198,3 +198,12 @@ align-items: center;
     border-color: #111111;
     color: #ffffff;
 }
+
+/* Outline lettering: the white fill is painted over the inner half of the
+   stroke, which also hides the overlapping contours inside the letters. */
+.nfCode{
+    color: #ffffff;
+    -webkit-text-stroke: 3px #111111;
+    paint-order: stroke fill;
+    -webkit-text-stroke-width: 5px;
+}
