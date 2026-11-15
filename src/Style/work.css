@@ -1,0 +1,653 @@
+/* Portfolio page: selected work, services, earlier work */
+.wk{
+    --ink: #091C23;
+    --muted: #5b6672;
+    --line: #e6e9ee;
+    --accent: #fe9800;
+    width: min(100% - 48px, 1240px);
+    margin: 0 auto 120px auto;
+    color: var(--ink);
+    font-family: "font2", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wk *,
+.wkEarlier *{
+    box-sizing: border-box;
+}
+
+/* ---------- Header ---------- */
+.wkHead{
+    padding: 30px 0 44px 0;
+}
+
+.wkEyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #b45309;
+    font-family: "font2", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.wkEyebrow::before{
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: #fe9800;
+}
+
+.wkEyebrow.onDark{
+    color: #ffc266;
+}
+
+.wkTitle{
+    margin: 18px 0 0 0;
+    max-width: 980px;
+    font-size: clamp(38px, 6.4vw, 84px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+}
+
+.wkTitle em{
+    font-style: normal;
+    color: #9aa4ae;
+}
+
+.wkSub{
+    margin: 24px 0 0 0;
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.wkSub a{
+    color: var(--ink);
+    font-weight: 600;
+    text-underline-offset: 3px;
+}
+
+.wkFilters{
+    margin-top: 36px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 5px;
+    border-radius: 999px;
+    background: #f1f3f6;
+}
+
+.wkFilter{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.wkFilter.isActive{
+    color: #ffffff;
+}
+
+.wkFilterPill{
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: var(--ink);
+}
+
+.wkFilterLabel,
+.wkFilterCount{
+    position: relative;
+}
+
+.wkFilterCount{
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* ---------- Project grid ---------- */
+.wkGrid{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 56px 28px;
+}
+
+.wkCard{
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    text-decoration: none;
+}
+
+.wkCard.half{
+    grid-column: span 6;
+}
+
+.wkCard.wide{
+    grid-column: 1 / -1;
+}
+
+.wkMedia{
+    position: relative;
+    aspect-ratio: var(--ratio, 16 / 10);
+    border-radius: 22px;
+    overflow: hidden;
+    background: #eef1f4;
+}
+
+.wkMedia img,
+.wkMedia video{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wkCard:hover .wkMedia img,
+.wkCard:hover .wkMedia video{
+    transform: scale(1.045);
+}
+
+.wkNumber,
+.wkBadge{
+    position: absolute;
+    top: 16px;
+    height: 30px;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.wkNumber{
+    left: 16px;
+    font-variant-numeric: tabular-nums;
+}
+
+.wkBadge{
+    left: 64px;
+    background: var(--ink);
+    color: #ffffff;
+}
+
+.wkArrow{
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    color: var(--ink);
+    font-size: 22px;
+    box-shadow: 0 10px 24px rgba(9, 28, 35, 0.22);
+    opacity: 0;
+    transform: translateY(12px) rotate(-45deg) scale(0.8);
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wkCard:hover .wkArrow,
+.wkCard:focus-visible .wkArrow{
+    opacity: 1;
+    transform: none;
+}
+
+.wkInfo{
+    padding: 20px 4px 0 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.wkName{
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.wkKind{
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.wkText{
+    margin: 10px 0 0 0;
+    color: #3d4852;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.wkTags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.wkTags span{
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: #3d4852;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.wkMore{
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.wkMore span{
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.wkCard:hover .wkMore span{
+    transform: translateX(6px);
+}
+
+.wkGallery{
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.wkGallery img{
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Full-width project: text in two columns under the media */
+.wkCard.wide .wkInfo{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 48px;
+    padding-top: 26px;
+}
+
+.wkCard.wide .wkInfoMain{
+    flex: 1 1 55%;
+    max-width: 640px;
+}
+
+.wkCard.wide .wkInfoSide{
+    flex: 0 1 380px;
+}
+
+.wkCard.wide .wkName{
+    font-size: 40px;
+}
+
+.wkCard.wide .wkKind{
+    font-size: 19px;
+}
+
+.wkCard.wide .wkText{
+    font-size: 18px;
+}
+
+.wkCard.third .wkName{
+    font-size: 22px;
+}
+
+.wkCard.third .wkText{
+    font-size: 15px;
+}
+
+/* ---------- Services ---------- */
+.wkServices{
+    margin-top: 130px;
+}
+
+.wkServicesHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    margin-bottom: 36px;
+}
+
+.wkServicesTitle{
+    margin: 14px 0 0 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.wkServicesSub{
+    margin: 0 0 6px 0;
+    max-width: 360px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.wkServiceGrid{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.wkServiceGrid > li{
+    display: flex;
+}
+
+.wkService{
+    flex: 1;
+    min-height: 360px;
+    padding: 24px;
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    background: #f6f8fa;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.wkService:hover,
+.wkService:focus-visible{
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #ffffff;
+    transform: translateY(-6px);
+    box-shadow: 0 24px 44px rgba(9, 28, 35, 0.24);
+}
+
+.wkServiceTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wkServiceNo{
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.5;
+    font-variant-numeric: tabular-nums;
+}
+
+.wkServiceArrow{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    color: var(--ink);
+    font-size: 17px;
+    border: 1px solid var(--line);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, border-color 0.3s ease;
+}
+
+.wkService:hover .wkServiceArrow{
+    transform: rotate(45deg);
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.wkServiceName{
+    min-height: 3.45em;
+    margin: 44px 0 0 0;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.wkServicePoints{
+    list-style: none;
+    margin: 18px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wkServicePoints li{
+    position: relative;
+    padding-left: 18px;
+    font-size: 15px;
+    line-height: 1.4;
+    opacity: 0.78;
+}
+
+.wkServicePoints li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.wkServiceFoot{
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid rgba(9, 28, 35, 0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    transition: border-color 0.35s ease;
+}
+
+.wkService:hover .wkServiceFoot{
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.wkServicePrice{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.wkServiceHire{
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.6;
+    white-space: nowrap;
+}
+
+/* ---------- Earlier work heading ---------- */
+.wkEarlier{
+    width: min(100% - 48px, 1240px);
+    margin: 0 auto;
+}
+
+.wkEarlierTitle{
+    margin: 14px 0 0 0;
+    color: #091C23;
+    font-family: "font2", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.pagePortfolio .PortfolioSection{
+    margin-top: 30px;
+}
+
+/* ---------- Tablet ---------- */
+@media only screen and (max-width: 1000px) {
+    .wkCard,
+    .wkCard.half{
+        grid-column: span 6;
+    }
+
+    .wkCard.wide .wkInfo{
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .wkCard.wide .wkInfoSide{
+        flex: none;
+    }
+
+    .wkCard.wide .wkName{
+        font-size: 32px;
+    }
+
+    .wkServiceGrid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wkService{
+        min-height: 300px;
+    }
+}
+
+/* ---------- Phone ---------- */
+@media only screen and (max-width: 680px) {
+    .wk,
+    .wkEarlier{
+        width: calc(100% - 32px);
+    }
+
+    .wk{
+        margin-bottom: 90px;
+    }
+
+    .wkHead{
+        padding: 10px 0 32px 0;
+    }
+
+    .wkSub{
+        font-size: 16px;
+    }
+
+    .wkFilters{
+        margin-top: 26px;
+        border-radius: 22px;
+    }
+
+    .wkFilter{
+        height: 36px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .wkGrid{
+        gap: 40px 0;
+    }
+
+    .wkCard,
+    .wkCard.half,
+    .wkCard.wide{
+        grid-column: 1 / -1;
+    }
+
+    .wkMedia{
+        border-radius: 16px;
+        aspect-ratio: 16 / 10.5;
+    }
+
+    .wkArrow{
+        display: none;
+    }
+
+    .wkName,
+    .wkCard.wide .wkName,
+    .wkCard.third .wkName{
+        font-size: 24px;
+    }
+
+    .wkKind,
+    .wkCard.wide .wkKind{
+        font-size: 15px;
+    }
+
+    .wkText,
+    .wkCard.wide .wkText,
+    .wkCard.third .wkText{
+        font-size: 15px;
+    }
+
+    .wkServices{
+        margin-top: 90px;
+    }
+
+    .wkServicesHead{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 26px;
+    }
+
+    .wkServicesTitle,
+    .wkEarlierTitle{
+        font-size: 34px;
+    }
+
+    .wkServicesSub{
+        font-size: 16px;
+    }
+
+    .wkServiceGrid{
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .wkService{
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .wkServiceName{
+        min-height: 0;
+        margin-top: 22px;
+        font-size: 22px;
+    }
+
+    .wkServiceFoot{
+        margin-top: 22px;
+    }
+}

@@ -1,15 +1,15 @@
 import ContraWork from "../component/ContraWork/ContraWork";
 import Portfolio from "../component/Portfolio/Portfolio";
-import { RevealText } from "../motion/Motion";
 
-// Latest Contra projects and services first, then the portfolio grid.
+// Selected projects and services first, then earlier work.
 const PortfolioPage = () => (
   <div className="page pagePortfolio">
     <ContraWork />
 
-    <h2 className="Portfolioname">
-      <RevealText text="Portfolio" />
-    </h2>
+    <div className="wkEarlier">
+      <div className="wkEyebrow">Archive</div>
+      <h2 className="wkEarlierTitle">Earlier work</h2>
+    </div>
 
     <Portfolio />
   </div>
