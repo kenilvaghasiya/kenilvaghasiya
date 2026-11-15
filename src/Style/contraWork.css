@@ -286,3 +286,20 @@
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+/* Small brand shots under a featured project's text */
+.contraWorkGallery{
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.contraWorkGallery img{
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 10px;
+}

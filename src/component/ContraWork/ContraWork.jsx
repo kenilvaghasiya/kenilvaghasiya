@@ -7,6 +7,38 @@ const PROFILE_URL = "https://contra.com/kenil_vaghasiya6108";
 
 const projects = [
   {
+    title: "Velor Coffee House — Brand Identity & Website",
+    text: "Brand identity and Framer website for a neighbourhood coffee house: a retro wordmark with a coffee bean in the \"O\", a sage, terracotta and cream palette, packaging, signage and staff apparel.",
+    tags: ["Framer", "Figma", "Brand Design", "Logo Design"],
+    image: "images/work/velor-poster.webp",
+    video: "videos/velor.mp4",
+    width: 1120,
+    height: 644,
+    label: "New · Built in Framer",
+    ratio: "1120 / 644",
+    featured: true,
+    gallery: [
+      { src: "images/work/velor-1.webp", alt: "Velor Coffee House storefront signage" },
+      { src: "images/work/velor-2.webp", alt: "Velor Coffee House barista T-shirt" },
+      { src: "images/work/velor-3.webp", alt: "Velor Coffee House cups and coffee packaging" }
+    ],
+    link: "https://contra.com/p/NNAOcUlk-velor-coffee-house-brand-identity-and-website"
+  },
+  {
+    title: "MORIVA Matcha House — Brand Identity & Website",
+    text: "Brand and website concept for a matcha house: a classic logo, serif typography, warm colours and smooth scroll animations in a responsive site.",
+    tags: ["Next.js", "Figma", "Brand Design", "Web Design"],
+    image: "images/work/moriva-poster.webp",
+    video: "videos/moriva.mp4",
+    width: 1120,
+    height: 644,
+    label: "New · Brand & website concept",
+    ratio: "1120 / 644",
+    featured: true,
+    reversed: true,
+    link: "https://contra.com/p/MZgrcll7-moriva-matcha-house-or-brand-identity-and-website-design"
+  },
+  {
     title: "Caldiors — A Little Care. A Beautiful Website.",
     text: "Website for Caldiors, a premium baby-care brand: clean design, thoughtful details and a premium browsing experience, built from design through to launch.",
     tags: ["Next.js", "React", "CSS3", "Brand Design"],
@@ -122,6 +154,7 @@ const ProjectVideo = ({ src, poster, label, width, height }) => {
       preload="none"
       controls={reduce}
       aria-label={label}
+      title={label}
     />
   );
 };
@@ -131,6 +164,7 @@ const ContraWork = () => (
     <h2 className="contraWorkTitle"><RevealText text="Latest Work" /></h2>
     <p className="contraWorkSub">
       Recent projects from my <a href={PROFILE_URL} target="_blank" rel="noreferrer">Contra profile</a>.
+      {" "}Watch the walkthroughs: <a href="/work/caldiors/">Caldiors</a> and <a href="/work/orven/">ORVEN</a>.
     </p>
 
     <motion.div
@@ -166,6 +200,13 @@ const ContraWork = () => (
                 <span key={tag}>{tag}</span>
               ))}
             </div>
+            {project.gallery && (
+              <div className="contraWorkGallery">
+                {project.gallery.map((shot) => (
+                  <img key={shot.src} src={shot.src} alt={shot.alt} width="720" height="480" loading="lazy" decoding="async" />
+                ))}
+              </div>
+            )}
           </div>
         </motion.a>
       ))}
