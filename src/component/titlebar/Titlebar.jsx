@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "../../Style/Titlebar.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AnimatePresence, motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { Magnetic } from "../../motion/Motion";
 import ParticleText from "../../motion/ParticleText";
@@ -9,9 +9,9 @@ import ContraButton from "../ContraButton/ContraButton";
 const NAME = "Kenil Vaghasiya";
 
 const socials = [
-  { to: "https://www.linkedin.com/in/kenil704/", src: "/images/linkedin.png", alt: "linkedin" },
-  { to: "https://github.com/kenilvaghasiya", src: "/images/code.png", alt: "code" },
-  { to: "https://dribbble.com/kenil_vaghasiya", src: "/images/dribbble.png", alt: "dribbble" }
+  { to: "https://www.linkedin.com/in/kenil704/", src: "/images/linkedin.png", alt: "Kenil Vaghasiya on LinkedIn" },
+  { to: "https://github.com/kenilvaghasiya", src: "/images/code.png", alt: "Kenil Vaghasiya on GitHub" },
+  { to: "https://dribbble.com/kenil_vaghasiya", src: "/images/dribbble.png", alt: "Kenil Vaghasiya on Dribbble" }
 ];
 
 const builds = ["I build SaaS products", "I build Framer websites", "I build AI-powered features", "I build fast web apps"];
@@ -118,7 +118,7 @@ const Titlebar = (prop) => {
           <motion.div className="logosectionMain" variants={rise}>
             {socials.map((item) => (
               <Magnetic strength={0.45} key={item.alt}>
-                <Link to={item.to}><img src={item.src} alt={item.alt} className="iconLogo"/></Link>
+                <a href={item.to} target="_blank" rel="noreferrer me"><img src={item.src} alt={item.alt} className="iconLogo"/></a>
               </Magnetic>
             ))}
           </motion.div>

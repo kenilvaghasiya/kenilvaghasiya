@@ -6,12 +6,18 @@ import { RevealText } from "../../motion/Motion";
 // Newest first.
 const jobs = [
   {
-    title: "Software Engineer",
-    company: "Clerxi",
-    location: "United States",
-    date: "Present",
+    title: "Senior Software Engineer Team Lead",
+    company: "Clerxi · Full-time",
+    location: "United States · Remote",
+    date: "Mar 2026 – Present",
     current: true,
-    highlights: []
+    highlights: [
+      "Lead engineering for Clerxi’s multi-tenant construction SaaS (contractor, insurance-broker and carrier portals plus an offline-first React Native field app), owning architecture, code review and releases for a TypeScript monorepo (Node.js, Next.js 15, Prisma, PostgreSQL) of 1,200+ API route modules and 1,650+ data models.",
+      "Built an AI-agent-driven delivery workflow (Claude Code agent playbooks, codebase map, pre-commit quality gates) that merged 4,400+ pull requests in six months, backed by 5,800+ automated test files and 460+ Playwright end-to-end specs.",
+      "Designed the tenant security model: org-scoped RBAC with plan-based feature entitlements enforced on every route, PostgreSQL Row-Level Security, and AES-256-GCM field-level encryption for tax IDs, EINs and bank accounts.",
+      "Shipped an LLM entitlement gateway (Anthropic, AWS Bedrock) that meters and bills every model call per organization, with a commit-time lint ratchet that cut ungated AI call sites from 65 to 0.",
+      "Delivered the construction finance core (double-entry general ledger, payroll and certified payroll, QuickBooks Online sync, Plaid bank feeds, Stripe billing) on an event-driven backend (pg-boss with 250+ scheduled jobs, Socket.io realtime), deployed on AWS (EC2, RDS, S3) with Docker and GitHub Actions."
+    ]
   },
   {
     title: "Software Developer",
@@ -58,7 +64,7 @@ const jobs = [
   }
 ];
 
-const VISIBLE = 3;
+const VISIBLE = 2;
 const EASE = [0.22, 1, 0.36, 1];
 
 const JobCard = ({ job, index }) => {

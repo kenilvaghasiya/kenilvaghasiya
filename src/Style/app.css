@@ -15,7 +15,7 @@
 }
 
 .Portfolioname{
-    color: #091C23;
+    color: #18191D;
 font-family: "font1";
 font-size: 64px;
 font-style: normal;
@@ -82,7 +82,7 @@ align-items: center;
 
 .pageTitle{
     margin: 0;
-    color: #091C23;
+    color: #18191D;
     font-family: "font1";
     font-size: 64px;
     font-weight: 400;
@@ -100,7 +100,7 @@ align-items: center;
 .pageLead{
     margin: 14px 0 36px 0;
     max-width: 640px;
-    color: #4b5563;
+    color: #5A5E6B;
     font-family: "font2", sans-serif;
     font-size: 18px;
     line-height: 1.5;
@@ -108,7 +108,7 @@ align-items: center;
 }
 
 .pageLead a{
-    color: #091C23;
+    color: #18191D;
     font-weight: 700;
 }
 

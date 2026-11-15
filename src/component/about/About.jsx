@@ -75,7 +75,7 @@ const About = () => (
       <motion.div className="abIntroText" variants={stagger} initial="hidden" animate="show">
         <motion.div className="abEyebrow" variants={fadeUp}>About me</motion.div>
         <motion.h1 className="abHeadline" variants={fadeUp}>
-          I build scalable products, and the websites that present them.
+          I build <mark>scalable products</mark>, and the websites that present them.
         </motion.h1>
         <motion.p className="abLead" variants={fadeUp}>
           Software Engineer with 4+ years of experience building scalable, cloud-native web applications across frontend and

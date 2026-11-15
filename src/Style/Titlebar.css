@@ -13,7 +13,7 @@
 
 .navlinknone{
     text-decoration: none;
-    color: #091C23;
+    color: #18191D;
 }
 
 /* Colour ring behind everything */
@@ -90,7 +90,7 @@
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid #e3e8ee;
     box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
-    color: #091C23;
+    color: #18191D;
     font-family: "font2", sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -136,9 +136,9 @@
 .heroRole{
     padding: 8px 16px;
     border-radius: 999px;
-    border: 1px solid #ffd88f;
-    background: #fff4db;
-    color: #0A1C23;
+    border: 1px solid #C9D1FF;
+    background: #F2F4FF;
+    color: #18191D;
     font-family: "font2", sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -149,7 +149,7 @@
 /* The real heading. ParticleText makes it transparent only while its particle copy is animating. */
 .Titilename{
     margin: 18px 0 0 0;
-    color: #091C23;
+    color: #18191D;
     font-family: "font1";
     font-size: 112px;
     font-style: normal;
@@ -169,7 +169,7 @@
 
 .heroBuildLine{
     display: inline-block;
-    color: #091C23;
+    color: #18191D;
     font-family: "font2", sans-serif;
     font-size: 30px;
     font-weight: 400;
@@ -194,19 +194,19 @@
     padding: 0 24px;
     border: 0;
     border-radius: 999px;
-    background: #091C23;
+    background: #2D46F5;
     color: #ffffff;
     font-family: "font2", sans-serif;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 10px 24px rgba(9, 28, 35, 0.22);
+    box-shadow: 0 10px 24px rgba(45, 70, 245, 0.32);
     transition: box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .heroPrimaryBtn:hover{
-    background: #12303b;
-    box-shadow: 0 14px 30px rgba(9, 28, 35, 0.3);
+    background: #1F35D6;
+    box-shadow: 0 14px 30px rgba(45, 70, 245, 0.42);
 }
 
 .heroPrimaryBtn span{

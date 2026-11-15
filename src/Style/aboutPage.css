@@ -1,12 +1,12 @@
 /* About page. One container width, one card style, one heading style. */
 .ab{
-    --ink: #091C23;
-    --muted: #5b6672;
+    --ink: #18191D;
+    --muted: #5A5E6B;
     font-feature-settings: "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
-    --line: #e6e9ee;
-    --accent: #fe9800;
-    --soft: #f6f8fa;
+    --line: #DDE2F7;
+    --accent: #2D46F5;
+    --soft: #F2F4FF;
     color: var(--ink);
     font-family: "font2", sans-serif;
 }
@@ -33,7 +33,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #b45309;
+    color: #2D46F5;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -89,19 +89,20 @@
 }
 
 .abBtnPrimary{
-    background: var(--ink);
+    background: #2D46F5;
+    border-color: #2D46F5;
     color: #ffffff;
-    box-shadow: 0 10px 22px rgba(9, 28, 35, 0.2);
+    box-shadow: 0 10px 22px rgba(45, 70, 245, 0.3);
 }
 
 .abBtnPrimary:hover{
-    background: #12303b;
+    background: #1F35D6;
 }
 
 .abBtnGhost{
     background: transparent;
     color: var(--ink);
-    border-color: #cfd6de;
+    border-color: #C9D1FF;
 }
 
 .abBtnGhost:hover{
@@ -111,8 +112,8 @@
 }
 
 .abBtnAccent{
-    background: var(--accent);
-    border-color: var(--accent);
+    background: #D7F75B;
+    border-color: #D7F75B;
     color: var(--ink);
 }
 
@@ -149,7 +150,7 @@
 .abLead{
     margin: 22px 0 0 0;
     max-width: 620px;
-    color: #3d4852;
+    color: #3A3D47;
     font-size: 18px;
     line-height: 1.65;
 }
@@ -298,7 +299,7 @@
 }
 
 .abSkillCard:hover{
-    border-color: #ffd88f;
+    border-color: #C9D1FF;
     box-shadow: 0 14px 30px rgba(16, 24, 40, 0.1);
     transform: translateY(-3px);
 }
@@ -350,7 +351,7 @@
 }
 
 .abEduDate{
-    color: #b45309;
+    color: #2D46F5;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -437,8 +438,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 32px;
-    background: linear-gradient(125deg, #091c23 0%, #102f3c 55%, #1f4f64 100%);
-    box-shadow: 0 18px 40px rgba(9, 28, 35, 0.22);
+    background: linear-gradient(125deg, #2D46F5 0%, #1F35D6 100%);
+    box-shadow: 0 18px 40px rgba(45, 70, 245, 0.3);
 }
 
 .abCtaTitle{
@@ -454,7 +455,7 @@
 .abCtaSub{
     margin: 14px 0 0 0;
     max-width: 560px;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.86);
     font-size: 17px;
     line-height: 1.55;
 }
@@ -604,4 +605,42 @@
     .abAvailable span{
         animation: none;
     }
+}
+
+/* Citron marker behind key words in the headline */
+.abHeadline mark{
+    background: linear-gradient(transparent 58%, #D7F75B 58%);
+    color: inherit;
+    padding: 0 2px;
+}
+
+.abResult > span{
+    border-top-color: #D7F75B;
+}
+
+.abResult:nth-child(1){
+    background: #2D46F5;
+    border-color: #2D46F5;
+}
+
+.abResult:nth-child(1) strong{
+    color: #ffffff;
+}
+
+.abResult:nth-child(1) > span{
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.abResult:nth-child(4){
+    background: #D7F75B;
+    border-color: #D7F75B;
+}
+
+.abResult:nth-child(4) > span{
+    color: #18191D;
+    border-top-color: #18191D;
+}
+
+.abSkillCard:hover{
+    border-color: #2D46F5;
 }

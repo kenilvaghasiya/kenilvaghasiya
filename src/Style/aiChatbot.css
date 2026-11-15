@@ -13,7 +13,7 @@
 }
 
 .aiBotTitle{
-    color: #091C23;
+    color: #18191D;
     font-family: "font1";
     font-size: 46px;
     line-height: 1;
@@ -36,7 +36,7 @@
 .aiBotQuickActions button{
     border: 1px solid #cdd9ea;
     background: #ffffff;
-    color: #0A1C23;
+    color: #18191D;
     border-radius: 999px;
     padding: 8px 13px;
     font-family: "font2";
@@ -81,9 +81,9 @@
 }
 
 .aiBubble.user{
-    background: #091C23;
+    background: #18191D;
     color: #ffffff;
-    border: 1px solid #091C23;
+    border: 1px solid #18191D;
     align-self: flex-end;
 }
 
@@ -112,8 +112,8 @@
 
 .aiBotInputForm button{
     height: 46px;
-    border: 1px solid #091C23;
-    background: #091C23;
+    border: 1px solid #18191D;
+    background: #18191D;
     color: #ffffff;
     border-radius: 12px;
     padding: 0 18px;

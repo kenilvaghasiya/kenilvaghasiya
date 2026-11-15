@@ -20,3 +20,8 @@ code {
 }
 
 /* The @font-face rules for font1 / font2 / font3 are in public/index.html, next to their preload links. */
+
+::selection{
+  background: #D7F75B;
+  color: #18191D;
+}

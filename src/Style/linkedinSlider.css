@@ -4,7 +4,7 @@
 }
 
 .linkedinHeading{
-    color: #091C23;
+    color: #18191D;
     font-family: "font1";
     font-size: 62px;
     display: flex;
@@ -31,7 +31,7 @@
 }
 
 .coverflowStage:focus-visible{
-    box-shadow: inset 0 0 0 2px #0a86f9;
+    box-shadow: inset 0 0 0 2px #2D46F5;
     border-radius: 16px;
 }
 
@@ -82,12 +82,12 @@
     padding: 0;
     border: 0;
     cursor: pointer;
-    background: linear-gradient(90deg, rgba(9, 28, 35, 0.16), rgba(9, 28, 35, 0.04));
+    background: linear-gradient(90deg, rgba(24, 25, 29, 0.16), rgba(24, 25, 29, 0.04));
     transition: background 0.25s ease;
 }
 
 .coverflowCover:hover{
-    background: rgba(9, 28, 35, 0);
+    background: rgba(24, 25, 29, 0);
 }
 
 .coverflowCover.isActiveCover{
@@ -125,7 +125,7 @@
     height: 46px;
     border-radius: 50%;
     border: 0;
-    background: #091C23;
+    background: #18191D;
     color: #ffffff;
     font-size: 20px;
     line-height: 1;
@@ -159,7 +159,7 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: #091C23;
+    background: #18191D;
 }
 
 @media only screen and (max-width: 700px) {

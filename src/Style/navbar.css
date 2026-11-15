@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: row;
     border-radius: 50px;
-    background: #091C23;
+    background: #18191D;
     height: 55px;
     padding: 7px;
 }
@@ -50,14 +50,14 @@ padding: 0px 30px;
 cursor: pointer;
 }
 .NavbarItem.isActive{
-    color: #091C23;
+    color: #18191D;
 }
 
 .NavbarPill{
     position: absolute;
     inset: 0;
     border-radius: 30px;
-    background: #ffffff;
+    background: #D7F75B;
     z-index: 0;
 }
 
