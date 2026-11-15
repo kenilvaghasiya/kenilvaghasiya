@@ -18,6 +18,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "work": "node scripts/build-work-pages.js",
+    "prebuild": "node scripts/build-work-pages.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

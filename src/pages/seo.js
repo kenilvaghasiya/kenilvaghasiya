@@ -39,7 +39,7 @@ export const usePageSeo = (pathname) => {
     const page = pages[path] || pages["/"];
     const url = SITE + (pages[path] ? path : "/");
 
-    document.title = page.title;
+    document.title = pages[path] ? page.title : "Page not found | Kenil Vaghasiya";
     setContent('meta[name="description"]', page.description);
     setContent('meta[property="og:title"]', page.title);
     setContent('meta[property="og:description"]', page.description);

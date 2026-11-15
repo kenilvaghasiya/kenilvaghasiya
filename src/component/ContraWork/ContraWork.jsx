@@ -4,7 +4,7 @@ import "../../Style/work.css";
 
 const PROFILE_URL = "https://contra.com/kenil_vaghasiya6108";
 
-// `page` is the project's case study on this site (built by scripts/build-work-pages.js);
+// `page` is the project's case study on this site (built by scripts/build-pages.js);
 // `link` is the same project on Contra, linked from that case study.
 const projects = [
   {

@@ -12,7 +12,8 @@ const items = [
 const Navbar = (prop) => {
   const [hovered, setHovered] = useState(null);
   // The white pill sits on the hovered item, otherwise on the page you are on.
-  const page = items.find((item) => item.key !== "/" && prop.pathname.startsWith(item.key))?.key ?? "/";
+  // No pill on a "page not found" address.
+  const page = prop.pathname === "/" ? "/" : items.find((item) => item.key !== "/" && prop.pathname.startsWith(item.key))?.key ?? null;
   const current = hovered ?? page;
 
   return (

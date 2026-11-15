@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 import { AboutPage, ContactPage, PortfolioPage } from './pages/routes';
 import {
   createBrowserRouter,
@@ -17,8 +18,7 @@ const router = createBrowserRouter([
       { path: "about", element: <AboutPage /> },
       { path: "portfolio", element: <PortfolioPage /> },
       { path: "contact", element: <ContactPage /> },
-      // Unknown addresses show the home page.
-      { path: "*", element: <HomePage /> },
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);

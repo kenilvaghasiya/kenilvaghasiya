@@ -1,3 +1,8 @@
-# Single-page app: every address that is not a real file is served by index.html,
-# so /about, /portfolio and /contact work when opened or refreshed directly.
-/*    /index.html   200
+# The app's own pages are all served by index.html (React shows the right one).
+/about       /index.html   200
+/portfolio   /index.html   200
+/contact     /index.html   200
+
+# Real files (the /work/ blog pages, images, fonts...) are served as they are.
+# Anything else gets the app's "page not found" screen with a 404 status.
+/*           /index.html   404

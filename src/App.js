@@ -5,6 +5,7 @@ import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useLocation, useNavigate, useOutlet } from "react-router-dom";
 import { ScrollProgress } from "./motion/Motion";
 import { preloadPages } from "./pages/routes";
+import { usePageSeo } from "./pages/seo";
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -16,6 +17,8 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const outlet = useOutlet();
+
+  usePageSeo(location.pathname);
 
   // Once the first page is up and the browser is idle, fetch the other pages so switching is instant.
   useEffect(() => {

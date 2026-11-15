@@ -1,22 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Kenil Vaghasiya",
+  "name": "Kenil Vaghasiya | Full Stack, Framer & SaaS Developer",
+  "description": "Portfolio of Kenil Vaghasiya, a full stack developer, Framer developer and SaaS software developer available for hire.",
   "icons": [
-    {
-      "src": "LOGOK.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "LOGOK.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "LOGOK.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
+    { "src": "favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "favicon-512.png", "type": "image/png", "sizes": "512x512" }
   ],
   "start_url": ".",
   "display": "standalone",

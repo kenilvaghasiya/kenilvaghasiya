@@ -30,6 +30,8 @@ align-items: center;
 /* ---------- Pages ---------- */
 .pageShell{
     min-height: 100vh;
+    /* Slide-in animations start a little off to the side; never let them widen the page. */
+    overflow-x: clip;
 }
 
 .pageLoading{
@@ -129,4 +131,70 @@ align-items: center;
         font-size: 16px;
         margin-bottom: 26px;
     }
+}
+
+/* ---------- 404 page ---------- */
+.pageNotFound{
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 60px 20px 130px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #111111;
+    font-family: "font2", sans-serif;
+}
+
+.nfCode{
+    font-size: clamp(120px, 30vw, 300px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    color: #111111;
+}
+
+.nfTitle{
+    margin: 24px 0 0 0;
+    font-size: clamp(28px, 4.4vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.nfText{
+    margin: 14px 0 0 0;
+    color: #5A5E6B;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.nfActions{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nfBtn{
+    display: inline-flex;
+    align-items: center;
+    height: 46px;
+    padding: 0 22px;
+    border-radius: 999px;
+    border: 1px solid #D9D9DE;
+    color: #111111;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.nfBtn:hover,
+.nfBtnPrimary{
+    background: #111111;
+    border-color: #111111;
+    color: #ffffff;
 }

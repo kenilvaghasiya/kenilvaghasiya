@@ -1,0 +1,9 @@
+# Netlify build settings (same as running `npm run build` locally).
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Page routing and cache headers live in public/_redirects and public/_headers.

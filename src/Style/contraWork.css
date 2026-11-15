@@ -10,7 +10,7 @@
 }
 
 .contraWorkTitle{
-    color: #091C23;
+    color: #111111;
     font-family: "font1";
     font-size: 64px;
     line-height: 1.1;
@@ -25,13 +25,13 @@
 .contraWorkSub{
     margin: 12px 0 40px 0;
     text-align: center;
-    color: #4b5563;
+    color: #5A5E6B;
     font-family: "font2", sans-serif;
     font-size: 18px;
 }
 
 .contraWorkSub a{
-    color: #091C23;
+    color: #111111;
     font-weight: 700;
 }
 
@@ -48,14 +48,14 @@
     color: inherit;
     border-radius: 22px;
     background: #ffffff;
-    border: 1px solid #e8ebef;
+    border: 1px solid #E6E6EA;
     box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
     padding: 12px;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .contraWorkCard:hover{
-    border-color: #cfd6df;
+    border-color: #D9D9DE;
     box-shadow: 0 22px 44px rgba(16, 24, 40, 0.16);
 }
 
@@ -63,7 +63,7 @@
     border-radius: 14px;
     overflow: hidden;
     aspect-ratio: 4 / 3;
-    background: #f1f3f6;
+    background: #EFEFF1;
 }
 
 .contraWorkImageWrap img,
@@ -101,7 +101,7 @@
 
 .contraWorkFeaturedLabel{
     margin-bottom: 10px;
-    color: #b45309;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 13px;
     font-weight: 800;
@@ -114,7 +114,7 @@
 }
 
 .contraWorkCardTitle{
-    color: #091C23;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 21px;
     font-weight: 800;
@@ -123,7 +123,7 @@
 
 .contraWorkText{
     margin-top: 8px;
-    color: #4b5563;
+    color: #5A5E6B;
     font-family: "font2", sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -137,10 +137,10 @@
 }
 
 .contraWorkTags span{
-    border: 1px solid #ffd88f;
+    border: 1px solid #D9D9DE;
     border-radius: 999px;
-    background: #fff4db;
-    color: #0A1C23;
+    background: #F5F5F6;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 13px;
     font-weight: 600;
@@ -160,7 +160,7 @@
     color: inherit;
     border-radius: 18px;
     overflow: hidden;
-    background: #091C23;
+    background: #111111;
     box-shadow: 0 12px 28px rgba(16, 24, 40, 0.14);
 }
 
@@ -190,7 +190,7 @@
 }
 
 .contraServicePrice{
-    color: #fe9800;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 15px;
     font-weight: 700;
@@ -302,4 +302,27 @@
     aspect-ratio: 3 / 2;
     object-fit: cover;
     border-radius: 10px;
+}
+
+/* "Read the case study" link at the bottom of each project card */
+.contraWorkMore{
+    margin-top: 16px;
+    color: #111111;
+    font-family: "font2", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.contraWorkMore span{
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.contraWorkCard:hover .contraWorkMore span{
+    transform: translateX(5px);
+}
+
+.contraWorkCard:focus-visible{
+    outline: 3px solid #111111;
+    outline-offset: 3px;
 }
