@@ -93,3 +93,7 @@ cursor: pointer;
         padding: 0px 7px;
     }
 }
+
+a.NavbarItem{
+    text-decoration: none;
+}

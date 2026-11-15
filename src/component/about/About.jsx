@@ -1,6 +1,6 @@
 import "../../Style/about.css";
 import { motion } from "framer-motion";
-import CardSection from "../cardSection/CardSection";
+import Experience from "../Experience/Experience";
 import LinkedInSlider from "../LinkedInSlider/LinkedInSlider";
 import ContraButton from "../ContraButton/ContraButton";
 import { CountUp, Magnetic, RevealText, chipGroup, chipItem } from "../../motion/Motion";
@@ -81,7 +81,7 @@ const About = (prop) => {
         >
           <div className="aboutVisualGlow" aria-hidden="true"></div>
           <motion.img
-            src="images/about.webp"
+            src="/images/about.webp"
             alt=""
             width="862"
             height="635"
@@ -143,86 +143,7 @@ const About = (prop) => {
           </motion.div>
         </motion.div>
       </section>
-      <motion.div
-        className="roadmapSection"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-      >
-
-        <div className="roadmapSectionLeft">
-       
-          <CardSection
-            name="Software Developer"
-            margin={0}
-            date="Jun 2024 - Dec 2025"
-            company="UnivSoftware.com, Inc. — Las Vegas, NV"
-            highlights={[
-              "Designed and implemented RESTful APIs using ASP.NET Core supporting high-traffic SaaS workloads.",
-              "Built scalable React.js + TypeScript frontend architecture with reusable components and strict typing, reducing post-release defects by 30%.",
-              "Improved full-stack performance by 40% using SSR, Redis caching, AWS CloudFront CDN, and asset optimization.",
-              "Architected microservices deployed via Azure App Services and Docker containers.",
-              "Built event-driven workflows using Azure Service Bus for asynchronous processing.",
-              "Optimized SQL queries and indexing strategies in PostgreSQL and SQL Server, improving throughput under concurrent load.",
-              "Integrated LLM-powered AI features for intelligent invoice summaries and automated customer communication workflows.",
-              "Developed end-to-end tests using Jest, Cypress, and React Testing Library with 90%+ coverage.",
-              "Collaborated in Agile/Scrum teams on architecture decisions and CI/CD deployments."
-            ]}
-          />
-         
-       
-
-
-
-<CardSection
-            name="Full-stack Developer"
-            margin={120}
-            date="Jan 2020 - Jul 2022"
-            company="Rejoice Hub Solutions — Surat, India"
-            highlights={[
-              "Developed enterprise billing and CRM systems using TypeScript and RESTful backend APIs.",
-              "Improved API response times from 450ms to 180ms under 5,000+ concurrent users using async processing and caching.",
-              "Built AI-driven automation modules using Python and Azure ML APIs.",
-              "Reduced memory consumption by 25% through performance profiling and optimized object lifecycle management.",
-              "Developed automated test suites improving system reliability and Core Web Vitals by 35%."
-            ]}
-          />
-       
-
-        </div>
-        <div className="roadmapSectionCenter">
-          <div className="mappathDesign">
-            <div className="mappathDesigncenter"></div>
-          </div>
-        </div>
-        <div className="roadmapSectionright">
-       
-
-        <CardSection
-            name="Full-stack Developer"
-            margin={70}
-            date="Sep 2023 - May 2024"
-            company="Associated Students, Inc. — Long Beach, CA"
-            highlights={[
-              "Developed full-stack applications using React.js, Node.js, and REST APIs serving 10,000+ student users.",
-              "Designed real-time streaming features and dynamic UI rendering pipelines.",
-              "Built backend services for authentication, event tracking, and analytics dashboards.",
-              "Increased daily active users by 300% through optimized frontend performance and API enhancements.",
-              "Implemented secure authentication flows (JWT, OAuth) and improved API response times."
-            ]}
-          />
-
-       
-
-
-
-
-        </div>
-
-
-
-      </motion.div>
+      <Experience />
 
       <LinkedInSlider></LinkedInSlider>
 

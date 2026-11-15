@@ -3,16 +3,17 @@ import "../../Style/navbar.css";
 import { motion } from "framer-motion";
 
 const items = [
-  { key: "home", label: "Home" },
-  { key: "about", label: "About" },
-  { key: "Portfolio", label: "Portfolio" },
-  { key: "Contact", label: "Contact" }
+  { key: "/", label: "Home" },
+  { key: "/about", label: "About" },
+  { key: "/portfolio", label: "Portfolio" },
+  { key: "/contact", label: "Contact" }
 ];
 
 const Navbar = (prop) => {
   const [hovered, setHovered] = useState(null);
-  // The white pill sits on the hovered item, otherwise on the section in view.
-  const current = hovered ?? prop.active ?? "home";
+  // The white pill sits on the hovered item, otherwise on the page you are on.
+  const page = items.find((item) => item.key !== "/" && prop.pathname.startsWith(item.key))?.key ?? "/";
+  const current = hovered ?? page;
 
   return (
     <motion.div
@@ -24,12 +25,21 @@ const Navbar = (prop) => {
     >
       <div className="NavbarCard" onMouseLeave={() => setHovered(null)}>
         {items.map((item) => (
-          <motion.div
+          <motion.a
             key={item.key}
+            href={item.key}
             whileTap={{ scale: 0.94 }}
             className={`NavbarItem ${current === item.key ? "isActive" : ""}`}
+            aria-current={page === item.key ? "page" : undefined}
             onMouseEnter={() => setHovered(item.key)}
-            onClick={() => prop.datapass(item.key)}
+            onClick={(event) => {
+              // Plain clicks switch page in place; ctrl/cmd-click still opens a new tab.
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+              event.preventDefault();
+              setHovered(null);
+              if (page === item.key) window.scrollTo({ top: 0, behavior: "smooth" });
+              else prop.onNavigate(item.key);
+            }}
           >
             {current === item.key && (
               <motion.span
@@ -39,10 +49,10 @@ const Navbar = (prop) => {
               />
             )}
             <span className="NavbarLabel">{item.label}</span>
-          </motion.div>
+          </motion.a>
         ))}
-        <motion.div whileHover={{ y: -3, rotate: -8 }} whileTap={{ scale: 0.9 }} className="topItem" onClick={()=>prop.datapass("home")}>
-            <img src="images/Arrow.png" alt="Back to top"></img>
+        <motion.div whileHover={{ y: -3, rotate: -8 }} whileTap={{ scale: 0.9 }} className="topItem" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <img src="/images/Arrow.png" alt="Back to top"></img>
         </motion.div>
       </div>
     </motion.div>

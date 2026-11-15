@@ -9,9 +9,9 @@ import ContraButton from "../ContraButton/ContraButton";
 const NAME = "Kenil Vaghasiya";
 
 const socials = [
-  { to: "https://www.linkedin.com/in/kenil704/", src: "images/linkedin.png", alt: "linkedin" },
-  { to: "https://github.com/kenilvaghasiya", src: "images/code.png", alt: "code" },
-  { to: "https://dribbble.com/kenil_vaghasiya", src: "images/dribbble.png", alt: "dribbble" }
+  { to: "https://www.linkedin.com/in/kenil704/", src: "/images/linkedin.png", alt: "linkedin" },
+  { to: "https://github.com/kenilvaghasiya", src: "/images/code.png", alt: "code" },
+  { to: "https://dribbble.com/kenil_vaghasiya", src: "/images/dribbble.png", alt: "dribbble" }
 ];
 
 const builds = ["I build SaaS products", "I build Framer websites", "I build AI-powered features", "I build fast web apps"];
@@ -57,7 +57,7 @@ const Titlebar = (prop) => {
     <div className="homePage" id="HomePage" ref={setRefs} onPointerMove={handlePointerMove}>
       <motion.div className="bgDesign" style={{ scale: ringScale, y: ringY }}>
         <motion.div className="bgDesignInner" style={{ x: pointerX, y: pointerY }}>
-          <img src="images/es1.svg" alt=""></img>
+          <img src="/images/es1.svg" alt=""></img>
         </motion.div>
       </motion.div>
 

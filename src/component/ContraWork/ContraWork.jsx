@@ -10,17 +10,17 @@ const projects = [
     title: "Velor Coffee House — Brand Identity & Website",
     text: "Brand identity and Framer website for a neighbourhood coffee house: a retro wordmark with a coffee bean in the \"O\", a sage, terracotta and cream palette, packaging, signage and staff apparel.",
     tags: ["Framer", "Figma", "Brand Design", "Logo Design"],
-    image: "images/work/velor-poster.webp",
-    video: "videos/velor.mp4",
+    image: "/images/work/velor-poster.webp",
+    video: "/videos/velor.mp4",
     width: 1120,
     height: 644,
     label: "New · Built in Framer",
     ratio: "1120 / 644",
     featured: true,
     gallery: [
-      { src: "images/work/velor-1.webp", alt: "Velor Coffee House storefront signage" },
-      { src: "images/work/velor-2.webp", alt: "Velor Coffee House barista T-shirt" },
-      { src: "images/work/velor-3.webp", alt: "Velor Coffee House cups and coffee packaging" }
+      { src: "/images/work/velor-1.webp", alt: "Velor Coffee House storefront signage" },
+      { src: "/images/work/velor-2.webp", alt: "Velor Coffee House barista T-shirt" },
+      { src: "/images/work/velor-3.webp", alt: "Velor Coffee House cups and coffee packaging" }
     ],
     link: "https://contra.com/p/NNAOcUlk-velor-coffee-house-brand-identity-and-website"
   },
@@ -28,8 +28,8 @@ const projects = [
     title: "MORIVA Matcha House — Brand Identity & Website",
     text: "Brand and website concept for a matcha house: a classic logo, serif typography, warm colours and smooth scroll animations in a responsive site.",
     tags: ["Next.js", "Figma", "Brand Design", "Web Design"],
-    image: "images/work/moriva-poster.webp",
-    video: "videos/moriva.mp4",
+    image: "/images/work/moriva-poster.webp",
+    video: "/videos/moriva.mp4",
     width: 1120,
     height: 644,
     label: "New · Brand & website concept",
@@ -42,8 +42,8 @@ const projects = [
     title: "Caldiors — A Little Care. A Beautiful Website.",
     text: "Website for Caldiors, a premium baby-care brand: clean design, thoughtful details and a premium browsing experience, built from design through to launch.",
     tags: ["Next.js", "React", "CSS3", "Brand Design"],
-    image: "images/work/caldiors.webp",
-    video: "videos/caldiors.mp4",
+    image: "/images/work/caldiors.webp",
+    video: "/videos/caldiors.mp4",
     width: 1280,
     height: 853,
     link: "https://contra.com/p/POlFEscZ-a-little-care-a-beautiful",
@@ -55,8 +55,8 @@ const projects = [
     title: "ORVEN — Interior Design Website",
     text: "Framer website showcase for an interior design studio: warm visual identity, image-led layouts, responsive pages and animation direction.",
     tags: ["Framer", "Figma", "Web Design"],
-    image: "images/work/orven-poster.webp",
-    video: "videos/orven.mp4",
+    image: "/images/work/orven-poster.webp",
+    video: "/videos/orven.mp4",
     width: 1120,
     height: 644,
     label: "Featured · Built in Framer",
@@ -69,21 +69,21 @@ const projects = [
     title: "AXIOM — Architecture Brand & Website Concept",
     text: "Brand and website concept for an architecture studio: geometric logo, editorial typography and desktop + mobile homepage designs.",
     tags: ["Next.js", "React", "Node.js"],
-    image: "images/work/axiom.webp",
+    image: "/images/work/axiom.webp",
     link: "https://contra.com/p/cORkYE72-axiom-architecture-brand-and-website-design-concept"
   },
   {
     title: "From Zero to Hero — SaaS Brand & Product",
     text: "My 8-step process for turning a SaaS idea into a complete brand and digital product, from discovery and naming to MVP, launch and brand guidelines.",
     tags: ["Brand Design", "UI Design", "React"],
-    image: "images/work/saasbrand.webp",
+    image: "/images/work/saasbrand.webp",
     link: "https://contra.com/p/QFUgeq77-from-zero-to-heroturning-a"
   },
   {
     title: "Building a New SaaS Product",
     text: "An Agile, MVP-first approach in six steps: discovery, planning, UI/UX design, development, testing, then launch and improvement.",
     tags: ["Next.js", ".NET", "Supabase"],
-    image: "images/work/saasmvp.webp",
+    image: "/images/work/saasmvp.webp",
     link: "https://contra.com/p/RPWcRgov-building-a-new-saa-s-product"
   }
 ];
@@ -92,25 +92,25 @@ const services = [
   {
     title: "Backend API Development & Integrations",
     price: "$58/hr",
-    image: "images/work/svc-api.webp",
+    image: "/images/work/svc-api.webp",
     link: "https://contra.com/s/3NBqBQmq-backend-api-development-and-integrations"
   },
   {
     title: "AI Integrations & Workflow Automation",
     price: "$60/hr",
-    image: "images/work/svc-ai.webp",
+    image: "/images/work/svc-ai.webp",
     link: "https://contra.com/s/6MNbYPQs-ai-integrations-and-workflow-automation"
   },
   {
     title: "Next.js Website Design & Development",
     price: "$55/hr",
-    image: "images/work/svc-next.webp",
+    image: "/images/work/svc-next.webp",
     link: "https://contra.com/s/7ZoZYPLB-nextjs-website-design-and-development"
   },
   {
     title: "SaaS & MVP Development",
     price: "Contact for pricing",
-    image: "images/work/svc-saas.webp",
+    image: "/images/work/svc-saas.webp",
     link: "https://contra.com/s/essYOqOs-saa-s-and-mvp-development"
   }
 ];

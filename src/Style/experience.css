@@ -1,0 +1,287 @@
+.expSection{
+    box-sizing: border-box;
+    width: min(100%, 1180px);
+    margin: 0 auto 140px auto;
+    padding: 0 32px;
+}
+
+.expSection *{
+    box-sizing: border-box;
+}
+
+.expTitle{
+    margin: 0;
+    color: #091C23;
+    font-family: "font1";
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.expSub{
+    margin: 12px 0 56px 0;
+    color: #4b5563;
+    font-family: "font2", sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.expTimeline{
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* Centre line and its scroll-driven fill */
+.expLine{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    margin-left: -2px;
+    border-radius: 4px;
+    background: #e8ebef;
+    overflow: hidden;
+}
+
+.expLineFill{
+    position: absolute;
+    inset: 0;
+    transform-origin: 50% 0;
+    background: linear-gradient(180deg, #0a86f9 0%, #12a60f 50%, #fe9800 100%);
+}
+
+.expItem{
+    position: relative;
+    width: 50%;
+    padding-right: 48px;
+}
+
+.expItem.right{
+    align-self: flex-end;
+    padding-right: 0;
+    padding-left: 48px;
+}
+
+.expDot{
+    position: absolute;
+    top: 30px;
+    right: -9px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 4px solid #091C23;
+    z-index: 1;
+}
+
+.expItem.right .expDot{
+    right: auto;
+    left: -9px;
+}
+
+.expDot.isCurrent{
+    border-color: #12a60f;
+    box-shadow: 0 0 0 6px rgba(18, 166, 15, 0.16);
+}
+
+.expCard{
+    position: relative;
+    padding: 24px 26px;
+    border-radius: 20px;
+    border: 1px solid #e8ebef;
+    background: linear-gradient(150deg, #ffffff 0%, #fffaf0 100%);
+    box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.expCard:hover{
+    border-color: #ffd88f;
+    box-shadow: 0 20px 40px rgba(16, 24, 40, 0.14);
+}
+
+.expMeta{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 12px;
+}
+
+.expDate{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid #ffd88f;
+    background: #fff4db;
+    color: #0A1C23;
+    font-family: "font2", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.expDate.isCurrent{
+    border-color: #b7e4b5;
+    background: #eefaee;
+}
+
+.expLive{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #12a60f;
+    animation: expLive 1.8s ease-out infinite;
+}
+
+@keyframes expLive {
+    0% { box-shadow: 0 0 0 0 rgba(18, 166, 15, 0.5); }
+    100% { box-shadow: 0 0 0 9px rgba(18, 166, 15, 0); }
+}
+
+.expLocation{
+    color: #6b7280;
+    font-family: "font2", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.expRole{
+    margin: 16px 0 0 0;
+    color: #091C23;
+    font-family: "font1";
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.expCompany{
+    margin-top: 6px;
+    color: #091C23;
+    font-family: "font2", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.expList{
+    margin: 16px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.expList li{
+    position: relative;
+    padding: 0 0 10px 20px;
+    overflow: hidden;
+    color: #374151;
+    font-family: "font2", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.expList li::before{
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fe9800;
+}
+
+.expToggle{
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #d5dbe3;
+    background: #ffffff;
+    color: #091C23;
+    font-family: "font2", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.expToggle:hover{
+    background: #091C23;
+    border-color: #091C23;
+    color: #ffffff;
+}
+
+.expToggle span{
+    display: inline-block;
+}
+
+/* Tablet and phone: line on the left, cards in one column */
+@media only screen and (max-width: 860px) {
+    .expSection{
+        padding: 0 16px;
+        margin-bottom: 100px;
+    }
+
+    .expTitle{
+        font-size: 40px;
+    }
+
+    .expSub{
+        font-size: 16px;
+        margin-bottom: 36px;
+    }
+
+    .expTimeline{
+        gap: 24px;
+    }
+
+    .expLine{
+        left: 9px;
+    }
+
+    .expItem,
+    .expItem.right{
+        width: 100%;
+        align-self: stretch;
+        padding: 0 0 0 34px;
+    }
+
+    .expDot,
+    .expItem.right .expDot{
+        left: 0;
+        right: auto;
+        top: 26px;
+    }
+
+    .expCard{
+        padding: 20px 18px;
+    }
+
+    .expRole{
+        font-size: 24px;
+    }
+
+    .expCompany{
+        font-size: 16px;
+    }
+
+    .expList li{
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .expLive{
+        animation: none;
+    }
+}

@@ -1,0 +1,3 @@
+# Single-page app: every address that is not a real file is served by index.html,
+# so /about, /portfolio and /contact work when opened or refreshed directly.
+/*    /index.html   200
