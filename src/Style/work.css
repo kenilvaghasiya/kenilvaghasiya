@@ -1,9 +1,9 @@
 /* Portfolio page: selected work, services, earlier work */
 .wk{
-    --ink: #18191D;
+    --ink: #111111;
     --muted: #5A5E6B;
-    --line: #DDE2F7;
-    --accent: #2D46F5;
+    --line: #E6E6EA;
+    --accent: #111111;
     width: min(100% - 48px, 1240px);
     margin: 0 auto 120px auto;
     color: var(--ink);
@@ -25,7 +25,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #2D46F5;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -37,11 +37,11 @@
     content: "";
     width: 26px;
     height: 2px;
-    background: #2D46F5;
+    background: #111111;
 }
 
 .wkEyebrow.onDark{
-    color: #D7F75B;
+    color: #FFFFFF;
 }
 
 .wkTitle{
@@ -55,7 +55,7 @@
 
 .wkTitle em{
     font-style: normal;
-    color: #2D46F5;
+    color: #111111;
 }
 
 .wkSub{
@@ -79,7 +79,7 @@
     gap: 4px;
     padding: 5px;
     border-radius: 999px;
-    background: #E9ECFF;
+    background: #EFEFF1;
 }
 
 .wkFilter{
@@ -149,7 +149,7 @@
     aspect-ratio: var(--ratio, 16 / 10);
     border-radius: 22px;
     overflow: hidden;
-    background: #F2F4FF;
+    background: #F5F5F6;
 }
 
 .wkMedia img,
@@ -207,7 +207,7 @@
     background: #ffffff;
     color: var(--ink);
     font-size: 22px;
-    box-shadow: 0 10px 24px rgba(24, 25, 29, 0.22);
+    box-shadow: 0 10px 24px rgba(17, 17, 17, 0.22);
     opacity: 0;
     transform: translateY(12px) rotate(-45deg) scale(0.8);
     transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
@@ -382,7 +382,7 @@
     padding: 24px;
     border-radius: 24px;
     border: 1px solid var(--line);
-    background: #F2F4FF;
+    background: #F5F5F6;
     color: var(--ink);
     text-decoration: none;
     display: flex;
@@ -396,7 +396,7 @@
     border-color: var(--ink);
     color: #ffffff;
     transform: translateY(-6px);
-    box-shadow: 0 24px 44px rgba(24, 25, 29, 0.24);
+    box-shadow: 0 24px 44px rgba(17, 17, 17, 0.24);
 }
 
 .wkServiceTop{
@@ -471,7 +471,7 @@
 .wkServiceFoot{
     margin-top: auto;
     padding-top: 18px;
-    border-top: 1px solid rgba(24, 25, 29, 0.12);
+    border-top: 1px solid rgba(17, 17, 17, 0.12);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -504,7 +504,7 @@
 
 .wkEarlierTitle{
     margin: 14px 0 0 0;
-    color: #18191D;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 48px;
     font-weight: 700;
@@ -654,35 +654,43 @@
 
 /* Palette roles */
 .wkFilterPill{
-    background: #2D46F5;
+    background: #111111;
 }
 
 .wkBadge{
-    background: #D7F75B;
-    color: #18191D;
+    background: #FFFFFF;
+    color: #111111;
 }
 
 .wkArrow{
-    background: #D7F75B;
+    background: #FFFFFF;
 }
 
 .wkCard:hover .wkMore{
-    color: #2D46F5;
+    color: #111111;
 }
 
 /* Service card turns cobalt on hover, with citron details */
 .wkService:hover,
 .wkService:focus-visible{
-    background: #2D46F5;
-    border-color: #2D46F5;
-    box-shadow: 0 24px 44px rgba(45, 70, 245, 0.32);
+    background: #111111;
+    border-color: #111111;
+    box-shadow: 0 24px 44px rgba(17, 17, 17, 0.32);
 }
 
 .wkService:hover .wkServiceArrow{
-    background: #D7F75B;
-    border-color: #D7F75B;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 .wkService:hover .wkServicePoints li::before{
-    background: #D7F75B;
+    background: #FFFFFF;
 }
+
+/* Black + white theme */
+.wkEyebrow::before{ background: #F2542D; }
+.wkTitle em{ color: #A3A3AB; }
+.wkBadge{ background: #F2542D; color: #ffffff; }
+.wkCard:hover .wkMore{ color: #F2542D; }
+.wkService:hover .wkServicePoints li::before{ background: #F2542D; }
+.wkService:hover .wkServiceArrow{ color: #111111; }

@@ -22,6 +22,11 @@ code {
 /* The @font-face rules for font1 / font2 / font3 are in public/index.html, next to their preload links. */
 
 ::selection{
-  background: #D7F75B;
-  color: #18191D;
+  background: #FFFFFF;
+  color: #111111;
+}
+
+::selection{
+  background: #F2542D;
+  color: #ffffff;
 }

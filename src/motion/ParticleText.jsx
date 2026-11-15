@@ -33,10 +33,10 @@ varying vec3 vColor;
 varying float vAlpha;
 
 vec3 palette(float t) {
-  // Brand colours: cobalt, citron, light cobalt
-  if (t < 0.45) return vec3(0.176, 0.275, 0.961);
-  if (t < 0.8) return vec3(0.749, 0.878, 0.239);
-  return vec3(0.482, 0.553, 1.0);
+  // Black + white theme: greys, with a few accent-coloured particles
+  if (t < 0.5) return vec3(0.067, 0.067, 0.067);
+  if (t < 0.85) return vec3(0.62, 0.62, 0.65);
+  return vec3(0.949, 0.329, 0.176);
 }
 
 void main() {
@@ -67,7 +67,7 @@ void main() {
   gl_Position = vec4(clip.x, -clip.y, 0.0, 1.0);
   gl_PointSize = uSize * (1.0 + moved * 0.5);
 
-  vColor = mix(vec3(0.094, 0.098, 0.114), palette(aSeed.w), moved);
+  vColor = mix(vec3(0.067, 0.067, 0.067), palette(aSeed.w), moved);
   vAlpha = mix(1.0, 0.72, moved);
 }
 `;

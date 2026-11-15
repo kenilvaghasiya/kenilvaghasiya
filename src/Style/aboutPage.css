@@ -1,12 +1,12 @@
 /* About page. One container width, one card style, one heading style. */
 .ab{
-    --ink: #18191D;
+    --ink: #111111;
     --muted: #5A5E6B;
     font-feature-settings: "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
-    --line: #DDE2F7;
-    --accent: #2D46F5;
-    --soft: #F2F4FF;
+    --line: #E6E6EA;
+    --accent: #111111;
+    --soft: #F5F5F6;
     color: var(--ink);
     font-family: "font2", sans-serif;
 }
@@ -33,7 +33,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #2D46F5;
+    color: #111111;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -89,20 +89,20 @@
 }
 
 .abBtnPrimary{
-    background: #2D46F5;
-    border-color: #2D46F5;
+    background: #111111;
+    border-color: #111111;
     color: #ffffff;
-    box-shadow: 0 10px 22px rgba(45, 70, 245, 0.3);
+    box-shadow: 0 10px 22px rgba(17, 17, 17, 0.3);
 }
 
 .abBtnPrimary:hover{
-    background: #1F35D6;
+    background: #2B2B2E;
 }
 
 .abBtnGhost{
     background: transparent;
     color: var(--ink);
-    border-color: #C9D1FF;
+    border-color: #D9D9DE;
 }
 
 .abBtnGhost:hover{
@@ -112,8 +112,8 @@
 }
 
 .abBtnAccent{
-    background: #D7F75B;
-    border-color: #D7F75B;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
     color: var(--ink);
 }
 
@@ -299,7 +299,7 @@
 }
 
 .abSkillCard:hover{
-    border-color: #C9D1FF;
+    border-color: #D9D9DE;
     box-shadow: 0 14px 30px rgba(16, 24, 40, 0.1);
     transform: translateY(-3px);
 }
@@ -351,7 +351,7 @@
 }
 
 .abEduDate{
-    color: #2D46F5;
+    color: #111111;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -438,8 +438,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 32px;
-    background: linear-gradient(125deg, #2D46F5 0%, #1F35D6 100%);
-    box-shadow: 0 18px 40px rgba(45, 70, 245, 0.3);
+    background: linear-gradient(125deg, #111111 0%, #2B2B2E 100%);
+    box-shadow: 0 18px 40px rgba(17, 17, 17, 0.3);
 }
 
 .abCtaTitle{
@@ -609,18 +609,18 @@
 
 /* Citron marker behind key words in the headline */
 .abHeadline mark{
-    background: linear-gradient(transparent 58%, #D7F75B 58%);
+    background: linear-gradient(transparent 58%, #FFFFFF 58%);
     color: inherit;
     padding: 0 2px;
 }
 
 .abResult > span{
-    border-top-color: #D7F75B;
+    border-top-color: #FFFFFF;
 }
 
 .abResult:nth-child(1){
-    background: #2D46F5;
-    border-color: #2D46F5;
+    background: #111111;
+    border-color: #111111;
 }
 
 .abResult:nth-child(1) strong{
@@ -632,15 +632,24 @@
 }
 
 .abResult:nth-child(4){
-    background: #D7F75B;
-    border-color: #D7F75B;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 .abResult:nth-child(4) > span{
-    color: #18191D;
-    border-top-color: #18191D;
+    color: #111111;
+    border-top-color: #111111;
 }
 
 .abSkillCard:hover{
-    border-color: #2D46F5;
+    border-color: #111111;
 }
+
+/* Black + white theme: one accent (#F2542D) for small details only */
+.abEyebrow::before{ background: #F2542D; }
+.abHeadline mark{ background: linear-gradient(transparent 86%, #F2542D 86%); }
+.abResult > span{ border-top-color: #111111; }
+.abResult:nth-child(1) > span{ border-top-color: #ffffff; }
+.abResult:nth-child(4){ background: #F5F5F6; border-color: #E6E6EA; }
+.abResult:nth-child(4) > span{ color: var(--muted); }
+.abCta{ background: #111111; box-shadow: 0 18px 40px rgba(17, 17, 17, 0.22); }

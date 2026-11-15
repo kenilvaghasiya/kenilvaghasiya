@@ -34,8 +34,8 @@
     background:
       radial-gradient(circle at 30% 25%, rgba(10, 134, 249, 0.22), transparent 55%),
       radial-gradient(circle at 75% 70%, rgba(254, 152, 0, 0.24), transparent 55%),
-      radial-gradient(circle at 50% 50%, #F2F4FF 0%, #F2F4FF 70%);
-    border: 1px solid #DDE2F7;
+      radial-gradient(circle at 50% 50%, #F5F5F6 0%, #F5F5F6 70%);
+    border: 1px solid #E6E6EA;
 }
 
 .aboutVisualImage{
@@ -54,9 +54,9 @@
     padding: 10px 16px;
     border-radius: 999px;
     background: #ffffff;
-    border: 1px solid #DDE2F7;
+    border: 1px solid #E6E6EA;
     box-shadow: 0 10px 24px rgba(16, 24, 40, 0.12);
-    color: #18191D;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -75,8 +75,8 @@
 .aboutBadgeBottom{
     bottom: 10%;
     left: 0;
-    background: #18191D;
-    border-color: #18191D;
+    background: #111111;
+    border-color: #111111;
     color: #ffffff;
 }
 
@@ -91,9 +91,9 @@
     display: inline-flex;
     padding: 7px 14px;
     border-radius: 999px;
-    border: 1px solid #C9D1FF;
-    background: #F2F4FF;
-    color: #18191D;
+    border: 1px solid #D9D9DE;
+    background: #F5F5F6;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -103,7 +103,7 @@
 
 .aboutTitle{
     margin: 16px 0 6px 0;
-    color: #18191D;
+    color: #111111;
     font-family: "font1";
     font-size: 64px;
     font-weight: 400;
@@ -133,15 +133,15 @@
 .aboutStat{
     padding: 16px;
     border-radius: 16px;
-    border: 1px solid #DDE2F7;
-    background: linear-gradient(150deg, #ffffff 0%, #F2F4FF 100%);
+    border: 1px solid #E6E6EA;
+    background: linear-gradient(150deg, #ffffff 0%, #F5F5F6 100%);
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
 .aboutStat strong{
-    color: #18191D;
+    color: #111111;
     font-family: "font2", sans-serif;
     font-size: 30px;
     font-weight: 800;
@@ -263,14 +263,14 @@ top: 40%;
     width: min(100%, 1040px);
     margin: 0 auto 110px auto;
     padding: 30px 22px;
-    border: 1px solid #DDE2F7;
+    border: 1px solid #E6E6EA;
     border-radius: 20px;
-    background: linear-gradient(150deg, #ffffff 0%, #F2F4FF 100%);
+    background: linear-gradient(150deg, #ffffff 0%, #F5F5F6 100%);
     box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
 }
 
 .skillsTitle{
-    color: #18191D;
+    color: #111111;
     font-family: "font1";
     font-size: 44px;
     line-height: 1;
@@ -282,7 +282,7 @@ top: 40%;
 }
 
 .skillsGroupTitle{
-    color: #18191D;
+    color: #111111;
     font-family: "font2";
     font-size: 16px;
     font-weight: 700;
@@ -298,10 +298,10 @@ top: 40%;
 .skillsChips span{
     display: inline-flex;
     align-items: center;
-    border: 1px solid #C9D1FF;
+    border: 1px solid #D9D9DE;
     border-radius: 999px;
-    background: #F2F4FF;
-    color: #18191D;
+    background: #F5F5F6;
+    color: #111111;
     font-family: "font2";
     font-size: 14px;
     font-weight: 600;
@@ -325,7 +325,7 @@ top: 40%;
 }
 
 .impactTitle{
-    color: #18191D;
+    color: #111111;
     font-family: "font2", "Times New Roman", Georgia, serif;
     font-size: 44px;
     line-height: 1;
@@ -483,7 +483,7 @@ top: 40%;
 
 .certTitle{
     text-align: center;
-    color: #18191D;
+    color: #111111;
     font-family: "font1";
     display: flex;
     align-items: center;
@@ -748,14 +748,14 @@ top: 40%;
     width: min(100%, 1040px);
     margin: 0 auto 36px auto;
     padding: 30px 22px;
-    border: 1px solid #DDE2F7;
+    border: 1px solid #E6E6EA;
     border-radius: 20px;
     background: linear-gradient(145deg, #ffffff 0%, #f7fbff 100%);
     box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
 }
 
 .valueSectionTitle{
-    color: #18191D;
+    color: #111111;
     font-family: "font1";
     font-size: 44px;
     line-height: 1;
@@ -783,7 +783,7 @@ top: 40%;
 
 .valueCardLarge{
     grid-column: span 2;
-    background: linear-gradient(135deg, #18191D 0%, #143746 100%);
+    background: linear-gradient(135deg, #111111 0%, #143746 100%);
     border: 1px solid #143746;
 }
 
@@ -793,7 +793,7 @@ top: 40%;
 }
 
 .valueCardTitle{
-    color: #18191D;
+    color: #111111;
     font-family: "font2";
     font-size: 20px;
     font-weight: 800;
@@ -817,7 +817,7 @@ top: 40%;
     justify-content: space-between;
     gap: 18px;
     align-items: center;
-    background: linear-gradient(125deg, #18191D 0%, #2D46F5 55%, #1F35D6 100%);
+    background: linear-gradient(125deg, #111111 0%, #111111 55%, #2B2B2E 100%);
     box-shadow: 0 16px 30px rgba(16, 24, 40, 0.2);
 }
 
@@ -877,9 +877,9 @@ top: 40%;
 }
 
 .recruiterBtnPrimary{
-    background: #2D46F5;
-    color: #18191D;
-    border: 1px solid #2D46F5;
+    background: #111111;
+    color: #111111;
+    border: 1px solid #111111;
 }
 
 .recruiterBtnGhost{
@@ -892,7 +892,7 @@ top: 40%;
     width: min(100%, 1040px);
     margin: 0 auto 36px auto;
     padding: 30px 22px;
-    border: 1px solid #DDE2F7;
+    border: 1px solid #E6E6EA;
     border-radius: 20px;
     background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
     box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
@@ -904,7 +904,7 @@ top: 40%;
 }
 
 .dashboardDemoTitle{
-    color: #18191D;
+    color: #111111;
     font-family: "font2", "Times New Roman", Georgia, serif;
     font-weight: 700;
     font-size: 44px;
@@ -1171,7 +1171,7 @@ top: 40%;
     position: relative;
     border: 1px solid #2f3037;
     border-radius: 18px;
-    background: #18191D;
+    background: #111111;
     overflow: hidden;
 }
 
@@ -1607,7 +1607,7 @@ top: 40%;
 }
 
 .toolbarTitle{
-    color: #18191D;
+    color: #111111;
     font-family: "font2";
     font-size: 14px;
     font-weight: 800;
@@ -1665,7 +1665,7 @@ top: 40%;
 }
 
 .dashboardStatValue{
-    color: #18191D;
+    color: #111111;
     font-family: "font1";
     font-size: 27px;
     margin-top: 3px;
@@ -1710,7 +1710,7 @@ top: 40%;
 }
 
 .dashboardChartTitle{
-    color: #18191D;
+    color: #111111;
     font-family: "font2";
     font-size: 14px;
     font-weight: 800;
@@ -1801,7 +1801,7 @@ top: 40%;
 
 .funnelStep{
     border-radius: 10px;
-    color: #18191D;
+    color: #111111;
     font-family: "font2";
     font-size: 12px;
     font-weight: 800;
@@ -1871,7 +1871,7 @@ top: 40%;
 }
 
 .healthScore{
-    color: #18191D;
+    color: #111111;
     font-size: 26px;
     font-weight: 900;
     line-height: 1;
